@@ -1,20 +1,20 @@
-import mongoose from 'mongoose';
-import ResultInfo from './resultInfo.js';  // Adjust the path as needed
+import { v4 as uuidv4 } from 'uuid';
+import ResultInfo from '../../models/registration/resultInfo.js'; 
 
 const createResultInfo = async (req, res) => {
     try {
         // Extract data from request body
-            const resultId = uuidv4();
-            currentSemester = req.body,
-            subjects = req.body 
-        
+        const resultId = uuidv4();
+        const currentSemester = req.body.currentSemester;
+        const subjects = req.body.subjects;
+
         // Validate required fields
-        if (!studentId || !currentSemester || !subjects) {
+        if (!resultId || !currentSemester || !subjects) {
             return res.status(400).json({ error: 'Student ID, current semester, and subjects are required' });
         }
 
         // Validate semester
-        if (![1, 2, 3, 4, 5, 6, 7, 8].includes(currentSemester)) {
+        if (![1, 2, 3, 4, 5, 6, 7, 8].includes(Number(currentSemester))) {
             return res.status(400).json({ error: 'Invalid semester number' });
         }
 
@@ -29,11 +29,14 @@ const createResultInfo = async (req, res) => {
             if (!subjectCode || !subjectName || !grade) {
                 return res.status(400).json({ error: 'Each subject must have a subjectCode, subjectName, and grade' });
             }
-            // Optionally, validate the grade if needed
+            
         }
 
         // Check if ResultInfo already exists for the student and semester
-        const existingResult = await ResultInfo.findOne({ studentId, currentSemester });
+        const existingResult = await ResultInfo.findOne({ 
+            resultId,
+            currentSemester 
+        });
 
         if (existingResult) {
             return res.status(400).json({
@@ -43,7 +46,7 @@ const createResultInfo = async (req, res) => {
 
         // Create and save the new ResultInfo document
         const newResult = new ResultInfo({
-            resultId,
+            resultId: uuidv4(),
             currentSemester,
             subjects,  // Add subjects with their grades
         });

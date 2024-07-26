@@ -83,4 +83,6 @@ const collegeInfoSchema = new mongoose.Schema({
     }
 });
 
-const CollegeInfo = mongoose.model("CollegeInfo", collegeInfoSchema);
+const CollegeInfoModel = mongoose.model("CollegeInfo", collegeInfoSchema);
+
+export default CollegeInfoModel;

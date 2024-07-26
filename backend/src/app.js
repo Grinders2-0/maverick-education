@@ -12,3 +12,7 @@ app.use(registerRoutes);
 app.listen(port, () => {
     console.log(`Server running at ${port}`);
 });
+
+app.use((err, req,res,next) => {
+    console.log(err);
+})

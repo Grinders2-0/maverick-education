@@ -2,14 +2,13 @@ import mongoose from 'mongoose';
 
 const resultSchema = new mongoose.Schema({
     resultId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Student'
+        type: String,
+        required: true
     },
     currentSemester: {
-        type: Number,
+        type: String,
         required: true,
-        enum: [1, 2, 3, 4, 5, 6, 7, 8]
+        enum: ['1', '2', '3', '4', '5', '6', '7', '8']
     },
     subjects: [{
         subjectCode: {
@@ -22,7 +21,7 @@ const resultSchema = new mongoose.Schema({
         },
         grade: {
             type: String,
-            enum: ['A', 'B', 'C', 'D', 'F', 'Pass', 'Fail'],  // Enumerate possible grades
+            enum: ['AA', 'AB', 'BB', 'BC', 'CC', 'CD', 'DD','FF'], 
             default: ''
         }
     }],
@@ -110,19 +109,30 @@ const predefinedSubjects = {
     ]
 };
 
-// Middleware to populate subjects from the predefinedSubjects based on the currentSemester
+// Middleware to populate subjects from all previous semesters based on the currentSemester
 resultSchema.pre('save', function(next) {
     if (this.isNew || this.isModified('currentSemester')) {
-        if (predefinedSubjects[this.currentSemester]) {
-            this.subjects = predefinedSubjects[this.currentSemester].map(subject => ({
-                ...subject,
-                grade: ''  // Initialize grade as empty to allow user input
-            }));
+        let subjects = [];
+        if (this.currentSemester === '1') {
+            subjects = [
+                { subjectCode: "3100001", subjectName: "Mathematics-I" },
+                { subjectCode: "3110018", subjectName: "Physics" },
+                { subjectCode: "3110002", subjectName: "English" },
+                { subjectCode: "3110017", subjectName: "Chemistry" }
+            ];
+        } else {
+            for (let i = 1; i < this.currentSemester; i++) {
+                subjects = subjects.concat(predefinedSubjects[i]);
+            }
         }
+        this.subjects = subjects.map(subject => ({
+            ...subject,
+            grade: ''
+        }));
     }
     next();
 });
 
-const ResultInfo = mongoose.model("ResultInfo", resultSchema);
+const ResultInfoModel = mongoose.model("ResultInfo", resultSchema);
 
-export default ResultInfo;
+export default ResultInfoModel;

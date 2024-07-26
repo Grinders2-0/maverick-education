@@ -5,7 +5,6 @@ const personalInfoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
     firstName: {
         type: String,
         required: true
@@ -50,6 +49,10 @@ const personalInfoSchema = new mongoose.Schema({
     },
     updatedAt: {
         type: Date
+    },
+    isDeleted : {
+        type : Boolean,
+        default : false
     },
     profilePicture: {
         type: String, 
