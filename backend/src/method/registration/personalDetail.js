@@ -1,9 +1,10 @@
-import { uuidv4 } from 'uuid';
-import PersonalInfoModel from '../../../model/personalInfo/personalInfo.js';
+import { v4 as uuidv4 } from 'uuid';
+import PersonalInfoModel from '../../models/registration/personalInfo.js'
 import { emailRegex, phoneRegex } from '../../utility/utils.js';
 
 const personalInfoCreateMethod = async (req, res) => {
     try {
+        console.log('work');
         // Extract data from request body
         const presonalId = uuidv4();
         const firstName = req.body.firstName;

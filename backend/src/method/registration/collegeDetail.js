@@ -1,5 +1,5 @@
-import { uuidv4 } from 'uuid';
-import CollegeInfo from '../../../model/collegeInfo/collegeInfo.js';
+import { v4 as uuidv4 } from 'uuid';
+import CollegeInfoModel  from '../../models/registration/collegeInfo.js';
 
 const collegeInfoCreateMethod = async (req, res) => {
     try {
@@ -17,7 +17,7 @@ const collegeInfoCreateMethod = async (req, res) => {
         }
 
         // Create a new college info document
-        const newCollegeInfo = new CollegeInfo({
+        const newCollegeInfo = new CollegeInfoModel({
             collegeId,
             collegeName,
             department,
