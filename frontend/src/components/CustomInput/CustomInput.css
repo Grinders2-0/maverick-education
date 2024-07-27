@@ -1,0 +1,42 @@
+input {
+  border: 1px solid black; /* Add border */
+  border-radius: 5;
+  padding: 4px 8px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: "#cccccc";
+}
+
+input:focus {
+  border-color: #75aaf4; /* Change border color on focus */
+  box-shadow: 0 0 0 2px #75aaf4; /* Add box-shadow on focus */
+  border-width: inherit;
+}
+.custom-input-container {
+  width: 100%;
+}
+
+.custom-input-label {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  padding-bottom: 5px;
+}
+
+.custom-input {
+  border: 1px solid black; /* Add border */
+  border-radius: 10px;
+  padding: 4px 8px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  min-height: 45px;
+  width: 100%; /* Set width to 100% */
+  padding-left: 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.custom-input:focus {
+  border-color: #75aaf4; /* Change border color on focus */
+  box-shadow: 0 0 0 2px #75aaf4; /* Add box-shadow on focus */
+  border-width: inherit;
+}
