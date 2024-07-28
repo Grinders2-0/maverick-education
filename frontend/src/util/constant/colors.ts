@@ -1,8 +1,22 @@
+const blueShades = {
+  50: "#ebf8ff",
+  100: "#bee3f8",
+  200: "#90cdf4",
+  300: "#63b3ed",
+  400: "#4299e1",
+  500: "#3182ce",
+  600: "#2b6cb0",
+  700: "#2c5282",
+  800: "#2a4365",
+  900: "#1A365D",
+  950: "#0E2245",
+};
+
 export const colors = {
-  primary: "#ffA500", // orange
-  secondry: "#FFB347", // light orange,
-  accent: "#FF8C00", // dark orange,
-  BackgroundColor: "#FFFDF9",
+  primary: "#007bff", // blue
+  secondary: "#5a9efc", // light blue
+  accent: "#0056b3", // dark blue
+  BackgroundColor: "#F0F8FF", // light blue background
   black: "#000000",
   white: "#ffffff",
   black1: "#00000010",
@@ -24,11 +38,6 @@ export const colors = {
   EditColor: "#D49D11",
   DropDown: "#4B4B4B",
   grey: "#808080",
-  seller: "#F5F4E8",
-  purchaseAmount: "#E9E8F5",
-  Expense: "#F5E8E8",
-  Income: "#E8F5EC",
-  Broker: "#E8F2F5",
   skeletonBgColor: "#D9D9D9",
   primaryText: "#333333", // dark grey
   secondaryText: "#666666", // medium grey
@@ -36,14 +45,16 @@ export const colors = {
   linkHover: "#004080", // dark blue
   mainBackground: "#FFFFFF", // white
   secondaryBackground: "#F2F2F2", // light grey
-  headerFooterBackground: "#FF8C00", // dark orange
-  cardPanelBackground: "#FFF5E6", // very light orange
-  primaryButtonBackground: "#FFA500", // orange
+  headerFooterBackground: "#0056B3", // dark blue
+  cardPanelBackground: "#ebf8ff", // very light blue
+  primaryButtonBackground: "#007bff", // blue
   primaryButtonText: "#FFFFFF", // white
-  secondaryButtonBackground: "#FFB347", // light orange
-  secondaryButtonText: "#FFFFFF", // white
-  primaryBorder: "#FF8C00", // dark orange
-  secondaryBorder: "#FFB347", // light orange
-  highlightBackground: "#FFFAE6", // very light yellow-orange
-  highlightText: "#FF8C00", // dark orange
+  secondaryButtonBackground: "#5a9efc", // light blue
+  secondaryButtonText: "#FFFFFF",
+  primaryBorder: "#0056B3", // dark blue
+  secondaryBorder: "#5a9efc", // light blue
+  highlightBackground: "#ebf8ff", // very light blue
+  highlightText: "#0056B3", // dark blue
+
+  ...blueShades,
 };
