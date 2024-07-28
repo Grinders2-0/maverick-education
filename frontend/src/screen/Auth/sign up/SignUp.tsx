@@ -107,7 +107,7 @@ const SignUp = () => {
             color: colors.primary,
           }}
         >
-          Sign Up
+          Create an Account
         </h1>
       </div>
       <form onSubmit={handleSubmit}>
