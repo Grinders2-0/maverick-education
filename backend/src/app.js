@@ -3,10 +3,10 @@ import "express-async-errors";
 import cors from "cors";
 import "dotenv/config";
 import registerRoutes from "./routers/studentRouter.js";
-import errorHandlerMiddleware from "./middleware/error-handler";
-import notFoundMiddleware from "./middleware/not-found";
+import errorHandlerMiddleware from "./middleware/error-handler.js";
+import notFoundMiddleware from "./middleware/not-found.js";
 import helmet from "helmet";
-import authRouter from "./routes/auth";
+import authRouter from "./routes/auth.js";
 
 const port = process.env.PORT || 3001;
 

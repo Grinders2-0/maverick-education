@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import authenticateUser from "../middleware/authentication";
+import authenticateUser from "../middleware/authentication.js";
 import {
   changePassword,
   sendMailOtp,
@@ -12,7 +12,7 @@ import {
   userAuthorize,
   webDeleteAccount,
   updateProfile,
-} from "../controllers/auth";
+} from "../controller/auth.js";
 
 router.post("/login", login);
 router.patch("/logout", authenticateUser, logout);

@@ -3,12 +3,12 @@ import {
   BadRequestError,
   NotFoundError,
   UnauthenticatedError,
-} from "../errors";
-import User from "../models/User";
+} from "../errors/index.js";
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
-import { sendMail } from "./sendMail";
+import { sendMail } from "./sendMail.js";
 
 const login = async (req, res) => {
   const { email, password, fcmToken, loginType, socialToken, isLogin } =
