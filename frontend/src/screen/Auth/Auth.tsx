@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import Login from "./login/Login";
-import SignUp from "./sign up/SignUp";
 import "./Auth.css";
 import { colors } from "../../util/constant/colors";
 import { images } from "../../util/constant/images";
+import SignUp from "./sign up/SignUp";
 
 const Auth = () => {
   return (
