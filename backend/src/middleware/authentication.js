@@ -9,6 +9,9 @@ const authenticateUser = async (req, _res, next) => {
   }
   try {
     const token = authHeader.split(" ")[1];
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT_SECRET environment variable not defined");
+    }
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // attach the user to the job routes
     req.user = { userId: payload.userId };

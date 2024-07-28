@@ -1,14 +1,23 @@
 import express from "express";
+import "express-async-errors";
+import cors from "cors";
+import "dotenv/config";
 import registerRoutes from "./routers/studentRouter.js";
 import errorHandlerMiddleware from "./middleware/error-handler";
 import notFoundMiddleware from "./middleware/not-found";
-const port = 3001;
+import helmet from "helmet";
+import authRouter from "./routes/auth";
+
+const port = process.env.PORT || 3001;
 
 const app = express();
-
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 
 app.use(registerRoutes);
+app.use("auth", authRouter);
+
 app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
 
