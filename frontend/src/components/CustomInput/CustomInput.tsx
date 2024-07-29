@@ -1,6 +1,7 @@
 import React from "react";
 import { colors } from "../../util/constant/colors";
 import "./CustomInput.css";
+import { EAttadance } from "../../@types/form";
 
 interface CustomInputProps {
   label?: string | undefined;
@@ -25,7 +26,11 @@ const CustomInput: React.FC<CustomInputProps> = ({
     <div
       className={`custom-input-container ${sideBySide ? "side-by-side" : ""}`}
     >
-      {label && <label className="custom-input-label">{label}</label>}
+      {label && (
+        <label className={`custom-input-label ${sideBySide ? "" : "not-side"}`}>
+          {label}
+        </label>
+      )}
       <input
         className="custom-input"
         placeholder={placeholder}
