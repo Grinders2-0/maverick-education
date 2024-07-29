@@ -20,7 +20,7 @@
   padding: 4px 8px;
   outline: none; /* Remove default outline */
   transition: border-color 0.3s, box-shadow 0.3s;
-  min-height: 42px;
+  min-height: 45px;
   width: 100%; /* Set width to 100% */
   padding-left: "1rem";
   font-size: 14px;
@@ -40,6 +40,12 @@
   flex-direction: row; /* Arrange label and input in a row */
   align-items: center;
   width: 100%;
+}
+.not-side {
+  display: flex;
+  text-align: left;
+  min-width: 0px;
+  margin-left: 5px;
 }
 
 .side-by-side .custom-input-label {

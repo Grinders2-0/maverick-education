@@ -1,28 +1,22 @@
 import React, { memo } from "react";
-import "./Form.css";
 import { colors } from "../../util/constant/colors";
 import { images } from "../../util/constant/images";
 import CollegeForm from "./CollegeForm/CollegeForm";
 import SemesterDetail from "./SemesterDetail/SemesterDetail";
-
+import "./Form.css";
 const Form = () => {
   return (
-    <div className="container" style={{}}>
+    <div style={{ height: "100vh" }}>
       <section
-        className="login-container"
         style={{
-          // backgroundImage: `url(${images.bgImage2})`,
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          // opacity: 0.8,
-          backgroundColor: colors.BackgroundColor,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "90%",
         }}
       >
         <CollegeForm />
       </section>
-      {/* <section className="signup-container"> */}
-      {/* <SemesterDetail />
-      </section> */}
     </div>
   );
 };

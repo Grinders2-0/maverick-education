@@ -71,6 +71,11 @@ const collegeInfoSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+      ref: "User",
+    },
     expectedGraduationYear: {
       type: Number,
       required: true,

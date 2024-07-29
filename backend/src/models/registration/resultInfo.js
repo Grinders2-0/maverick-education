@@ -9,6 +9,11 @@ const resultSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: "User",
+  },
   currentSemester: {
     type: String,
     required: true,
@@ -60,7 +65,7 @@ const resultSchema = new mongoose.Schema({
 });
 
 const predefinedSubjects = {
-    1: [],
+  1: [],
   2: [
     { subjectCode: "3110005", subjectName: "Basic Electrical Engineering" },
     { subjectCode: "3110007", subjectName: "Environmental Science" },

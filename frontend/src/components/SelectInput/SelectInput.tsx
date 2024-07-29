@@ -17,6 +17,8 @@ const SelectInput: React.FC<SelectInputProps> = ({
     <div
       style={{ marginBottom: "1rem", display: "flex", alignItems: "center" }}
     >
+      {label && <label className="custom-input-label">{label}</label>}
+
       <select
         value={value}
         onChange={onChange}
