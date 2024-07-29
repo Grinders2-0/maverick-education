@@ -55,6 +55,7 @@ export const colors = {
   secondaryBorder: "#5a9efc", // light blue
   highlightBackground: "#ebf8ff", // very light blue
   highlightText: "#0056B3", // dark blue
+  circleColor: "#BEE1FA",
 
   ...blueShades,
 };

@@ -4,7 +4,9 @@ body {
   height: 100%; /* Ensure html and body are 100% height */
   margin: 0;
 }
-
+body.no-scroll {
+  overflow: hidden;
+}
 * {
   box-sizing: border-box;
   margin: 0;

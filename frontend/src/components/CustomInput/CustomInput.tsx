@@ -27,7 +27,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
       className={`custom-input-container ${sideBySide ? "side-by-side" : ""}`}
     >
       {label && (
-        <label className={`custom-input-label ${sideBySide ? "" : "not-side"}`}>
+        <label className={`custom-input-label ${sideBySide ? "" : ""}`}>
           {label}
         </label>
       )}
