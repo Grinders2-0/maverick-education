@@ -10,4 +10,5 @@ export const images = {
   signupImage: require("../../assets/icons/singupImage.png"),
   LeftArrow: require("../../assets/icons/left-arrow.png"),
   RightArrow: require("../../assets/icons/arrow-right.png"),
+  FormImage: require("../../assets/icons/Group1.png"),
 };

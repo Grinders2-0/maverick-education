@@ -9,6 +9,7 @@ import semester from "../../../assets/data/semester.json";
 import "./CollegeForm.css";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import { images } from "../../../util/constant/images";
+import { colors } from "../../../util/constant/colors";
 
 const CollegeForm = () => {
   const [clgName, setClgName] = useState<string>("");
@@ -64,17 +65,21 @@ const CollegeForm = () => {
 
   return (
     <section
-      className="college-form"
       style={{
         marginBottom: 50,
         alignItems: "center",
         justifyContent: "center",
-        width: "40%",
+        width: "100%",
+        backgroundColor: colors[100],
       }}
     >
-      <h1 style={{ marginBottom: 30, textAlign: "center", fontSize: 32 }}>
+      <h1 style={{ marginBottom: 30, textAlign: "left", fontSize: 42 }}>
         College Form
       </h1>
+      <label style={{ marginBottom: 30, textAlign: "left", fontSize: 42 }}>
+        College Form
+      </label>
+
       <SelectInput
         label="College Name"
         value={clgName}
@@ -88,7 +93,6 @@ const CollegeForm = () => {
         value={enrollNo}
         placeholder="Enter Your Enrollment Number"
         onChange={handleEnrollNoChange}
-        sideBySide
       />
       {enrollNoError && <p className="error">{enrollNoError}</p>}
 
@@ -99,23 +103,21 @@ const CollegeForm = () => {
         onChange={handleDepartChange}
       />
       {departError && <p className="error">{departError}</p>}
-      <div className="form-row">
-        <SelectInput
-          label="Enroll Year"
-          value={enrollYear}
-          options={yearList}
-          onChange={handleEnrollYearChange}
-        />
-        {enrollYearError && <p className="error">{enrollYearError}</p>}
+      <SelectInput
+        label="Enroll Year"
+        value={enrollYear}
+        options={yearList}
+        onChange={handleEnrollYearChange}
+      />
+      {enrollYearError && <p className="error">{enrollYearError}</p>}
 
-        <SelectInput
-          label="Graduation Year"
-          value={graduationYear}
-          options={yearList}
-          onChange={handleGraduationYearChange}
-        />
-        {graduationYearError && <p className="error">{graduationYearError}</p>}
-      </div>
+      <SelectInput
+        label="Graduation Year"
+        value={graduationYear}
+        options={yearList}
+        onChange={handleGraduationYearChange}
+      />
+      {graduationYearError && <p className="error">{graduationYearError}</p>}
       {/* <SelectInput
         label="Current Semester"
         value={graduationYear}

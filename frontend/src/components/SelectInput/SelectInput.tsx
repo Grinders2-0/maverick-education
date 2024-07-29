@@ -14,20 +14,21 @@ const SelectInput: React.FC<SelectInputProps> = ({
   onChange,
 }) => {
   return (
-    <div
-      style={{ marginBottom: "1rem", display: "flex", alignItems: "center" }}
-    >
-      {label && <label className="custom-input-label">{label}</label>}
+    <div style={{ marginBottom: "1rem" }}>
+      {label && (
+        <label style={{ display: "block", marginBottom: "0.5rem" }}>
+          {label}
+        </label>
+      )}
 
       <select
         value={value}
         onChange={onChange}
         style={{
-          flexGrow: 1,
+          width: "100%",
           padding: "0.5rem",
           borderRadius: 10,
           minHeight: 45,
-          marginLeft: 15,
         }}
       >
         <option value="" disabled color="#fff">
