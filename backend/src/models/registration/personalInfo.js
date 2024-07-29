@@ -21,24 +21,7 @@ const personalInfoSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    password: {
-      type: String,
-      minlength: 6,
-      unique: false,
-    },
-    socialToken: {
-      type: String,
-      required: false,
-      minlength: 0,
-    },
-    profileImage: {
-      type: String,
-      required: false,
-    },
-    loginType: {
-      type: String,
-      required: [true, "loginType required"],
-    },
+
     isDeleted: {
       type: Boolean,
       default: false,

@@ -14,9 +14,8 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
+app.use("/api/v1/auth", authRouter);
 app.use(registerRoutes);
-app.use("auth", authRouter);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);

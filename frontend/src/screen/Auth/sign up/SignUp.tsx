@@ -7,6 +7,8 @@ import {
   validatePasswordMatch,
 } from "../../../service/validators/passwordValidator";
 
+import { GoogleAuthProvider } from "firebase/auth";
+
 const isValidEmail = (email: string): string => {
   // Basic email validation
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

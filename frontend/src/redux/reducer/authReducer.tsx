@@ -1,12 +1,16 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export interface IAuthSlice {
+  userInfo: any;
+  otp_token: string;
   fontSizeMultiplier: number;
   isDataLoaded: boolean;
 }
 const initialState: IAuthSlice = {
   fontSizeMultiplier: 1,
   isDataLoaded: false,
+  userInfo: undefined,
+  otp_token: "",
 };
 
 export const authReducer = createSlice({

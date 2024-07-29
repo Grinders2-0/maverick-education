@@ -6,7 +6,13 @@ import { images } from "../../../util/constant/images";
 import "./Login.css";
 import { validatePassword } from "../../../service/validators/passwordValidator";
 import { isValidEmail } from "../../../service/validators/emailValidator";
-
+import {
+  auth,
+  googleProvider,
+  signInWithPopup,
+  signOut,
+} from "../../../firebase";
+import { GoogleAuthProvider } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -39,6 +45,30 @@ const Login = () => {
   };
 
   const handleForgotPasswordClick = () => {};
+  const signInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log("User signed in: ", user);
+      return user;
+    } catch (error: any) {
+      const errorCode = (error as any).code;
+      const errorMessage = (error as any).message;
+      const email = (error as any).customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.error(
+        "Error signing in with Google: ",
+        errorCode,
+        errorMessage,
+        email,
+        credential
+      );
+    }
+  };
 
   return (
     <div
@@ -151,6 +181,7 @@ const Login = () => {
             iconAlt="Google logo"
             text={"Countinuew with google"}
             isLoading={isGLoading}
+            onClick={signInWithGoogle}
             style={{
               minWidth: "200px ",
               marginTop: 20,

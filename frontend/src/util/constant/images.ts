@@ -8,4 +8,6 @@ export const images = {
   bgImage6: require("../../assets/icons/bgImage6.png"),
   bgImage7: require("../../assets/icons/bgImage7.png"),
   signupImage: require("../../assets/icons/singupImage.png"),
+  LeftArrow: require("../../assets/icons/left-arrow.png"),
+  RightArrow: require("../../assets/icons/arrow-right.png"),
 };
