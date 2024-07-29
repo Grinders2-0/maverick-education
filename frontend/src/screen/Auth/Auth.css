@@ -1,0 +1,41 @@
+/* Auth.css */
+html,
+body {
+  height: 100%; /* Ensure html and body are 100% height */
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background: #fdfefe;
+}
+
+.login-container {
+  display: flex;
+  width: 45%;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  background: #fdfefe;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-width: 1px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%; /* Ensure it takes up half of the container width */
+  background: #fdfefe;
+}

@@ -1,0 +1,59 @@
+.custom-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Default to column layout */
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.custom-input-label {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  padding-bottom: 5px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.custom-input {
+  border: 1px solid black; /* Add border */
+  border-radius: 10px;
+  padding: 4px 8px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  min-height: 45px;
+  width: 100%; /* Set width to 100% */
+  padding-left: "1rem";
+  font-size: 14px;
+  color: black;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.custom-input:focus {
+  border-color: #75aaf4; /* Change border color on focus */
+  box-shadow: 0 0 0 2px #75aaf4; /* Add box-shadow on focus */
+  border-width: inherit;
+}
+
+/* Styles for side-by-side layout */
+.side-by-side {
+  flex-direction: row; /* Arrange label and input in a row */
+  align-items: center;
+  width: 100%;
+}
+.not-side {
+  display: flex;
+  text-align: left;
+  min-width: 0px;
+  margin-left: 5px;
+}
+
+.side-by-side .custom-input-label {
+  margin-right: 10px; /* Space between label and input */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.side-by-side .custom-input {
+  width: auto; /* Set width to auto to fit content */
+  flex-grow: 1; /* Allow input to take remaining space */
+}
