@@ -50,6 +50,14 @@ const surveyResponseSchema = new Schema(
       enum: [1, 2, 3],
       required: true,
     },
+    spi:{
+      type:Number,
+      require:true
+    },
+    uniqueKey: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
