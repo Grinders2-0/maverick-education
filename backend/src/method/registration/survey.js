@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import SurveyResponse from "../../models/registration/survey.js";
-import PersonalInfoModel from "../../models/registration/personalInfo.js";
+// import PersonalInfoModel from "../../models/registration/personalInfo.js";
 import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
 
 // Function to categorize SPI

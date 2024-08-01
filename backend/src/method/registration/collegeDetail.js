@@ -1,42 +1,29 @@
-import { v4 as uuidv4 } from "uuid";
 import CollegeInfoModel from "../../models/registration/collegeInfo.js";
-import PersonalInfoModel from "../../models/registration/personalInfo.js";
-
+import User from "../../models/User.js"; // Assuming this is the path to your User model
 
 const collegeInfoCreateMethod = async (req, res) => {
   try {
+    const {userId}=req.user;
+    console.log(userId);
     // Extract data from request body
-    const collegeId = uuidv4();
-    const presonalId =  req.body.presonalId;
-    const collegeName = req.body.collegeName;
-    const department = req.body.department;
-    const enrollmentYear = req.body.enrollmentYear;
-    const expectedGraduationYear = req.body.expectedGraduationYear;
-    const enrollmentNumber = req.body.enrollmentNumber;
+    const { collegeName,semester, department, enrollmentYear, expectedGraduationYear, enrollmentNumber } = req.body;
 
     // Check if all required fields are provided
-    if (
-      !presonalId ||
-      !collegeName ||
-      !department ||
-      !enrollmentYear ||
-      !expectedGraduationYear
-    ) {
-      return res
-        .status(400)
-        .json({ error: "All required fields must be provided" });
+    if (!userId || !semester|| !collegeName || !department || !enrollmentYear || !expectedGraduationYear) {
+      return res.status(400).json({ error: "All required fields must be provided" });
     }
 
-    const PersonalInfo = await PersonalInfoModel.findOne({ presonalId, isDeleted: { $ne: true } });
-        if (!PersonalInfo) {
-            return res.status(404).send({ error: "presonalId is not available. Enter correct presonalId." });
-        }
+    // Check if the user ID exists and is not marked as deleted
+    const user = await User.findOne({ _id: userId, isDeleted: { $ne: true } });
+    if (!user) {
+      return res.status(404).send({ error: "User ID is not available. Enter a correct user ID." });
+    }
 
     // Create a new college info document
     const newCollegeInfo = new CollegeInfoModel({
-      presonalId,
-      collegeId,
+      userId,
       collegeName,
+      semester,
       department,
       enrollmentYear,
       expectedGraduationYear,

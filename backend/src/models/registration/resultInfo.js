@@ -1,23 +1,11 @@
 import mongoose from "mongoose";
 
 const resultSchema = new mongoose.Schema({
-  resultId: {
-    type: String,
-    required: true,
-  },
-  presonalId: {
-    type: String,
-    required: true,
-  },
+
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
     ref: "User",
-  },
-  currentSemester: {
-    type: String,
-    required: true,
-    enum: ["1", "2", "3", "4", "5", "6", "7", "8"],
   },
   subjects: [
     {
@@ -25,14 +13,6 @@ const resultSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ["1", "2", "3", "4", "5", "6", "7", "8"],
-      },
-      subjectCode: {
-        type: String,
-        required: true,
-      },
-      subjectName: {
-        type: String,
-        required: true,
       },
       grade: {
         type: String,
