@@ -11,7 +11,10 @@ import CustomButton from "../../../components/CustomButton/CustomButton";
 import { images } from "../../../util/constant/images";
 import { colors } from "../../../util/constant/colors";
 
-const CollegeForm = () => {
+type props = {
+  onNextPress?: () => void;
+};
+const CollegeForm = ({ onNextPress }: props) => {
   const [clgName, setClgName] = useState<string>("");
   const [depart, setDepart] = useState<string>("");
   const [enrollNo, setEnrollNo] = useState<string>("");
@@ -62,23 +65,37 @@ const CollegeForm = () => {
       validateRequiredField(event.target.value, "Graduation Year")
     );
   };
-
   return (
     <section
       style={{
-        marginBottom: 50,
         alignItems: "center",
         justifyContent: "center",
-        width: "100%",
-        backgroundColor: colors[100],
+        width: "60%",
+        marginRight: "10%",
+        // background: "#00000040",
       }}
     >
-      <h1 style={{ marginBottom: 30, textAlign: "left", fontSize: 42 }}>
-        College Form
+      <h1
+        style={{
+          marginBottom: 0,
+          textAlign: "left",
+          fontSize: 42,
+          color: colors.accent,
+        }}
+      >
+        College Details
       </h1>
-      <label style={{ marginBottom: 30, textAlign: "left", fontSize: 42 }}>
-        College Form
-      </label>
+      <div style={{ marginBottom: 30 }}>
+        <label
+          style={{
+            textAlign: "left",
+            fontSize: 20,
+            color: colors.black8,
+          }}
+        >
+          Please provide your college details
+        </label>
+      </div>
 
       <SelectInput
         label="College Name"
@@ -93,6 +110,7 @@ const CollegeForm = () => {
         value={enrollNo}
         placeholder="Enter Your Enrollment Number"
         onChange={handleEnrollNoChange}
+        style={{ marginTop: -10 }}
       />
       {enrollNoError && <p className="error">{enrollNoError}</p>}
 
@@ -111,27 +129,36 @@ const CollegeForm = () => {
       />
       {enrollYearError && <p className="error">{enrollYearError}</p>}
 
-      <SelectInput
+      {/* <SelectInput
         label="Graduation Year"
         value={graduationYear}
         options={yearList}
         onChange={handleGraduationYearChange}
       />
-      {graduationYearError && <p className="error">{graduationYearError}</p>}
-      {/* <SelectInput
+      {graduationYearError && <p className="error">{graduationYearError}</p>} */}
+      <SelectInput
         label="Current Semester"
         value={graduationYear}
         options={semester}
         onChange={handleGraduationYearChange}
-      /> */}
+      />
       <div
         style={{
           display: "flex",
+          alignItems: "flex-end",
           justifyContent: "flex-end",
-          // justifyContent: "center",
         }}
       >
-        <img src={images.RightArrow} style={{ height: 40, width: 40 }} />
+        <CustomButton
+          text="Next"
+          style={{
+            marginTop: 20,
+            backgroundColor: colors.accent,
+            paddingLeft: 30,
+            paddingRight: 30,
+          }}
+          onClick={onNextPress}
+        />
       </div>
     </section>
   );
