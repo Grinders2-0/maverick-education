@@ -1,4 +1,5 @@
 import React from "react";
+import { colors } from "../../util/constant/colors";
 
 interface SelectInputProps {
   label?: string;
@@ -28,10 +29,14 @@ const SelectInput: React.FC<SelectInputProps> = ({
           width: "100%",
           padding: "0.5rem",
           borderRadius: 10,
-          minHeight: 45,
+          minHeight: 50,
+          borderColor:colors.black7,
+          color: value ? colors.black : colors.black8, // Changes color based on value
+
+
         }}
       >
-        <option value="" disabled color="#fff">
+        <option value="" disabled color="#fff" >
           Select {label}
         </option>
         {options.map((option, index) => (

@@ -113,8 +113,16 @@ const SignUp = () => {
         </h1>
       </div>
       <form onSubmit={handleSubmit}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ marginRight: 10, padding: 0, margin: 0 }}>
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              marginRight: 20,
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flex: 1,
+            }}
+          >
             <CustomInput
               label="First Name"
               placeholder="First Name"
@@ -123,7 +131,7 @@ const SignUp = () => {
             />
             {firstNameError && <p style={{ color: "red" }}>{firstNameError}</p>}
           </div>
-          <div>
+          <div style={{ display: "flex", flex: 1 }}>
             <CustomInput
               label="Last Name"
               placeholder="Last Name"

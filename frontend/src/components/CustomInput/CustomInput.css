@@ -10,22 +10,22 @@
   margin-top: 10px;
   margin-bottom: 2px;
   padding-bottom: 5px;
-  min-width: 150px;
   text-align: center;
+  /* margin-left: 10px; */
 }
 
 .custom-input {
-  border: 1px solid black; /* Add border */
+  border: 1px solid #00000070; /* Add border */
   border-radius: 10px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   outline: none; /* Remove default outline */
   transition: border-color 0.3s, box-shadow 0.3s;
-  min-height: 45px;
+  min-height: 50px;
   width: 100%; /* Set width to 100% */
   padding-left: "1rem";
   font-size: 14px;
   color: black;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   margin-bottom: 5px;
 }
 
