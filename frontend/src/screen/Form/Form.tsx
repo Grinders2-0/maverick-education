@@ -5,9 +5,11 @@ import CollegeForm from "./CollegeForm/CollegeForm";
 import SemesterDetail from "./SemesterDetail/SemesterDetail";
 import "./Form.css";
 import CustomNumber from "../../components/CustomNumber/CustomNumber";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [selectedNo, setSelectedNo] = useState<number>(1);
+
   useEffect(() => {
     // Add no-scroll class to body when the component mounts
     document.body.classList.add("no-scroll");
@@ -17,6 +19,9 @@ const Form = () => {
       document.body.classList.remove("no-scroll");
     };
   }, []);
+  const onNextPress = () => {
+    setSelectedNo(2);
+  };
   return (
     <div style={{ height: "100vh", display: "flex" }}>
       <div
@@ -43,19 +48,34 @@ const Form = () => {
           <div style={{}}>
             <CustomNumber
               no="2"
-              title="Result Detail"
+              title="Select Subject"
               selected={selectedNo == 2}
             />
           </div>
           <div style={{}}>
-            <CustomNumber no="3" title="Survey" selected={selectedNo == 3} />
+            <CustomNumber
+              no="3"
+              title="Result Detail"
+              selected={selectedNo == 3}
+            />
           </div>
-          {/* <div style={{}}>
-            <CustomNumber no="4" title="College Form" selected={selectedNo==4} />
-          </div> */}
+          <div style={{}}>
+            <CustomNumber no="4" title="Survey" selected={selectedNo == 4} />
+          </div>
         </section>
       </div>
-      <CollegeForm />
+      <div
+        style={{
+          // background:'#00000020',
+          display: "flex",
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {selectedNo == 1 && <CollegeForm onNextPress={onNextPress} />}
+        {selectedNo == 2 && <SemesterDetail />}
+      </div>
     </div>
   );
 };

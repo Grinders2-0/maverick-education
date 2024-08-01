@@ -11,4 +11,5 @@ export const images = {
   LeftArrow: require("../../assets/icons/left-arrow.png"),
   RightArrow: require("../../assets/icons/arrow-right.png"),
   FormImage: require("../../assets/icons/Group1.png"),
+  subjectBG:require('../../assets/icons/subjectBG.png')
 };

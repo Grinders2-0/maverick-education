@@ -15,13 +15,14 @@ const CustomNumber = ({ no, title, selected }: props) => {
         alignItems: "center",
         display: "flex",
         paddingBottom: 20,
+
       }}
     >
       <div
         className="aa"
         style={{
-          height: 60,
-          width: 60,
+          height: 70,
+          width: 70,
           borderRadius: 1000,
           backgroundColor: selected ? colors.circleColor : "transparent",
           alignItems: "center",
@@ -34,12 +35,11 @@ const CustomNumber = ({ no, title, selected }: props) => {
       >
         <label
           style={{
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: "bold",
             color: selected ? "#000" : colors.circleColor,
           }}
         >
-          {" "}
           {no}
         </label>
       </div>
@@ -52,7 +52,7 @@ const CustomNumber = ({ no, title, selected }: props) => {
       >
         <label
           style={{
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: "lighter",
             color: colors.DarkBorder,
             letterSpacing: 0.8,
@@ -62,7 +62,7 @@ const CustomNumber = ({ no, title, selected }: props) => {
         </label>
         <label
           style={{
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: "bold",
             color: colors.white,
             letterSpacing: 0.8,
