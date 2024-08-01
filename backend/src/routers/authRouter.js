@@ -1,5 +1,5 @@
 import express from 'express';
-import registerApiRouter from '../api/student.js';
+import registerApiRouter from '../api/auth.js';
 
 const authRought = express.Router();
 

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import ResultInfo from "../../models/registration/resultInfo.js";
-import PersonalInfoModel from "../../models/registration/personalInfo.js";
+// import PersonalInfoModel from "../../models/registration/personalInfo.js";
 
 const createResultInfo = async (req, res) => {
   try {

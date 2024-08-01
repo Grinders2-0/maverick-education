@@ -1,14 +1,16 @@
 import mongoose from "mongoose";
 
+
 const collegeInfoSchema = new mongoose.Schema(
   {
-    collegeId: {
-      type: String,
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: true,
     },
-    presonalId: {
-      type: String,
-      required: true,
+    semester:{
+      type:String,
+      required:true,
     },
     collegeName: {
       type: String,
@@ -59,34 +61,21 @@ const collegeInfoSchema = new mongoose.Schema(
         "Shree Satsangi Saketdham 'Ram Ashram' Group of Institutions, Vadasma",
       ],
     },
-    // courseName: {
-    //     type: String,
-    //     required: true
-    // },
     department: {
       type: String,
       required: true,
     },
     enrollmentYear: {
-      type: Number,
+      type: String,
       required: true,
     },
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: false,
-      ref: "User",
-    },
     expectedGraduationYear: {
-      type: Number,
+      type: String,
       required: true,
     },
     enrollmentNumber: {
-      type: Number,
+      type: String,
       required: false,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
     },
     updatedAt: {
       type: Date,
