@@ -5,16 +5,11 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-console.log(__filename);
 const __dirname = dirname(__filename);
-console.log(__dirname);
 
 const fetchResultDetails = (req, res) => {
     const scriptPath = 'D:/maverick-education/maverick-education/backend/src/method/registration/extract_grades.py';
     const filePath = path.join(__dirname, '../../public/temp', req.file.filename);
-    
-    console.log('Script Path:', scriptPath);
-    console.log('File Path:', filePath);
 
     execFile('python', [scriptPath, filePath], (error, stdout, stderr) => {
         if (error) {
