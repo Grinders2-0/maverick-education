@@ -8,7 +8,6 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import helmet from "helmet";
 import authRouter from "./routers/authRouter.js";
- 
 
 const port = process.env.PORT || 3001;
 

@@ -1,20 +1,29 @@
+export interface IFromSlice {
+  collegeDetail: ICollegeInfo;
+  subjectDetail: ISubjectModel[];
+}
+
 export interface ICollegeInfo {
   collegeId?: string;
   userId?: string;
   collegeName?: string;
   department?: string;
-  enrollmentYear?: number;
-  expectedGraduationYear?: number;
-  enrollmentNumber?: number;
+  enrollmentYear?: string;
+  expectedGraduationYear?: string;
+  enrollmentNumber?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
+  semester?: string;
 }
 
-export interface ISubjectInfo {
-  semester?: string;
-  subjectCode?: string;
-  subjectName?: string;
-  grade?: string;
+export interface ISubjectModel {
+  _id?: string;
+  sname?: string;
+  scode?: string;
+  sem?: string;
+  isDeleted?: string;
+  createdAt?: string | Date;
+  updatedAt?: string | Date;
 }
 
 export interface ISPIS {
@@ -25,7 +34,7 @@ export interface IResultInfo {
   resultId?: string;
   userId?: string;
   currentSemester?: string;
-  subjects?: ISubjectInfo[];
+  subjects?: number[];
   spies?: ISPIS;
 }
 export enum EAttadance {
