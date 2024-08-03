@@ -1,6 +1,7 @@
 export interface IFromSlice {
   collegeDetail: ICollegeInfo;
   subjectDetail: ISubjectModel[];
+  selectedSubjects: ISubjectModel[];
 }
 
 export interface ICollegeInfo {

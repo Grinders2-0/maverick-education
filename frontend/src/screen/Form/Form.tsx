@@ -10,7 +10,7 @@ import SelectSubject from "./SelectSubject/SelectSubject";
 import Servey from "./Servey/Servey";
 
 const Form = () => {
-  const [selectedNo, setSelectedNo] = useState<number>(2);
+  const [selectedNo, setSelectedNo] = useState<number>(1);
 
   useEffect(() => {
     // Add no-scroll class to body when the component mounts

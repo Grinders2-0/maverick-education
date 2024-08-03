@@ -15,6 +15,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../../redux/app/store";
+import { getSubjectBySem } from "../../../redux/action/subject/subject";
 
 type Props = {
   onNextPress?: () => void;
@@ -26,6 +27,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
     (state: RootState) => state.form.collegeDetail
   );
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [clgNameError, setClgNameError] = useState<string>("");
   const [departError, setDepartError] = useState<string>("");
@@ -107,9 +109,21 @@ const CollegeForm = ({ onNextPress }: Props) => {
   };
 
   const handleNextPress = () => {
+    setIsLoading(true);
     const isFormValid = validateFormOnSubmit();
     if (isFormValid && onNextPress) {
-      onNextPress();
+      dispatch(
+        getSubjectBySem(collegeDetail?.semester ?? "", (success) => {
+          if (success) {
+            onNextPress();
+          } else {
+            alert("Error getting subject detail");
+          }
+          setIsLoading(false);
+        })
+      );
+    } else {
+      setIsLoading(false);
     }
   };
   useEffect(() => {
@@ -230,6 +244,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
           }}
           disabled={!isFormValid}
           onClick={handleNextPress}
+          isLoading={isLoading}
         />
       </div>
     </section>

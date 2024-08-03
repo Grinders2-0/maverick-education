@@ -1,7 +1,7 @@
 import { instanceWithAuth, instanceWithoutAuth } from "../../util/axiosHandler";
 
 const getSubject = async (semester: string) => {
-  return instanceWithoutAuth
+  return instanceWithAuth
     .get("subject/subjects", { params: { sem: semester } })
     .then((res) => {
       return res.data;

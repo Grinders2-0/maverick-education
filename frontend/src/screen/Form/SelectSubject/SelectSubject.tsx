@@ -3,7 +3,9 @@ import CustomButton from "../../../components/CustomButton/CustomButton";
 import { colors } from "../../../util/constant/colors";
 import TextButton from "../../../components/TextButton/TextButton";
 import SelectionSubject from "../../../components/Subject/SelectionSubject";
-import { useAppSelector } from "../../../redux/app/store";
+import { useAppDispatch, useAppSelector } from "../../../redux/app/store";
+import { modifySelectedSubjectDetail } from "../../../redux/action/subject/subject";
+import { ISubjectModel } from "../../../@types/form";
 type props = {
   onNextPress?: () => void;
   onBackPrees?: () => void;
@@ -11,13 +13,14 @@ type props = {
 const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
   const subjects = useAppSelector((state) => state.form?.subjectDetail);
-
-  const handleSelectSubject = (subjectCode: string) => {
+  const dispatch = useAppDispatch();
+  const handleSelectSubject = (subjectCode: string, item: ISubjectModel) => {
     setSelectedSubjects((prevSelectedSubjects) =>
       prevSelectedSubjects.includes(subjectCode)
         ? prevSelectedSubjects.filter((code) => code !== subjectCode)
         : [...prevSelectedSubjects, subjectCode]
     );
+    dispatch(modifySelectedSubjectDetail(subjectCode, item));
   };
   const onBoxPress = () => {};
   return (
@@ -58,7 +61,7 @@ const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
             subjectName={subject?.sname ?? ""}
             subjectCode={subject?.scode ?? ""}
             isSelected={selectedSubjects.includes(subject?.scode ?? "")}
-            onSelect={() => handleSelectSubject(subject?.scode ?? "")}
+            onSelect={() => handleSelectSubject(subject?.scode ?? "", subject)}
           />
         ))}
       </div>

@@ -6,6 +6,7 @@ import { ICollegeInfo, IFromSlice, ISubjectModel } from "../../@types/form";
 const initialState: IFromSlice = {
   collegeDetail: {},
   subjectDetail: [{}],
+  selectedSubjects: [{}],
 };
 
 export const formSlice = createSlice({
@@ -18,9 +19,16 @@ export const formSlice = createSlice({
     setSubjectDetail: (state, action: PayloadAction<ISubjectModel[]>) => {
       state.subjectDetail = action.payload;
     },
+    setSelectedSubjectDetail: (
+      state,
+      action: PayloadAction<ISubjectModel[]>
+    ) => {
+      state.selectedSubjects = action.payload;
+    },
   },
 });
 
-export const { setCollegeDetail, setSubjectDetail } = formSlice.actions;
+export const { setCollegeDetail, setSubjectDetail, setSelectedSubjectDetail } =
+  formSlice.actions;
 
 export default formSlice.reducer;
