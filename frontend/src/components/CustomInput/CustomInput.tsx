@@ -12,6 +12,7 @@ interface CustomInputProps {
   required?: boolean;
   sideBySide?: boolean;
   style?: CSSProperties | undefined;
+  defaultValue?: string | number | readonly string[] | undefined;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -23,6 +24,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   required = false,
   sideBySide = false,
   style,
+  defaultValue,
 }) => {
   return (
     <div
@@ -35,6 +37,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         </label>
       )}
       <input
+        defaultValue={defaultValue}
         className="custom-input"
         placeholder={placeholder}
         value={value}

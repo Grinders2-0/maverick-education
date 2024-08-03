@@ -6,6 +6,7 @@ interface SelectInputProps {
   value: string;
   options: string[];
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  defaultValue?: string | number | readonly string[] | undefined;
 }
 
 const SelectInput: React.FC<SelectInputProps> = ({
@@ -13,6 +14,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
   value,
   options,
   onChange,
+  defaultValue,
 }) => {
   return (
     <div style={{ marginBottom: "1rem" }}>
@@ -30,17 +32,15 @@ const SelectInput: React.FC<SelectInputProps> = ({
           padding: "0.5rem",
           borderRadius: 10,
           minHeight: 50,
-          borderColor:colors.black7,
+          borderColor: colors.black7,
           color: value ? colors.black : colors.black8, // Changes color based on value
-
-
         }}
       >
-        <option value="" disabled color="#fff" >
+        <option value="" disabled color="#fff">
           Select {label}
         </option>
         {options.map((option, index) => (
-          <option key={index} value={option}>
+          <option key={index} value={option} defaultValue={defaultValue}>
             {option}
           </option>
         ))}

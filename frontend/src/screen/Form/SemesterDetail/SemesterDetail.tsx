@@ -4,11 +4,13 @@ import ImageUpload from "../../../components/ImageUPload/ImageUpload";
 import SelectInput from "@mui/material/Select/SelectInput";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import CustomInput from "../../../components/CustomInput/CustomInput";
+import TextButton from "../../../components/TextButton/TextButton";
 
 type props = {
   onNextPress?: () => void;
+  onBackPrees?: () => void;
 };
-const SemesterDetail = ({ onNextPress }: props) => {
+const SemesterDetail = ({ onNextPress, onBackPrees }: props) => {
   const onBoxPress = () => {};
   return (
     <section
@@ -45,10 +47,24 @@ const SemesterDetail = ({ onNextPress }: props) => {
       <div
         style={{
           display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "flex-end",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexDirection: "row",
         }}
       >
+        <div>
+          <TextButton
+            text="Back"
+            onClick={onBackPrees}
+            className="custom-button-class"
+            style={{ alignItems: "center" }}
+            textStyle={{
+              color: colors.accent,
+              fontSize: 18,
+              fontWeight: "normal",
+            }}
+          />
+        </div>
         <CustomButton
           text="Next"
           style={{

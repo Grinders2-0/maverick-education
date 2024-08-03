@@ -1,6 +1,3 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import EncryptedStorage from "react-native-encrypted-storage";
-
 export const IS_LOGIN = "is_login";
 export const IS_FIRST_TIME = "is_first_time";
 export const RECENT_SEARCH = "recent_search";
@@ -8,11 +5,11 @@ export const USER_TOKEN = "user_token";
 export const REFRESH_TOKEN = "refresh_token";
 export const USER_INFO = "user_info";
 export const USER_ID = "user_id";
-
 export const FONT_MULTIPLIER_VALUE = "font_multiplier_value";
-const getStorageData = async (key: string) => {
+
+const getStorageData = (key: string): any => {
   try {
-    const get_item = await AsyncStorage.getItem(key);
+    const get_item = localStorage.getItem(key);
     if (get_item) {
       const data = JSON.parse(get_item);
       return data;
@@ -20,28 +17,29 @@ const getStorageData = async (key: string) => {
       return null;
     }
   } catch {
-    throw Error("Key not found");
+    throw new Error("Key not found");
   }
 };
 
-const setStorageData = async (key: string, value: any): Promise<void> => {
+const setStorageData = (key: string, value: any): void => {
   try {
-    AsyncStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
-    throw Error("Key not found");
+    throw new Error("Key not found");
   }
 };
 
-const removeStorageData = async (key: string): Promise<void> => {
+const removeStorageData = (key: string): void => {
   try {
-    await AsyncStorage.removeItem(key);
+    localStorage.removeItem(key);
   } catch (error) {
     throw new Error("Error removing storage data: " + error);
   }
 };
-const getEncryptedStorageData = async (key: string) => {
+
+const getEncryptedStorageData = (key: string): any => {
   try {
-    const get_item = await EncryptedStorage.getItem(key);
+    const get_item = sessionStorage.getItem(key); // Using sessionStorage as a basic placeholder for encryption
     if (get_item) {
       const data = JSON.parse(get_item);
       return data;
@@ -49,24 +47,21 @@ const getEncryptedStorageData = async (key: string) => {
       return null;
     }
   } catch {
-    throw Error("Key not found");
+    throw new Error("Key not found");
   }
 };
 
-const setEncryptedStorageData = async (
-  key: string,
-  value: any
-): Promise<void> => {
+const setEncryptedStorageData = (key: string, value: any): void => {
   try {
-    EncryptedStorage.setItem(key, JSON.stringify(value));
+    sessionStorage.setItem(key, JSON.stringify(value)); // Using sessionStorage as a basic placeholder for encryption
   } catch (error) {
-    throw Error("Key not found");
+    throw new Error("Key not found");
   }
 };
 
-const removeEncryptedStorageData = async (key: string): Promise<void> => {
+const removeEncryptedStorageData = (key: string): void => {
   try {
-    await EncryptedStorage.removeItem(key);
+    sessionStorage.removeItem(key); // Using sessionStorage as a basic placeholder for encryption
   } catch (error) {
     throw new Error("Error removing storage data: " + error);
   }

@@ -1,2 +1,1 @@
-export const BASE_URL =
-  "mongodb+srv://harshil:Harshil@backend.ye2d7vr.mongodb.net/";
+export const BASE_URL = "http://192.168.5.32:3001";
