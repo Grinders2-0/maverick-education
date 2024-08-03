@@ -29,7 +29,6 @@ const addSubject = async (req, res) => {
   }
 };
 
-
 const getSubjectsBySem = async (req, res) => {
   try {
     const { sem } = req.query; // Get semester from query parameters
@@ -41,15 +40,21 @@ const getSubjectsBySem = async (req, res) => {
     // Find subjects by semester
     const subjects = await Subjects.find({ sem, isDeleted: false });
 
+    if (subjects.length === 0) {
+      return res.status(404).json({ message: "No subjects found for the given semester" });
+    }
+
     res.status(200).json({
       message: "Subjects fetched successfully",
       subjects,
     });
   } catch (error) {
-    res.status(500).json({ message: "error", error });
-    console.error(error);
+    console.error('Error fetching subjects:', error);
+    res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
 };
 
 
-export default addSubject ;
+
+
+export { addSubject as createSubject, getSubjectsBySem };
