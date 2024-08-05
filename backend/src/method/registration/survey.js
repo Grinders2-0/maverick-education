@@ -1,6 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
 import SurveyResponse from "../../models/registration/survey.js";
-// import PersonalInfoModel from "../../models/registration/personalInfo.js";
 import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
 
 // Function to categorize SPI
@@ -14,8 +12,7 @@ const categorizeSPI = (spi) => {
 const surveyResponseCreateMethod = async (req, res) => {
   try {
     // Extract data from request body
-    const surveyId = uuidv4();
-    const presonalId = req.body.presonalId;
+    const userId = req.user.userId; // Extract userId from req.user set by middleware
     const attendance = req.body.attendance;
     const participation = req.body.participation;
     const assignmentCompletion = req.body.assignmentCompletion;
@@ -24,7 +21,7 @@ const surveyResponseCreateMethod = async (req, res) => {
 
     // Check if all required fields are provided
     if (
-      !presonalId ||
+      !userId ||
       attendance === undefined ||
       participation === undefined ||
       assignmentCompletion === undefined ||
@@ -36,16 +33,10 @@ const surveyResponseCreateMethod = async (req, res) => {
         .json({ error: "All required fields must be provided" });
     }
 
-    // Check if PersonalInfo exists
-    const personalInfo = await PersonalInfoModel.findOne({ presonalId, isDeleted: { $ne: true } });
-    if (!personalInfo) {
-      return res.status(404).send({ error: "presonalId is not available. Enter correct presonalId." });
-    }
-
-    // Fetch ResultInfo based on presonalId
-    const resultInfo = await ResultInfoModel.findOne({ presonalId });
+    // Fetch ResultInfo based on userId
+    const resultInfo = await ResultInfoModel.findOne({ userId });
     if (!resultInfo) {
-      return res.status(404).send({ error: "No result information found for the given presonalId." });
+      return res.status(404).send({ error: "No result information found for the given userId." });
     }
 
     // Determine the previous semester based on the current semester
@@ -64,8 +55,7 @@ const surveyResponseCreateMethod = async (req, res) => {
 
     // Create a new survey response document
     const newSurveyResponse = new SurveyResponse({
-      presonalId,
-      surveyId,
+      userId,
       attendance,
       participation,
       assignmentCompletion,
