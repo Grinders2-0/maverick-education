@@ -1,4 +1,3 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { memo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
