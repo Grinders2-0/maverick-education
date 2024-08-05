@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import SurveyResponse from "../../models/registration/survey.js";
-// import PersonalInfoModel from "../../models/registration/personalInfo.js";
-import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
-
+import PersonalInfoModel from "../../models/registration/personalInfo.js";
+// import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
+import Result from "../../models/registration/resultdata_fetch.js";
 // Function to categorize SPI
 const categorizeSPI = (spi) => {
   if (spi === null) return null; // Handle null SPI case
@@ -43,7 +43,7 @@ const surveyResponseCreateMethod = async (req, res) => {
     }
 
     // Fetch ResultInfo based on presonalId
-    const resultInfo = await ResultInfoModel.findOne({ presonalId });
+    const resultInfo = await Result.findOne({ presonalId });
     if (!resultInfo) {
       return res.status(404).send({ error: "No result information found for the given presonalId." });
     }
