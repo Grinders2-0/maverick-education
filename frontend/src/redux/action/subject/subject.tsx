@@ -29,19 +29,24 @@ export const modifySelectedSubjectDetail =
     const state = getState();
     const subjectDetails = state.form?.selectedSubjects || [];
 
-    // Check if the subject code already exists in the array
+    // Find the index of the subject
     const index = subjectDetails.findIndex(
-      (subject) => subject.scode === scode
+      (subject) => subject?.scode === scode
     );
 
-    // If subject code exists, remove it
+    // Create a new array based on the current state
+    let newSubjectDetails;
     if (index > -1) {
-      subjectDetails.splice(index, 1);
+      // If the subject code exists, remove it
+      newSubjectDetails = [
+        ...subjectDetails.slice(0, index),
+        ...subjectDetails.slice(index + 1),
+      ];
     } else {
-      // If subject code does not exist, add the new subject
-      subjectDetails.push(item);
+      // If the subject code doesn't exist, add the new subject
+      newSubjectDetails = [...subjectDetails, item];
     }
 
     // Dispatch the updated list of selected subjects
-    dispatch(setSelectedSubjectDetail(subjectDetails));
+    dispatch(setSelectedSubjectDetail(newSubjectDetails));
   };

@@ -31,6 +31,7 @@ const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
         width: "60%",
         marginRight: "10%",
         // background: "#00000040",
+        flexWrap: "wrap",
       }}
     >
       <h1
@@ -54,16 +55,38 @@ const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
           Please select your subjects according to your university standard
         </label>
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-        {subjects.map((subject) => (
-          <SelectionSubject
-            key={subject?._id}
-            subjectName={subject?.sname ?? ""}
-            subjectCode={subject?.scode ?? ""}
-            isSelected={selectedSubjects.includes(subject?.scode ?? "")}
-            onSelect={() => handleSelectSubject(subject?.scode ?? "", subject)}
-          />
-        ))}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "500px", // Adjust height as needed
+          overflowY: "auto",
+          paddingRight: "10px", // Add padding to avoid overlap with scrollbar
+          scrollbarWidth: "thin", // Thin scrollbar for Firefox
+          scrollbarColor: "#888 #e0e0e0", // Custom colors for Firefox scrollbar
+          marginBottom: 10,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            padding: "10px", // Add padding for inner content
+          }}
+        >
+          {subjects.map((subject) => (
+            <SelectionSubject
+              key={subject?._id}
+              subjectName={subject?.sname ?? ""}
+              subjectCode={subject?.scode ?? ""}
+              isSelected={selectedSubjects.includes(subject?.scode ?? "")}
+              onSelect={() =>
+                handleSelectSubject(subject?.scode ?? "", subject)
+              }
+            />
+          ))}
+        </div>
       </div>
 
       <div

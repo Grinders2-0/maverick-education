@@ -5,8 +5,8 @@ import { ICollegeInfo, IFromSlice, ISubjectModel } from "../../@types/form";
 
 const initialState: IFromSlice = {
   collegeDetail: {},
-  subjectDetail: [{}],
-  selectedSubjects: [{}],
+  subjectDetail: [],
+  selectedSubjects: [],
 };
 
 export const formSlice = createSlice({
