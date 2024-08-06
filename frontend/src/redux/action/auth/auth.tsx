@@ -169,6 +169,7 @@ export const signUp =
           onSuccess(false);
         }
       } catch (error: any) {
+        alert(error);
         console.log("error", error);
 
         onSuccess(false);
