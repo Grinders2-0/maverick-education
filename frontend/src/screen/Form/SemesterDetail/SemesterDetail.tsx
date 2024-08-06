@@ -5,12 +5,16 @@ import SelectInput from "@mui/material/Select/SelectInput";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import CustomInput from "../../../components/CustomInput/CustomInput";
 import TextButton from "../../../components/TextButton/TextButton";
+import { useAppSelector } from "../../../redux/app/store";
 
 type props = {
   onNextPress?: () => void;
   onBackPrees?: () => void;
 };
 const SemesterDetail = ({ onNextPress, onBackPrees }: props) => {
+  const resultInfo = useAppSelector((state) => state.form?.collegeDetail);
+  const semester = Number(resultInfo?.semester ?? 7);
+
   const onBoxPress = () => {};
   return (
     <section
@@ -42,6 +46,38 @@ const SemesterDetail = ({ onNextPress, onBackPrees }: props) => {
         >
           Please upload your results based on given
         </label>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "500px", // Adjust height as needed
+          overflowY: "auto",
+          paddingRight: "10px", // Add padding to avoid overlap with scrollbar
+          scrollbarWidth: "thin", // Thin scrollbar for Firefox
+          scrollbarColor: "#888 #e0e0e0", // Custom colors for Firefox scrollbar
+          marginBottom: 10,
+        }}
+      >
+        {Array.from(
+          { length: semester - 1 },
+          (_, index) => semester - index - 1
+        ).map((sem) => (
+          <div
+            key={sem}
+            style={{
+              marginBottom: "20px",
+              alignItems: "center",
+              flexDirection: "row",
+              display: "flex",
+            }}
+          >
+            <h2 style={{ color: colors.black9, marginRight: -120 }}>
+              Semester {sem}
+            </h2>
+            <ImageUpload />
+          </div>
+        ))}
       </div>
 
       <div

@@ -35,16 +35,16 @@ const ImageUpload: React.FC = () => {
           onChange={handleImageChange}
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>
+        {/* <button type="submit" style={styles.button}>
           Upload Image
-        </button>
+        </button> */}
       </form>
-      {previewUrl && (
+      {/* {previewUrl && (
         <div style={styles.previewContainer}>
           <h4 style={styles.previewTitle}>Image Preview:</h4>
           <img src={previewUrl} alt="Selected" style={styles.previewImage} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
@@ -68,7 +68,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: "100%",
   },
   input: {
-    marginBottom: "15px",
+    // marginBottom: "15px",
     padding: "10px",
     borderRadius: "5px",
     border: "1px solid #ccc",

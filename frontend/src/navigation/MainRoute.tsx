@@ -12,6 +12,7 @@ const MainRoute = () => {
         <Route path="/" element={<SplashScreen />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/form" element={<FormRoute />} />
+        <Route path="/dashboard" element={<Home />} />
       </Routes>
     </Router>
   );

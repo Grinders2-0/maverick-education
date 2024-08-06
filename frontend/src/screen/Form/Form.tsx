@@ -10,7 +10,8 @@ import SelectSubject from "./SelectSubject/SelectSubject";
 import Servey from "./Servey/Servey";
 
 const Form = () => {
-  const [selectedNo, setSelectedNo] = useState<number>(3);
+  const [selectedNo, setSelectedNo] = useState<number>(1);
+  const navigation = useNavigate();
 
   useEffect(() => {
     // Add no-scroll class to body when the component mounts
@@ -31,6 +32,7 @@ const Form = () => {
     setSelectedNo(4);
   };
   const onNextPress4 = () => {
+    navigation("/dashboard");
     // setSelectedNo(4);
   };
   const onBackPrees2 = () => {

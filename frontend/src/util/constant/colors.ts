@@ -24,6 +24,7 @@ export const colors = {
   black6: "#00000060",
   black7: "#00000070",
   black8: "#00000080",
+  black9: "#00000090",
   red: "#FF0000",
   bgred7: "#F5E8E870",
   bgred2: "#F5E8E820",
@@ -56,6 +57,7 @@ export const colors = {
   highlightBackground: "#ebf8ff", // very light blue
   highlightText: "#0056B3", // dark blue
   circleColor: "#BEE1FA",
+  optionBG: "#483EFF30",
 
   ...blueShades,
 };

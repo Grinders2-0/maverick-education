@@ -9,10 +9,12 @@
   /* transition: transform 0.3s ease, background-size 0.3s ease; */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items horizontally */
-  justify-content: center; /* Center align items vertically */
+  /* align-items: center; Center align items horizontally */
+  /* justify-content: center; Center align items vertically */
   padding: 20px;
   overflow: hidden;
+  padding-left: 30px;
+  padding-top: 30px;
 }
 
 .subject-container.selected {

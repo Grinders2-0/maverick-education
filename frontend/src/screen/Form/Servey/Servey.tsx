@@ -1,13 +1,51 @@
-import React, { memo } from "react";
+import React, { memo, useCallback, useState } from "react";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import { colors } from "../../../util/constant/colors";
 import TextButton from "../../../components/TextButton/TextButton";
+import { questions, quetionProps } from "../../../assets/data/questions";
 type props = {
   onNextPress?: () => void;
   onBackPrees?: () => void;
 };
 const Servey = ({ onNextPress, onBackPrees }: props) => {
-  const onBoxPress = () => {};
+  const [currQuestion, setCurrQuestion] = useState<number>(1);
+  const [optionSelection, setOptionSelection] = useState<string>("00000");
+  const [currSelection, setCurrSelection] = useState<number>(0);
+  const qLength = questions?.length;
+
+  const onNextQuestionPress = useCallback(() => {
+    if (currQuestion == qLength) {
+      onNextPress && onNextPress();
+    } else {
+      let char = optionSelection.charAt(currQuestion - 1);
+      if (char == "0") {
+        alert("Please choose one of the option");
+      } else {
+        setCurrQuestion(currQuestion + 1);
+        setCurrSelection(0);
+      }
+    }
+  }, [currQuestion, currSelection]);
+
+  const onBackQuestionPrees = useCallback(() => {
+    if (currQuestion == 1) {
+      onBackPrees && onBackPrees();
+    } else {
+      setCurrQuestion(currQuestion - 1);
+    }
+  }, [currQuestion]);
+  const onOptionPress = (ind: number) => {
+    setCurrSelection(ind + 1);
+
+    // Replace the character in the optionSelection string at currQuestion-1 with the selected option index.
+    let updatedSelection =
+      optionSelection.substring(0, currQuestion - 1) +
+      String(ind + 1) +
+      optionSelection.substring(currQuestion);
+
+    setOptionSelection(updatedSelection);
+  };
+
   return (
     <section
       style={{
@@ -26,7 +64,7 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
           color: colors.accent,
         }}
       >
-        Result Details
+        Survey
       </h1>
       <div style={{ marginBottom: 30 }}>
         <label
@@ -36,8 +74,77 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
             color: colors.black8,
           }}
         >
-          Please upload your results based on given
+          Help us know you
         </label>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "500px", // Adjust height as needed
+          overflowY: "auto",
+          paddingRight: "10px", // Add padding to avoid overlap with scrollbar
+          scrollbarWidth: "thin", // Thin scrollbar for Firefox
+          scrollbarColor: "#888 #e0e0e0", // Custom colors for Firefox scrollbar
+          marginBottom: 10,
+          flex: 1,
+        }}
+      >
+        {questions.map((item: quetionProps, index: number) => {
+          return (
+            <div style={{}}>
+              {index == currQuestion - 1 && (
+                <div style={{ padding: 20, paddingLeft: 0 }}>
+                  <div>
+                    <h1 style={{ color: colors.accent, fontSize: 28 }}>
+                      0{index + 1}
+                      <label
+                        style={{ fontSize: 14, color: colors.darkSkeleton }}
+                      >
+                        /0{questions.length}
+                      </label>
+                    </h1>
+                    <div style={{ marginTop: 25, marginBottom: 20 }}>
+                      <label
+                        style={{
+                          fontSize: 20,
+                          color: colors.black,
+                        }}
+                      >
+                        {item?.question}
+                      </label>
+                    </div>
+                    {item?.options?.map((item: string, index: number) => {
+                      let char = optionSelection.charAt(currQuestion - 1);
+
+                      return (
+                        <div
+                          onClick={() => onOptionPress(index)}
+                          style={{
+                            borderWidth: 1,
+                            borderColor: colors.skeletonBgColor,
+                            borderStyle: "solid",
+                            padding: 15,
+                            paddingLeft: 20,
+                            paddingRight: 20,
+                            marginBottom: 10,
+                            borderRadius: 10,
+                            background:
+                              index + 1 == Number(char)
+                                ? colors.optionBG
+                                : "transparent",
+                          }}
+                        >
+                          {item}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <div
@@ -51,7 +158,7 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
         <div>
           <TextButton
             text="Back"
-            onClick={onBackPrees}
+            onClick={onBackQuestionPrees}
             className="custom-button-class"
             style={{ alignItems: "center" }}
             textStyle={{
@@ -62,14 +169,14 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
           />
         </div>
         <CustomButton
-          text="Next"
+          text={currQuestion == qLength ? "Submit" : "Next"}
           style={{
             marginTop: 20,
             backgroundColor: colors.accent,
             paddingLeft: 30,
             paddingRight: 30,
           }}
-          onClick={onNextPress}
+          onClick={onNextQuestionPress}
         />
       </div>
     </section>
