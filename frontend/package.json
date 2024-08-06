@@ -11,10 +11,14 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/styles": "^5.16.5",
     "@reduxjs/toolkit": "^2.2.6",
+    "@sentry/cli": "^2.33.1",
+    "@sentry/react": "^8.23.0",
+    "@sentry/tracing": "^7.114.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.17.7",
     "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -23,6 +27,8 @@
     "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
+    "lodash": "^4.17.21",
+    "mixpanel-browser": "^2.55.0",
     "postcss": "^8.4.40",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -40,10 +46,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && yarn sentry:sourcemaps",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org grinders --project javascript-react ./index.js && sentry-cli sourcemaps upload --org grinders --project javascript-react ./index.js"
   },
   "eslintConfig": {
     "extends": [

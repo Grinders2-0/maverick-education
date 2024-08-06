@@ -4,6 +4,7 @@ import Home from "../screen/home/Home";
 import SplashScreen from "../screen/SplashScreen/SplashScreen";
 import Auth from "../screen/Auth/Auth";
 import FormRoute from "./FormRoute";
+import DashRoute from "./DashRoute";
 
 const MainRoute = () => {
   return (
@@ -12,7 +13,7 @@ const MainRoute = () => {
         <Route path="/" element={<SplashScreen />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/form" element={<FormRoute />} />
-        <Route path="/dashboard" element={<Home />} />
+        <Route path="/dashboard" element={<DashRoute />} />
       </Routes>
     </Router>
   );
