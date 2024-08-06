@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import path from 'path';
 import { execFile } from 'child_process';
@@ -9,7 +8,6 @@ import User from "../../models/User.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 
 export const fetchResultDetails = async (req, res) => {
   const scriptPath = 'D:/Projects/maverick-education/maverick-education/backend/src/method/registration/extract_grades.py';
@@ -76,22 +74,12 @@ export const fetchResultDetails = async (req, res) => {
   }
 };
 
-    try {
-      const result = JSON.parse(stdout);
-      return res.status(200).json(result);
-    } catch (parseError) {
-      console.error("Error parsing Python script output:", parseError);
-      return res.status(500).json({ error: "Error processing the image" });
-    }
-  });
-};
-
 export const getStudentResult = async (req, res) => {
   const { userId } = req.user;
 
   try {
     const user = await User.findOne({ _id: userId, isDeleted: { $ne: true } });
-    
+
     if (!user) {
       return res.status(404).send({ error: "User ID is not available. Enter a correct user ID." });
     }

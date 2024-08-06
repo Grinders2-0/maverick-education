@@ -9,6 +9,10 @@ const selectedSubjectsSchema = new Schema(
       required: true,
       ref: "User",
     },
+    semester: {
+      type: String,
+      required: true,
+    },
     selectedSubjects: [
       {
         type: mongoose.Schema.Types.ObjectId,
