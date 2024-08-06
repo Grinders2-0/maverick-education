@@ -55,15 +55,19 @@ def extract_grades(image_path):
     return result
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print(json.dumps({"error": "No image file path provided"}))
+    if len(sys.argv) < 2:
+        print(json.dumps({"error": "No image file paths provided"}))
         sys.exit(1)
 
-    image_path = sys.argv[1]
+    image_paths = sys.argv[1:]
 
-    if not os.path.exists(image_path):
-        print(json.dumps({"error": "Image file does not exist"}))
-        sys.exit(1)
+    results = []
+    for image_path in image_paths:
+        if not os.path.exists(image_path):
+            results.append({"error": f"Image file {image_path} does not exist"})
+            continue
 
-    extracted_grades = extract_grades(image_path)
-    print(json.dumps(extracted_grades))
+        extracted_grades = extract_grades(image_path)
+        results.append(extracted_grades)
+
+    print(json.dumps(results))

@@ -13,9 +13,7 @@ const studentApiRouter = express.Router();
 studentApiRouter.post("/ResultInfo/create", authenticateUser, createResultInfo);
 studentApiRouter.post("/CollegeInfo/create", authenticateUser, collegeInfoCreateMethod);
 studentApiRouter.post("/survey/create", authenticateUser, createSurveyResponse);
-studentApiRouter.post("/survey/upload", upload.single('image'), fetchResultDetails);
+studentApiRouter.post("/survey/upload", upload.array('images', 10), authenticateUser, fetchResultDetails);
 studentApiRouter.post("/selectSubject/form", authenticateUser, selectedSubjects);
 
 export default studentApiRouter;
-
-    
