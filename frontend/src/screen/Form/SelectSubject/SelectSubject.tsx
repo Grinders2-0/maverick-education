@@ -20,9 +20,16 @@ const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
         ? prevSelectedSubjects.filter((code) => code !== subjectCode)
         : [...prevSelectedSubjects, subjectCode]
     );
-    dispatch(modifySelectedSubjectDetail(subjectCode, item));
+    dispatch(modifySelectedSubjectDetail(item?._id ?? ""));
   };
   const onBoxPress = () => {};
+  const onNextButtonPress = () => {
+    if (selectedSubjects.length < 1) {
+      alert("select subjects of your current semester");
+      return;
+    }
+    onNextPress && onNextPress();
+  };
   return (
     <section
       style={{
@@ -118,7 +125,7 @@ const SelectSubject = ({ onNextPress, onBackPrees }: props) => {
             paddingLeft: 30,
             paddingRight: 30,
           }}
-          onClick={onNextPress}
+          onClick={onNextButtonPress}
         />
       </div>
     </section>

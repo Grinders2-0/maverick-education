@@ -111,9 +111,9 @@ const CollegeForm = ({ onNextPress }: Props) => {
 
   const handleNextPress = () => {
     setIsLoading(true);
-    // const isFormValid = validateFormOnSubmit();
+    const isFormValid = validateFormOnSubmit();
 
-    if (onNextPress) {
+    if (isFormValid && onNextPress) {
       dispatch(
         getSubjectBySem(collegeDetail?.semester ?? "", (success) => {
           if (success) {

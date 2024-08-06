@@ -1,7 +1,9 @@
 export interface IFromSlice {
   collegeDetail: ICollegeInfo;
   subjectDetail: ISubjectModel[];
-  selectedSubjects: ISubjectModel[];
+  selectedSubjects: string[];
+  surveyDetail: IServay;
+  imageArray: File[];
 }
 
 export interface ICollegeInfo {

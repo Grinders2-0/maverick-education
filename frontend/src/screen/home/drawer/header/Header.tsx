@@ -15,7 +15,7 @@ const Header = () => {
     >
       <img src={images.Google} style={{ height: 30, width: 30 }} />
       <div style={{ marginLeft: 10 }}>
-        <label>AI Learn</label>
+        <label>NextGenLearn</label>
       </div>
     </div>
   );

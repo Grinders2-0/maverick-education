@@ -5,10 +5,6 @@ import { Provider } from "react-redux";
 import store from "./redux/app/store";
 import "./index.css";
 import * as Sentry from "@sentry/react";
-import { useEffect } from "react";
-import * as Sentry from "@sentry/react";
-import { createRoot } from "react-dom/client";
-
 Sentry.init({
   dsn: "https://b96f247761f1eacb880edc361fc6cc87@o4507728484171776.ingest.us.sentry.io/4507728486596608",
   integrations: [

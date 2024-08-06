@@ -8,10 +8,13 @@ import CustomNumber from "../../components/CustomNumber/CustomNumber";
 import { useNavigate } from "react-router-dom";
 import SelectSubject from "./SelectSubject/SelectSubject";
 import Servey from "./Servey/Servey";
+import { useAppDispatch } from "../../redux/app/store";
+import { formSubmit } from "../../redux/action/form/collegeForm";
 
 const Form = () => {
   const [selectedNo, setSelectedNo] = useState<number>(1);
   const navigation = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // Add no-scroll class to body when the component mounts
@@ -32,8 +35,17 @@ const Form = () => {
     setSelectedNo(4);
   };
   const onNextPress4 = () => {
-    navigation("/dashboard");
-    // setSelectedNo(4);
+    dispatch(
+      formSubmit((success) => {
+        if (success) {
+          navigation("/dashboard");
+        } else {
+          console.log("faled");
+
+          // navigation("/form");
+        }
+      })
+    );
   };
   const onBackPrees2 = () => {
     setSelectedNo(1);

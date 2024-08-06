@@ -3,6 +3,8 @@ import CustomButton from "../../../components/CustomButton/CustomButton";
 import { colors } from "../../../util/constant/colors";
 import TextButton from "../../../components/TextButton/TextButton";
 import { questions, quetionProps } from "../../../assets/data/questions";
+import { useAppDispatch } from "../../../redux/app/store";
+import { changeSurveyDetail } from "../../../redux/action/form/collegeForm";
 type props = {
   onNextPress?: () => void;
   onBackPrees?: () => void;
@@ -12,18 +14,19 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
   const [optionSelection, setOptionSelection] = useState<string>("00000");
   const [currSelection, setCurrSelection] = useState<number>(0);
   const qLength = questions?.length;
+  const dispatch = useAppDispatch();
 
   const onNextQuestionPress = useCallback(() => {
+    let char = optionSelection.charAt(currQuestion - 1);
+    if (char == "0") {
+      alert("Please choose one of the option");
+      return;
+    }
     if (currQuestion == qLength) {
       onNextPress && onNextPress();
     } else {
-      let char = optionSelection.charAt(currQuestion - 1);
-      if (char == "0") {
-        alert("Please choose one of the option");
-      } else {
-        setCurrQuestion(currQuestion + 1);
-        setCurrSelection(0);
-      }
+      setCurrQuestion(currQuestion + 1);
+      setCurrSelection(0);
     }
   }, [currQuestion, currSelection]);
 
@@ -36,6 +39,17 @@ const Servey = ({ onNextPress, onBackPrees }: props) => {
   }, [currQuestion]);
   const onOptionPress = (ind: number) => {
     setCurrSelection(ind + 1);
+    if (currQuestion == 1) {
+      dispatch(changeSurveyDetail("attendace", ind + 1));
+    } else if (currQuestion == 2) {
+      dispatch(changeSurveyDetail("participation", ind + 1));
+    } else if (currQuestion == 3) {
+      dispatch(changeSurveyDetail("assignmentCompletion", ind + 1));
+    } else if (currQuestion == 4) {
+      dispatch(changeSurveyDetail("examMotivation", ind + 1));
+    } else if (currQuestion == 5) {
+      dispatch(changeSurveyDetail("preferredMaterial", ind + 1));
+    }
 
     // Replace the character in the optionSelection string at currQuestion-1 with the selected option index.
     let updatedSelection =
