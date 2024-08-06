@@ -7,7 +7,7 @@ import Result from "../../models/registration/resultdata_fetch.js";  // Adjust t
 import User from "../../models/User.js";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const _dirname = dirname(__filename);
 
 export const fetchResultDetails = async (req, res) => {
   const scriptPath = 'D:/Projects/maverick-education/maverick-education/backend/src/method/registration/extract_grades.py';
