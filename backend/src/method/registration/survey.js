@@ -1,5 +1,5 @@
 import SurveyResponse from "../../models/registration/survey.js";
-import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
+import ResultInfoModel from "../../models/registration/resultdata_fetch.js"; // Corrected import
 
 // Function to categorize SPI
 const categorizeSPI = (spi) => {
@@ -19,6 +19,8 @@ const surveyResponseCreateMethod = async (req, res) => {
     const examMotivation = req.body.examMotivation;
     const preferredMaterial = req.body.preferredMaterial;
 
+    console.log("user", userId);
+
     // Check if all required fields are provided
     if (
       !userId ||
@@ -28,9 +30,7 @@ const surveyResponseCreateMethod = async (req, res) => {
       examMotivation === undefined ||
       preferredMaterial === undefined
     ) {
-      return res
-        .status(400)
-        .json({ error: "All required fields must be provided" });
+      return res.status(400).json({ error: "All required fields must be provided" });
     }
 
     // Fetch ResultInfo based on userId
@@ -40,12 +40,14 @@ const surveyResponseCreateMethod = async (req, res) => {
     }
 
     // Determine the previous semester based on the current semester
-    const currentSemester = parseInt(resultInfo.currentSemester, 10);
-    const previousSemester = (currentSemester - 1).toString();
+    const currentSemester = parseInt(resultInfo.semester);
+    console.log(currentSemester);
+    
+    const previousSemester = (currentSemester).toString();
 
     // Find SPI for the previous semester
-    const previousSemesterSPI = resultInfo.spis.find(spi => spi.semester === previousSemester);
-    const spi = previousSemesterSPI ? previousSemesterSPI.spi : null;
+    // Since the `spi` field is not an array, you should directly access it
+    const spi = resultInfo.spi || null;
 
     // Categorize SPI
     const categorizedSPI = categorizeSPI(spi);
