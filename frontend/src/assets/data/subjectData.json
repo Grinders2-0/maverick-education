@@ -1,6 +1,23 @@
 [
   {
-    "1": []
+    "1": [
+      {
+        "subjectName": "Mathematics - 1",
+        "subjectCode": "3110014"
+      },
+      {
+        "subjectCode": "3110013",
+        "subjectName": "Engineering Graphics & Design"
+      },
+      {
+        "subjectCode": "3110006",
+        "subjectName": "Basic Mechanical Engineering"
+      },
+      {
+        "subjectName": "Physics",
+        "subjectCode": "3110018"
+      }
+    ]
   },
   {
     "2": [
@@ -168,10 +185,6 @@
   },
   {
     "7": [
-      {
-        "subjectName": "Summer Internship",
-        "subjectCode": "3170001"
-      },
       {
         "subjectName": "Compiler Design",
         "subjectCode": "3170701"

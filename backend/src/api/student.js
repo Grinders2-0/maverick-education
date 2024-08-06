@@ -5,7 +5,9 @@ import { selectedSubjects } from "../method/registration/selectedSubjects.js";
 import createResultInfo from "../method/registration/resultDetail.js";
 import collegeInfoCreateMethod from "../method/registration/collegeDetail.js";
 import createSurveyResponse from "../method/registration/survey.js";
+
 import { fetchResultDetails, getStudentResult } from "../method/registration/result.js";
+
 import { upload } from "../middleware/multer.js";
 
 const studentApiRouter = express.Router();

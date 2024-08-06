@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CustomInput from "../../../components/CustomInput/CustomInput";
 import SelectInput from "../../../components/SelectInput/SelectInput";
@@ -39,6 +39,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
   const validateRequiredField = (value: string, fieldName: string): string => {
     return value.trim() === "" ? `${fieldName} is required.` : "";
   };
+  const isFirst = useRef<boolean>(true);
 
   const handleClgChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
@@ -111,6 +112,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
   const handleNextPress = () => {
     setIsLoading(true);
     const isFormValid = validateFormOnSubmit();
+
     if (isFormValid && onNextPress) {
       dispatch(
         getSubjectBySem(collegeDetail?.semester ?? "", (success) => {
@@ -126,11 +128,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
       setIsLoading(false);
     }
   };
-  useEffect(() => {
-    // Auto-validate the form whenever collegeDetail changes
-    const formIsValid = validateFormOnSubmit();
-    setIsFormValid(formIsValid);
-  }, [collegeDetail]);
+
   return (
     <section
       style={{
@@ -242,7 +240,7 @@ const CollegeForm = ({ onNextPress }: Props) => {
             paddingLeft: 30,
             paddingRight: 30,
           }}
-          disabled={!isFormValid}
+          disabled={isLoading}
           onClick={handleNextPress}
           isLoading={isLoading}
         />

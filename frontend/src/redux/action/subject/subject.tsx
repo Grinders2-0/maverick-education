@@ -24,24 +24,25 @@ export const getSubjectBySem =
     }
   };
 export const modifySelectedSubjectDetail =
-  (scode: string, item: ISubjectModel) =>
-  async (dispatch: AppDispatch, getState: () => RootState) => {
+  (id: string) => async (dispatch: AppDispatch, getState: () => RootState) => {
     const state = getState();
-    const subjectDetails = state.form?.selectedSubjects || [];
+    const subjectDetails: string[] = state.form?.selectedSubjects || [];
 
-    // Check if the subject code already exists in the array
-    const index = subjectDetails.findIndex(
-      (subject) => subject.scode === scode
-    );
+    // Find the index of the subject id
+    const index = subjectDetails.indexOf(id);
 
-    // If subject code exists, remove it
+    let newSubjectDetails;
     if (index > -1) {
-      subjectDetails.splice(index, 1);
+      // If the subject id exists, remove it
+      newSubjectDetails = [
+        ...subjectDetails.slice(0, index),
+        ...subjectDetails.slice(index + 1),
+      ];
     } else {
-      // If subject code does not exist, add the new subject
-      subjectDetails.push(item);
+      // If the subject id doesn't exist, add the new subject id
+      newSubjectDetails = [...subjectDetails, id];
     }
 
     // Dispatch the updated list of selected subjects
-    dispatch(setSelectedSubjectDetail(subjectDetails));
+    dispatch(setSelectedSubjectDetail(newSubjectDetails));
   };

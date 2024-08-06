@@ -5,7 +5,7 @@ const SplashScreen = () => {
   const navigate = useNavigate();
   const getInfo = async () => {
     const timeout = setTimeout(() => {
-      navigate("/login");
+      navigate("/dashboard");
     }, 1000);
 
     return () => clearTimeout(timeout);

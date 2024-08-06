@@ -1,22 +1,21 @@
-// const trackAutomaticEvents = true;
-// import {isObject} from 'lodash';
-// import {Mixpanel, MixpanelProperties} from 'mixpanel-react-native';
+import mixpanel from "mixpanel-browser";
+import { isObject } from "lodash";
 
-// export const mixpanel = new Mixpanel(
-//   '09b06c8e8365e281a5413945d8d6d23c',
-//   trackAutomaticEvents,
-// );
-// mixpanel.init();
-// export const mixpanelTrack = (
-//   eventName = '',
-//   properties?: MixpanelProperties,
-// ) => {
-//   if (eventName?.length > 0) {
-//     let prop = undefined;
-//     if (properties) {
-//       prop = isObject(properties) ? properties : {properties};
-//     }
-//     console.log('[mixpanel] ', eventName, prop);
-//     mixpanel.track(eventName, prop);
-//   }
-// };
+// Initialize Mixpanel with your project token and automatic event tracking
+mixpanel.init("517884ca60b6ea99a1202aa4b98afbc1", {
+  track_pageview: true, // Automatically track page views
+  debug: true, // Enable debug mode to log Mixpanel operations
+});
+
+export const mixpanelTrack = (eventName = "", properties = {}) => {
+  if (eventName?.length > 0) {
+    // Ensure properties is an object
+    const props = isObject(properties) ? properties : { properties };
+
+    // Log the event to the console for debugging
+    console.log("[mixpanel] ", eventName, props);
+
+    // Track the event using Mixpanel
+    mixpanel.track(eventName, props);
+  }
+};

@@ -33,7 +33,7 @@ const SelectionSubject: React.FC<Props> = ({
       <div>
         <h2 className="subject-name">{subjectName}</h2>
       </div>
-      <p className="subject-code">{subjectCode}</p>
+      <p className="subject-code">{"(" + subjectCode + ")"}</p>
     </div>
   );
 };

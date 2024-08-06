@@ -1,0 +1,20 @@
+/* For WebKit browsers (Chrome, Safari) */
+div::-webkit-scrollbar {
+  width: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Track color */
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 10px;
+  border: 2px solid #e0e0e0; /* Optional border around the scrollbar */
+}
+
+/* Smooth scrolling */
+div {
+  scroll-behavior: smooth;
+}
