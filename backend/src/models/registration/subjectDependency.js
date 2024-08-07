@@ -1,3 +1,6 @@
+import { Schema } from "mongoose";
+import mongoose from "mongoose";
+
 const subjectDependencySchema = new Schema(
   {
     name: { type: String, required: true },

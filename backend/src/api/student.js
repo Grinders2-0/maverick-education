@@ -5,7 +5,7 @@ import { selectedSubjects } from "../method/registration/selectedSubjects.js";
 import createResultInfo from "../method/registration/resultDetail.js";
 import collegeInfoCreateMethod from "../method/registration/collegeDetail.js";
 import createSurveyResponse from "../method/registration/survey.js";
-
+import { getWeakSubjectMaterial } from "../method/registration/getWeakSubjectMaterial.js";
 import { fetchResultDetails, getStudentResult } from "../method/registration/result.js";
 
 import { upload } from "../middleware/multer.js";
@@ -20,5 +20,6 @@ studentApiRouter.post("/survey/create", authenticateUser, createSurveyResponse);
 studentApiRouter.post("/survey/upload", upload.array('images', 10), authenticateUser, fetchResultDetails);
 studentApiRouter.post("/selectSubject/form", authenticateUser, selectedSubjects);
 studentApiRouter.get("/get/studentResult", authenticateUser, getStudentResult);
+studentApiRouter.get("/get/weakSubjectMaterial", authenticateUser, getWeakSubjectMaterial);
 
 export default studentApiRouter;
