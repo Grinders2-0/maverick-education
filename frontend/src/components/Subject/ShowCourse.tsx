@@ -21,7 +21,7 @@ const ShowCourse = ({
     <div
       style={{
         height: 100,
-        borderRadius: 30,
+        borderRadius: 10,
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
         padding: 25,
         display: "flex",
