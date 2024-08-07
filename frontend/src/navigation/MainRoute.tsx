@@ -8,6 +8,7 @@ import FormRoute from "./FormRoute";
 import DashRoute from "./DashRoute";
 import Subject from "../screen/subject/Subject";
 import Course from "../screen/Course/Course";
+import SubjectCourse from "../screen/home/SubjectCourse/SubjectCourse";
 
 const MainRoute: React.FC = () => {
   return (
@@ -20,6 +21,8 @@ const MainRoute: React.FC = () => {
           <Route path="dashboard" element={<DashRoute />} />
           <Route path="subject" element={<Subject />} />
           <Route path="course" element={<Course />} />
+          <Route path="subjectCourse" element={<SubjectCourse />} />
+
           {/* Add more routes here if needed */}
         </Route>
       </Routes>

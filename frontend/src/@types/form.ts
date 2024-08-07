@@ -5,6 +5,7 @@ export interface IFromSlice {
   surveyDetail: IServay;
   imageArray: File[];
   resultDetail: IStudentResult[];
+  fullSubjectDetails: ISubjectModel[];
 }
 interface IStudentGrade {
   subjectCode?: string;
