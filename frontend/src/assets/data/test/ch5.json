@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 5: Intermediate Code Generation MCQs",
+    "questions": [
+      {
+        "question": "What is the purpose of intermediate code in a compiler design?",
+        "options": {
+          "A": "To directly execute the code on the target machine",
+          "B": "To provide a machine-independent code optimization",
+          "C": "To increase the complexity of the compiler",
+          "D": "None of the above"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following is NOT a form of intermediate code?",
+        "options": {
+          "A": "Abstract syntax tree",
+          "B": "Postfix notation",
+          "C": "Binary code",
+          "D": "Three address code"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What does a syntax tree represent in intermediate code generation?",
+        "options": {
+          "A": "Memory allocation of variables",
+          "B": "Hierarchical structure of source code",
+          "C": "Optimized register allocation",
+          "D": "Error detection and recovery"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "In the context of intermediate code, what is the advantage of using three address code?",
+        "options": {
+          "A": "It is easier to translate into machine code",
+          "B": "It uses fewer computational resources",
+          "C": "It eliminates the need for syntax trees",
+          "D": "All of the above"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which data structure is primarily used during the generation of intermediate code?",
+        "options": {
+          "A": "Stack",
+          "B": "Queue",
+          "C": "Graph",
+          "D": "Tree"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "What role does the directed acyclic graph (DAG) play in intermediate code generation?",
+        "options": {
+          "A": "It helps in resource allocation",
+          "B": "It represents expressions with common subexpressions",
+          "C": "It stores all variables used in the program",
+          "D": "It directly converts source code into machine code"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following is true about Postfix notation in intermediate code?",
+        "options": {
+          "A": "Operands precede operators",
+          "B": "It is difficult to parse",
+          "C": "Operators precede operands",
+          "D": "It is mainly used for error handling"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "How does intermediate code benefit cross-platform compiler design?",
+        "options": {
+          "A": "By using the same code base for different target machines",
+          "B": "By requiring different code optimizations for each platform",
+          "C": "By increasing compilation time",
+          "D": "By reducing the efficiency of the generated code"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What is the result of compiling a source code into intermediate code?",
+        "options": {
+          "A": "Executable machine code",
+          "B": "Source code of another high-level language",
+          "C": "A lower-level, machine-independent code",
+          "D": "Directly interpretable code by the CPU"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which technique is used to optimize intermediate code?",
+        "options": {
+          "A": "Lexical analysis",
+          "B": "Syntax analysis",
+          "C": "Code folding",
+          "D": "Peephole optimization"
+        },
+        "correctAnswer": "D"
+      }
+    ]
+  }
+  

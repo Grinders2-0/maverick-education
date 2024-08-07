@@ -5,7 +5,7 @@ type SearchBarProps = {
   value: string;
   setValue: (value: string) => void;
   placeholder?: string;
-  onSearch: () => void;
+  onSearch: (text: string) => void;
   style?: React.CSSProperties;
   buttonStyle?: React.CSSProperties;
 };
@@ -37,7 +37,7 @@ const SearchBar = ({
         }}
       />
       <button
-        onClick={onSearch}
+        onClick={() => onSearch(value)}
         style={{
           padding: "10px 20px",
           fontSize: "16px",

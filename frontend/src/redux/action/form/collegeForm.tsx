@@ -4,6 +4,7 @@ import { mixpanelTrack } from "../../../util/mixpanel";
 import { AppDispatch, RootState } from "../../app/store";
 import {
   setCollegeDetail,
+  setCourseDetail,
   setImageArray,
   setResultDetails,
   setSurveyDetail,
@@ -75,7 +76,7 @@ export const formSubmit =
       const college = await SubjectService.collegeInfo(collegeInfo);
       const subject = await SubjectService.studentSubject(selectedSubject);
 
-      const result = await SubjectService.uploadResult(resultArray);
+      const result = await SubjectService.uploadResult(data);
       const survey = await SubjectService.addSurvey(surveyDetail);
 
       if (!college || !subject) {
@@ -128,6 +129,68 @@ export const getAllResultData =
         return;
       }
       dispatch(setResultDetails(result));
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+
+export const getAllCourseDetail =
+  (onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const college = await SubjectService.getAllCourse();
+      if (!college) {
+        onSuccess(false);
+        alert("failed");
+        return;
+      }
+      dispatch(setCourseDetail(college?.courses));
+      onSuccess(true);
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+export const getSearchCourseDetail =
+  (text: string, onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const college = await SubjectService.searchCourse(text);
+      if (!college) {
+        onSuccess(false);
+        alert("failed");
+        return;
+      }
+      dispatch(setCourseDetail(college?.data));
+      onSuccess(true);
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+export const getSubjectBySemester =
+  (onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const college = await SubjectService.getSubjectOfSem();
+      if (!college) {
+        onSuccess(false);
+        alert("failed");
+        return;
+      }
+      const data = college?.userSubject?.selectedSubjects;
+      dispatch(setCourseDetail(college?.data));
+      onSuccess(true);
     } catch (e: any) {
       alert("faled");
       onSuccess(false);

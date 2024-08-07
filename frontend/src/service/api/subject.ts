@@ -73,6 +73,7 @@ const formExist = async () => {
     });
 };
 
+// for cgpa  spi data get
 const getStudentResult = async () => {
   return instanceWithAuth
     .get("student/get/studentResult")
@@ -83,6 +84,42 @@ const getStudentResult = async () => {
       console.log("Error in get reults api ", e);
     });
 };
+const searchCourse = async (text: string) => {
+  return instanceWithAuth
+    .get("search/courses", {
+      params: {
+        query: text,
+      },
+    })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get serach corse reults api ", e);
+    });
+};
+const getAllCourse = async () => {
+  return instanceWithAuth
+    .get("search/allCourses")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get all corse reults api ", e);
+    });
+};
+
+const getSubjectOfSem = async () => {
+  return instanceWithAuth
+    .get("search/userSubject")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get all corse reults api ", e);
+    });
+};
+
 export default {
   getSubject,
   collegeInfo,
@@ -91,4 +128,7 @@ export default {
   addSurvey,
   formExist,
   getStudentResult,
+  searchCourse,
+  getAllCourse,
+  getSubjectOfSem,
 };

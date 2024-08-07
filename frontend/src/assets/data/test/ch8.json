@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 8: Code Generation",
+    "questions": [
+      {
+        "question": "What is the primary role of the code generation phase in compilation?",
+        "options": {
+          "A": "To analyze the syntax of the source code",
+          "B": "To produce an equivalent target program from the intermediate code",
+          "C": "To optimize the source code for execution",
+          "D": "To translate machine code to assembly code"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following is NOT a property that target code should have?",
+        "options": {
+          "A": "Correctness",
+          "B": "High quality",
+          "C": "Efficient use of resources",
+          "D": "Reduced file size"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "What is the output of the code generator in a compiler?",
+        "options": {
+          "A": "Intermediate code",
+          "B": "Source program",
+          "C": "Target program",
+          "D": "Abstract syntax tree"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which intermediate language form is NOT typically used in code generation?",
+        "options": {
+          "A": "Postfix notation",
+          "B": "Quadruples",
+          "C": "Abstract syntax trees",
+          "D": "Machine language"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "What is the advantage of producing a relocatable machine language program?",
+        "options": {
+          "A": "It is easier to debug",
+          "B": "It can be executed immediately after generation",
+          "C": "It allows subroutines to be compiled separately",
+          "D": "It requires less memory space"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is a basic block in code generation?",
+        "options": {
+          "A": "A sequence of consecutive statements with multiple entry and exit points",
+          "B": "A sequence of consecutive statements with a single entry and exit point",
+          "C": "A function or method in the source code",
+          "D": "A reusable piece of code used in optimization"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What does instruction selection involve in code generation?",
+        "options": {
+          "A": "Choosing the best syntax tree representation",
+          "B": "Selecting the set of variables to reside in registers",
+          "C": "Choosing the appropriate machine instructions for the intermediate code",
+          "D": "Determining the memory addresses for variables"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Why is register allocation a challenging problem in code generation?",
+        "options": {
+          "A": "Because registers are expensive to use",
+          "B": "Because it is NP-complete to optimally assign registers",
+          "C": "Because it affects the readability of the code",
+          "D": "Because registers do not support arithmetic operations"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is a key benefit of using Directed Acyclic Graphs (DAGs) in code generation?",
+        "options": {
+          "A": "They simplify lexical analysis",
+          "B": "They help eliminate common subexpressions",
+          "C": "They improve runtime error detection",
+          "D": "They increase the number of generated instructions"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which approach is often used for instruction scheduling in code generation?",
+        "options": {
+          "A": "Heuristic ordering",
+          "B": "Backtracking",
+          "C": "Recursive descent parsing",
+          "D": "Greedy algorithms"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  }
+  
