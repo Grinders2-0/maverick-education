@@ -2,16 +2,21 @@ import { exec } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+<<<<<<< HEAD
 import fs from 'fs';
 import Result from '../../models/registration/resultdata_fetch.js';  // Adjust the path to your Result model
 import User from '../../models/User.js';
 import NotFoundError from '../../errors/not-found.js';
+=======
+import Result from "../../models/registration/resultdata_fetch.js";  // Adjust the path as needed
+>>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const fetchResultDetails = async (req, res) => {
 
+<<<<<<< HEAD
     const { userId } = req.user;
 
     const user = await User.findById(userId);
@@ -30,12 +35,16 @@ export const fetchResultDetails = async (req, res) => {
     console.log('Image Paths:', imagePaths); // Debugging info
 
     exec(`python ${pythonScript} ${imagePaths.map(p => `"${p}"`).join(' ')}`, async (error, stdout, stderr) => {
+=======
+    execFile('python', [scriptPath, filePath], async (error, stdout, stderr) => {
+>>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
         if (error) {
             console.error(`exec error: ${error}`);
             return res.status(500).send('Error processing images');
         }
 
         try {
+<<<<<<< HEAD
             const results = JSON.parse(stdout);
 
             // Save the results into the MongoDB database
@@ -60,6 +69,26 @@ export const fetchResultDetails = async (req, res) => {
 
             // Clean up temporary files
             imagePaths.forEach(filePath => fs.unlinkSync(filePath)); // Use file paths without quotes
+=======
+            const result = JSON.parse(stdout);
+            
+            // Save the result to the database
+            const gradesArray = Object.keys(result.grades).map(key => ({
+                subjectCode: key,
+                grade: result.grades[key]
+            }));
+
+            const newResult = new Result({
+                grades: gradesArray,
+                spi: result.spi,
+                cgpa: result.cgpa,
+                semester: result.semester
+            });
+
+            await newResult.save();
+
+            return res.status(200).json(result);
+>>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
         } catch (parseError) {
             console.error('Error parsing Python script output:', parseError);
             res.status(500).send('Error parsing results');
@@ -67,6 +96,7 @@ export const fetchResultDetails = async (req, res) => {
     });
 };
 
+<<<<<<< HEAD
 
 export const getStudentResult = async (req, res) => {
     const { userId } = req.user;
@@ -86,3 +116,6 @@ export const getStudentResult = async (req, res) => {
         return res.status(500).json({ error: 'Database error' });
     }
 };
+=======
+export default fetchResultDetails;
+>>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
