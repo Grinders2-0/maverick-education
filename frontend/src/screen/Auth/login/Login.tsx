@@ -13,6 +13,10 @@ import {
   signOut,
 } from "../../../firebase";
 import { GoogleAuthProvider } from "firebase/auth";
+import { useAppDispatch } from "../../../redux/app/store";
+import { signIn, signUpWithGoogle } from "../../../redux/action/auth/auth";
+import { isFormSubmit } from "../../../redux/action/form/collegeForm";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -20,7 +24,8 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState<string>("");
   const [isLoginLoading, setIsLoginLoading] = useState<boolean>(false);
   const [isGLoading, setIsGLoading] = useState<boolean>(false);
-
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -40,6 +45,21 @@ const Login = () => {
       return;
     }
 
+    dispatch(
+      signIn(email, password, (success) => {
+        if (success) {
+          dispatch(
+            isFormSubmit((success) => {
+              if (success) {
+                navigate("/dashboard");
+              } else {
+                navigate("/form");
+              }
+            })
+          );
+        }
+      })
+    );
     setEmailError("");
     setPasswordError("");
   };
@@ -53,6 +73,21 @@ const Login = () => {
       const token = credential?.accessToken;
       // The signed-in user info.
       const user = result.user;
+      dispatch(
+        signUpWithGoogle((success) => {
+          if (success) {
+            dispatch(
+              isFormSubmit((success) => {
+                if (success) {
+                  navigate("/dashboard");
+                } else {
+                  navigate("/form");
+                }
+              })
+            );
+          }
+        })
+      );
       console.log("User signed in: ", user);
       return user;
     } catch (error: any) {

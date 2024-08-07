@@ -11,13 +11,10 @@ const ImageUpload: React.FC = () => {
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      Array.from(files).forEach((file) => {
-        // Dispatch the action for each selected file
-        dispatch(addImageDetail(file));
-      });
       const imageFiles = Array.from(files);
-      setSelectedImages(imageFiles);
+      dispatch(addImageDetail(imageFiles));
 
+      setSelectedImages(imageFiles);
       const imageUrls = imageFiles.map((file) => URL.createObjectURL(file));
       setPreviewUrls(imageUrls);
     }
@@ -51,25 +48,7 @@ const ImageUpload: React.FC = () => {
           onChange={handleImageChange}
           style={styles.input}
         />
-        {/* <button type="submit" style={styles.button}>
-          Upload Images
-        </button> */}
       </form>
-      {/* {previewUrls.length > 0 && (
-        <div style={styles.previewContainer}>
-          <h4 style={styles.previewTitle}>Image Previews:</h4>
-          <div style={styles.previewImagesContainer}>
-            {previewUrls.map((url, index) => (
-              <img
-                key={index}
-                src={url}
-                alt={`Selected ${index}`}
-                style={styles.previewImage}
-              />
-            ))}
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };

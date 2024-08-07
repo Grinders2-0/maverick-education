@@ -19,7 +19,6 @@ const collegeInfo = async (body: ICollegeInfo) => {
       return res.data;
     })
     .catch((e) => {
-      alert("college");
       console.log("error in create college Info api ", e);
     });
 };
@@ -34,12 +33,10 @@ const studentSubject = async (body: string[]) => {
       return res.data;
     })
     .catch((e) => {
-      alert("222");
-
       console.log("no subject are selected ", e);
     });
 };
-const uploadResult = async (body: File[]) => {
+const uploadResult = async (body: FormData) => {
   return instanceWithAuth
     .post("student/survey/upload", body, {
       headers: {
@@ -62,7 +59,16 @@ const addSurvey = async (body: IServay) => {
       return res.data;
     })
     .catch((e) => {
-      alert("44");
+      console.log("Error in add survey api ", e);
+    });
+};
+const formExist = async () => {
+  return instanceWithAuth
+    .get("student/isUserExist")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
       console.log("Error in add survey api ", e);
     });
 };
@@ -73,4 +79,5 @@ export default {
   studentSubject,
   uploadResult,
   addSurvey,
+  formExist,
 };

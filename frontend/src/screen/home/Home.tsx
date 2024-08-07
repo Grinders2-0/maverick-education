@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import DashBoard from "./dashboard/DashBoard";
 import Drawer from "./drawer/Drawer";
 import { colors } from "../../util/constant/colors";
+import Subject from "../subject/Subject";
+import Course from "../Course/Course";
 
 const Home = () => {
+  const [selectedLabel, setSelectedLabel] = useState<string>("Dashboard");
+
   return (
     <div
       style={{
         display: "flex",
         flex: 1,
-        background: colors.BackgroundColor,
+        background: colors.cardPanelBackground,
         height: "100vh",
         flexDirection: "row",
       }}
@@ -21,12 +25,30 @@ const Home = () => {
           margin: 25,
           borderRadius: 20,
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Add shadow for elevation
+          background: colors.white,
+          flexShrink: 0, // Prevent the drawer from shrinking
         }}
       >
-        <Drawer />
+        <Drawer
+          selectedLabel={selectedLabel}
+          setSelectedLabel={setSelectedLabel}
+        />
       </section>
-      <section>
-        <DashBoard />
+      <section
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          marginTop: 25,
+          background: colors.cardPanelBackground,
+          overflowY: "auto", // Enable vertical scrolling
+          padding: "0 20px", // Optional padding for aesthetics
+          overflowX: "hidden", // Prevent horizontal scrolling
+        }}
+      >
+        {selectedLabel === "Dashboard" && <DashBoard />}
+        {selectedLabel === "Subjects" && <Subject />}
+        {selectedLabel === "Courses" && <Course />}
       </section>
     </div>
   );

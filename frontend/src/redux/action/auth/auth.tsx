@@ -6,6 +6,9 @@ import {
   setUserInfo,
 } from "../../reducer/authSlice";
 import { AppDispatch, RootState } from "../../app/store";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth, googleProvider } from "../../../firebase";
+import { mixpanelTrack } from "../../../util/mixpanel";
 
 const getItemFromStorage = (key: string) => {
   const item = localStorage.getItem(key);
@@ -37,6 +40,7 @@ export const getUserData = () => async (dispatch: AppDispatch) => {
 export const signIn =
   (email: string, password: string, onSuccess: (success: boolean) => void) =>
   async (disptach: AppDispatch, getState: () => RootState) => {
+    mixpanelTrack("sing in press");
     const cleanedEmail = email.replace(/\s/g, "");
     const cleanPassword = password.replace(/\s/g, "");
     console.log("clearn", cleanedEmail, cleanPassword);
@@ -104,6 +108,7 @@ export const signUp =
     onSuccess: (success: boolean) => void
   ) =>
   async (disptach: AppDispatch, getState: () => RootState) => {
+    mixpanelTrack("sign up press");
     const cleanedEmail = email.replace(/\s/g, "");
     const cleanPassword = password.replace(/\s/g, "");
     const cleanConfirmPassword = confirmPassword.replace(/\s/g, "");
@@ -191,49 +196,41 @@ export const signUpWithGoogle =
   (onSuccess: (success: boolean) => void) =>
   async (disptach: AppDispatch, getState: () => RootState) => {
     const stateData = getState();
+    mixpanelTrack("Sign Up With Google");
+
     try {
-      //   await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-      //   const userData = await GoogleSignin.signIn();
-      // console.log('data', JSON.stringify(userData, null, 2));
+      const result = await signInWithPopup(auth, googleProvider);
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      const data = {
+        loginType: "google",
+        email: user.email,
+        fName: user.displayName || "", // Use an empty string if displayName is undefined
+        lName: user.displayName?.split(" ")[1] || "", // Split name by space and take the last part as last name
+        profileImage: user.photoURL,
+      };
 
-      //   const data = {
-      //     loginType: 'google',
-      //     email: userData?.user?.email,
-      //     socialToken: userData?.user?.id,
-      //     fName: userData?.user?.givenName,
-      //     lName: userData?.user?.familyName,
-      //     profileImage: userData?.user?.photo,
-      //   };
+      const loginData = await AuthService.login(data);
 
-      //   const loginData = await AuthService.login();
+      if (loginData) {
+        const mainData = {
+          ...data,
+          userID: loginData?.user?._id ?? "",
+        };
 
-      //   if (loginData) {
-      //     const mainData = {
-      //       ...data,
-      //       userID: loginData?.user?._id ?? '',
-      //     };
+        disptach(setUserInfo(mainData));
+        disptach(setIsLoggedIn(true));
+        disptach(setUserToken(loginData?.token));
+        disptach(setIsLoggedIn(true));
 
-      // disptach(setUserInfo(mainData));
+        onSuccess(true);
 
-      // disptach(setIsLoggedIn(true));
-
-      // console.log('dfasdfadsfadsf', loginData?.token);
-      // disptach(setUserToken(loginData?.token));
-      // disptach(setIsLoggedIn(true));
-      // showMessage({
-      //   message: 'Google SignIn Successfully',
-      //   type: 'success',
-      // });
-
-      onSuccess(true);
-      //   } else {
-      // showMessage({
-      //   message: 'Google SingUp Failed',
-      //   description: 'An error occurred while Google SignUp',
-      //   type: 'warning',
-      // });
-      onSuccess(false);
-      //   }
+        onSuccess(false);
+        //   }
+      }
     } catch (error: any) {
       onSuccess(false);
 

@@ -1,12 +1,16 @@
 import React, { memo } from "react";
 import Header from "./header/Header";
 import Body from "./body/Body";
-
-const Drawer = () => {
+import { colors } from "../../../util/constant/colors";
+type props = {
+  selectedLabel?: string;
+  setSelectedLabel?: (a: string) => void;
+};
+const Drawer = ({ selectedLabel, setSelectedLabel }: props) => {
   return (
-    <div>
+    <div style={{ background: colors.white }}>
       <Header />
-      <Body />
+      <Body selectedLabel={selectedLabel} setSelectedLabel={setSelectedLabel} />
     </div>
   );
 };

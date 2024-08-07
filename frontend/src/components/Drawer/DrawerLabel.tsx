@@ -5,10 +5,12 @@ type props = {
   image?: string | undefined;
   title?: string | undefined;
   isSelected?: boolean | undefined;
+  onClick?: () => void;
 };
-const DrawerLabel = ({ image, title, isSelected }: props) => {
+const DrawerLabel = ({ image, title, isSelected, onClick }: props) => {
   return (
     <div
+      onClick={onClick}
       style={{
         display: "flex",
         flexDirection: "row",
@@ -34,7 +36,7 @@ const DrawerLabel = ({ image, title, isSelected }: props) => {
         <img
           src={image}
           style={{
-            height: 20,
+            height: "auto",
             width: 20,
             filter: isSelected ? "invert(1) brightness(100)" : "none", // Apply filter conditionally
           }}
