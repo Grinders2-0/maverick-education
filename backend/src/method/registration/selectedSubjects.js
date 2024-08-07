@@ -70,7 +70,7 @@ const selectedSubjects = async (req, res) => {
     const sem = collegeInfo.semester;
 
     // Check if there's already a UserSubject document for the user and the same semester
-    let userSubject = await UserSubject.findOne({ userId, semester: sem });
+    let userSubject = await UserSubject.findOne({ userId, semester: sem }).populate('selectedSubjects');
     if (!userSubject) {
       // Create a new document if it doesn't exist
       userSubject = new UserSubject({ userId, semester: sem, selectedSubjects: subjectIds });
@@ -80,6 +80,8 @@ const selectedSubjects = async (req, res) => {
     }
 
     await userSubject.save();
+    // Populate the selectedSubjects field
+    userSubject = await userSubject.populate('selectedSubjects');
 
     res.status(200).json({ message: 'Subjects selected successfully', userSubject, currentSemester: sem });
   } catch (error) {
@@ -87,7 +89,6 @@ const selectedSubjects = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
-
 
 
 export { createSubject, getSubjectsBySem, selectedSubjects };
