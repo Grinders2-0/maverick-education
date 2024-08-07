@@ -12,6 +12,7 @@ export const images = {
   RightArrow: require("../../assets/icons/arrow-right.png"),
   FormImage: require("../../assets/icons/Group1.png"),
   subjectBG: require("../../assets/icons/subjectBG.png"),
+  courseBG: require("../../assets/icons/rectangle.png"),
   DashBoard: require("../../assets/icons/dashboard.png"),
   DashBoard1: require("../../assets/icons/dashboard1.png"),
   Feedback: require("../../assets/icons/chat.png"),

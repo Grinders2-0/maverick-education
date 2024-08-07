@@ -11,7 +11,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAllResultData((success) => {}));
+    // dispatch(getAllResultData((success) => {}));
   }, []);
   const [selectedLabel, setSelectedLabel] = useState<string>("Dashboard");
 

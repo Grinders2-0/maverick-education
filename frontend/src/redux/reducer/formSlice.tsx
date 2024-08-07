@@ -17,6 +17,7 @@ const initialState: IFromSlice = {
   surveyDetail: {},
   imageArray: [],
   resultDetail: [],
+  fullSubjectDetails: [],
 };
 
 export const formSlice = createSlice({
@@ -41,6 +42,9 @@ export const formSlice = createSlice({
     setResultDetails: (state, action: PayloadAction<IStudentResult[]>) => {
       state.resultDetail = action.payload;
     },
+    setFullSubjectDetails: (state, action: PayloadAction<ISubjectModel[]>) => {
+      state.resultDetail = action.payload;
+    },
   },
 });
 
@@ -51,6 +55,7 @@ export const {
   setSurveyDetail,
   setImageArray,
   setResultDetails,
+  setFullSubjectDetails,
 } = formSlice.actions;
 
 export default formSlice.reducer;

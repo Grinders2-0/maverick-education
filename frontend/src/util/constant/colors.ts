@@ -15,7 +15,7 @@ const blueShades = {
 export const colors = {
   primary: "#007bff", // blue
   secondary: "#5a9efc", // light blue
-  accent: "#0056b3", // dark blue
+  accent: "#0A1937", // dark blue
   BackgroundColor: "#fcfdff", // light blue background
   black: "#000000",
   white: "#ffffff",
