@@ -3,6 +3,7 @@ import { AppDispatch } from "../app/store";
 import { IAuthSlice, IUser } from "../../@types/auth";
 import {
   ICollegeInfo,
+  ICourseDetail,
   IFromSlice,
   IServay,
   IStudentResult,
@@ -18,6 +19,7 @@ const initialState: IFromSlice = {
   imageArray: [],
   resultDetail: [],
   fullSubjectDetails: [],
+  courseDetail: [],
 };
 
 export const formSlice = createSlice({
@@ -45,6 +47,9 @@ export const formSlice = createSlice({
     setFullSubjectDetails: (state, action: PayloadAction<ISubjectModel[]>) => {
       state.resultDetail = action.payload;
     },
+    setCourseDetail: (state, action: PayloadAction<ICourseDetail[]>) => {
+      state.courseDetail = action.payload;
+    },
   },
 });
 
@@ -56,6 +61,7 @@ export const {
   setImageArray,
   setResultDetails,
   setFullSubjectDetails,
+  setCourseDetail,
 } = formSlice.actions;
 
 export default formSlice.reducer;

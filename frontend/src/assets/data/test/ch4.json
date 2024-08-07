@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 4: Error Recovery",
+    "questions": [
+      {
+        "question": "Which type of error is detected during the lexical analysis phase?",
+        "options": {
+          "A": "Semantic error",
+          "B": "Logical error",
+          "C": "Lexical error",
+          "D": "Syntactic error"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is a common technique used in error recovery during syntax analysis?",
+        "options": {
+          "A": "Code optimization",
+          "B": "Backtracking",
+          "C": "Panic mode recovery",
+          "D": "Semantic analysis"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which of the following is NOT a type of compile-time error?",
+        "options": {
+          "A": "Syntax error",
+          "B": "Semantic error",
+          "C": "Logical error",
+          "D": "Type error"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "In panic mode error recovery, what action does the parser take?",
+        "options": {
+          "A": "It discards input symbols until a designated token is found.",
+          "B": "It rewrites the erroneous input string.",
+          "C": "It immediately halts compilation.",
+          "D": "It retries parsing from the last checkpoint."
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What is a semantic error in the context of compiler design?",
+        "options": {
+          "A": "An error related to the structure of code",
+          "B": "An error related to the meaning of the code",
+          "C": "An error due to syntax mistakes",
+          "D": "An error that occurs during execution"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which error recovery strategy involves making local corrections to the remaining input?",
+        "options": {
+          "A": "Panic mode",
+          "B": "Global correction",
+          "C": "Phrase-level recovery",
+          "D": "Error production"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the main goal of error recovery in compilers?",
+        "options": {
+          "A": "To optimize the code",
+          "B": "To ensure successful parsing of input",
+          "C": "To minimize the error messages",
+          "D": "To automatically fix all detected errors"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following errors is most likely to be detected at runtime?",
+        "options": {
+          "A": "Type mismatch",
+          "B": "Syntax error",
+          "C": "Array index out of bounds",
+          "D": "Uninitialized variable"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the function of the error handler in a compiler?",
+        "options": {
+          "A": "To optimize code execution",
+          "B": "To detect and correct errors",
+          "C": "To report errors and suggest recovery",
+          "D": "To increase compilation speed"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which error recovery strategy attempts to find a correct parse by considering multiple potential repairs?",
+        "options": {
+          "A": "Panic mode",
+          "B": "Backtracking",
+          "C": "Global correction",
+          "D": "Error production"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  }
+  

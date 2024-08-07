@@ -6,6 +6,7 @@ export interface IFromSlice {
   imageArray: File[];
   resultDetail: IStudentResult[];
   fullSubjectDetails: ISubjectModel[];
+  courseDetail: ICourseDetail[];
 }
 interface IStudentGrade {
   subjectCode?: string;
@@ -13,6 +14,13 @@ interface IStudentGrade {
   _id?: string;
 }
 
+export interface ICourseDetail {
+  name?: string;
+  url?: string;
+  subjectName?: string;
+  subjectUrl?: string;
+  semester?: string;
+}
 export interface IStudentResult {
   _id?: string;
   userId?: string;

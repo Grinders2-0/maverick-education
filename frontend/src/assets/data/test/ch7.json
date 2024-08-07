@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 7: Code Optimization",
+    "questions": [
+      {
+        "question": "What is the primary goal of code optimization in compilers?",
+        "options": {
+          "A": "To make the code syntactically correct",
+          "B": "To reduce the number of lines in the source code",
+          "C": "To improve the performance and efficiency of the generated code",
+          "D": "To ensure code readability"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which optimization technique involves shifting computations from runtime to compile-time?",
+        "options": {
+          "A": "Loop unrolling",
+          "B": "Code inlining",
+          "C": "Constant folding",
+          "D": "Dead code elimination"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is dead code elimination?",
+        "options": {
+          "A": "Removing comments from the code",
+          "B": "Removing unused or unreachable code",
+          "C": "Removing redundant loops",
+          "D": "Removing function calls"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following is an example of loop optimization?",
+        "options": {
+          "A": "Constant propagation",
+          "B": "Code motion",
+          "C": "Inline expansion",
+          "D": "Common subexpression elimination"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is strength reduction in the context of code optimization?",
+        "options": {
+          "A": "Replacing a complex operation with a simpler one",
+          "B": "Increasing the frequency of loop execution",
+          "C": "Reducing the memory usage of variables",
+          "D": "Eliminating duplicate code blocks"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "In code optimization, what does loop invariant code motion achieve?",
+        "options": {
+          "A": "Moves code inside the loop to improve performance",
+          "B": "Moves loop-invariant computations outside the loop",
+          "C": "Deletes loops that do not affect program output",
+          "D": "Increases the number of loop iterations"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which optimization technique replaces identical expressions with a single computation?",
+        "options": {
+          "A": "Constant folding",
+          "B": "Loop unrolling",
+          "C": "Common subexpression elimination",
+          "D": "Strength reduction"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the purpose of peephole optimization?",
+        "options": {
+          "A": "To optimize memory usage",
+          "B": "To optimize small sections of target code",
+          "C": "To optimize the overall program structure",
+          "D": "To optimize data structures used in the program"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following describes inline expansion?",
+        "options": {
+          "A": "Replacing a function call with the function code itself",
+          "B": "Removing all inline functions",
+          "C": "Moving functions to a separate module",
+          "D": "Expanding loops to improve readability"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which technique is used to reduce loop overhead and increase speed?",
+        "options": {
+          "A": "Loop jamming",
+          "B": "Loop splitting",
+          "C": "Loop unrolling",
+          "D": "Loop fusion"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  }
+  

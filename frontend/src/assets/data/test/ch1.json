@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 1: Introduction to Compiler Design",
+    "questions": [
+      {
+        "question": "What is the primary function of a compiler?",
+        "options": {
+          "A": "To convert high-level programming language to machine language",
+          "B": "To manage the resources of the computer",
+          "C": "To debug the program",
+          "D": "To increase the execution speed of the program"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What type of language translator is a compiler?",
+        "options": {
+          "A": "A program that converts entire source code into machine code before execution",
+          "B": "A program that executes code line by line",
+          "C": "A program that only checks the syntax of code",
+          "D": "A program that optimizes memory usage"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which phase of a compiler involves lexical analysis?",
+        "options": {
+          "A": "Syntax analysis",
+          "B": "Semantic analysis",
+          "C": "Code generation",
+          "D": "Lexical analysis"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "What is the output of the lexical analysis phase?",
+        "options": {
+          "A": "Syntax tree",
+          "B": "Intermediate code",
+          "C": "Tokens",
+          "D": "Optimized code"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which data structure is used by most compilers for variable storage management?",
+        "options": {
+          "A": "Queue",
+          "B": "Stack",
+          "C": "Symbol Table",
+          "D": "Linked List"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the purpose of the syntax analysis phase?",
+        "options": {
+          "A": "To check for semantic consistency",
+          "B": "To convert tokens into a syntax tree",
+          "C": "To optimize the code",
+          "D": "To generate machine code"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What type of error is detected during the semantic analysis phase of a compiler?",
+        "options": {
+          "A": "Syntax errors",
+          "B": "Runtime errors",
+          "C": "Semantic errors",
+          "D": "Logical errors"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What does the code optimization phase of a compiler aim to improve?",
+        "options": {
+          "A": "The readability of the code",
+          "B": "The execution speed and efficiency of the code",
+          "C": "The size of the compiled code",
+          "D": "Both B and C"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "Which of the following is NOT a task performed by a compiler?",
+        "options": {
+          "A": "Translation of code",
+          "B": "Execution of code",
+          "C": "Optimization of code",
+          "D": "Detection of errors"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is an intermediate code in the context of compiler design?",
+        "options": {
+          "A": "The code written by the programmer",
+          "B": "The code executed by the computer",
+          "C": "An abstraction between source and machine code",
+          "D": "A type of optimization technique"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  }
+  

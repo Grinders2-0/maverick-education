@@ -38,9 +38,10 @@ const SPIChart: React.FC<SPIChartProps> = ({ data, style }) => {
         label: "SPI",
         data: data.values,
         borderColor: "green",
-        backgroundColor: `${colors.primary}10`,
+        backgroundColor: `${colors.primary}30`, // Adjust alpha for shading
         borderWidth: 2,
         pointRadius: 5,
+        fill: true, // Enable shading below the line
       },
     ],
   };

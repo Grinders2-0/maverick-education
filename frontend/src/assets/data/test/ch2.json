@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 2: Lexical Analysis",
+    "questions": [
+      {
+        "question": "What is the role of lexical analysis in a compiler?",
+        "options": {
+          "A": "To parse the syntax of the code",
+          "B": "To generate machine code",
+          "C": "To convert source code into tokens",
+          "D": "To optimize the code"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What does a lexical analyzer generate as its output?",
+        "options": {
+          "A": "Syntax errors",
+          "B": "Executable code",
+          "C": "Tokens",
+          "D": "Semantic analysis"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which of the following is a function of a lexical analyzer?",
+        "options": {
+          "A": "Eliminating white space and comments",
+          "B": "Resolving variable names",
+          "C": "Checking data types",
+          "D": "Executing conditional statements"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What type of grammar is used by a lexical analyzer?",
+        "options": {
+          "A": "Context-free grammar",
+          "B": "Regular grammar",
+          "C": "Context-sensitive grammar",
+          "D": "Global grammar"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "In compiler design, what is a token?",
+        "options": {
+          "A": "A syntax error",
+          "B": "A basic element of the programming language",
+          "C": "An intermediate code",
+          "D": "A memory address"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which data structure is commonly used to implement a lexical analyzer?",
+        "options": {
+          "A": "Queue",
+          "B": "Stack",
+          "C": "Finite automata",
+          "D": "Tree"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "How does a lexical analyzer handle comments in the source code?",
+        "options": {
+          "A": "Converts them into tokens",
+          "B": "Executes them as code",
+          "C": "Stores them in a symbol table",
+          "D": "Strips them from the code"
+        },
+        "correctAnswer": "D"
+      },
+      {
+        "question": "What is a lexeme in the context of a compiler?",
+        "options": {
+          "A": "A set of legal code statements",
+          "B": "The lowest level syntactic unit",
+          "C": "A type of error",
+          "D": "A programming language"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What kind of errors can a lexical analyzer detect?",
+        "options": {
+          "A": "Syntax errors",
+          "B": "Logical errors",
+          "C": "Lexical errors",
+          "D": "Semantic errors"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which of the following best describes a pattern in lexical analysis?",
+        "options": {
+          "A": "A set of rules that defines token structure",
+          "B": "A type of token",
+          "C": "A parsing technique",
+          "D": "An error handling method"
+        },
+        "correctAnswer": "A"
+      }
+    ]
+  }
+  

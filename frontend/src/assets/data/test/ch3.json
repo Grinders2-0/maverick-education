@@ -1,0 +1,106 @@
+{
+    "title": "Chapter 3: Syntax Analysis",
+    "questions": [
+      {
+        "question": "What is the primary role of the syntax analysis phase in a compiler?",
+        "options": {
+          "A": "To execute the code",
+          "B": "To check the code for grammatical correctness",
+          "C": "To optimize the code",
+          "D": "To translate the code to machine language"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What structure does the syntax analysis phase typically generate?",
+        "options": {
+          "A": "Tokens",
+          "B": "Syntax tree",
+          "C": "Semantic model",
+          "D": "Symbol table"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following is a common type of parser used in syntax analysis?",
+        "options": {
+          "A": "Lexical parser",
+          "B": "Semantic parser",
+          "C": "Top-down parser",
+          "D": "Code parser"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the function of a predictive parser?",
+        "options": {
+          "A": "To predict the use of variables",
+          "B": "To foresee runtime errors",
+          "C": "To determine the parsing strategy from the next input symbols",
+          "D": "To predict the output of the code"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What type of grammar is primarily used in syntax analysis?",
+        "options": {
+          "A": "Regular grammar",
+          "B": "Context-free grammar",
+          "C": "Context-sensitive grammar",
+          "D": "Non-deterministic grammar"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What kind of errors does syntax analysis detect?",
+        "options": {
+          "A": "Semantic errors",
+          "B": "Runtime errors",
+          "C": "Syntax errors",
+          "D": "Compilation errors"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which component is essential for building a syntax tree?",
+        "options": {
+          "A": "Semantic analyzer",
+          "B": "Code optimizer",
+          "C": "Parser",
+          "D": "Preprocessor"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the purpose of left factoring in syntax analysis?",
+        "options": {
+          "A": "To optimize the left components of code",
+          "B": "To simplify the parser's job by eliminating left recursion",
+          "C": "To enhance the speed of the parser",
+          "D": "To convert left recursive grammars into right recursive"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which parser can handle left recursion naturally without modification?",
+        "options": {
+          "A": "Recursive descent parser",
+          "B": "Predictive parser",
+          "C": "LR parser",
+          "D": "SLR parser"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is backtracking in the context of syntax parsing?",
+        "options": {
+          "A": "A method to handle errors by reversing changes",
+          "B": "A technique where the parser goes back to previous steps to find more suitable matches",
+          "C": "A way to optimize the syntax tree",
+          "D": "A method to handle memory in parsing"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  }
+  

@@ -1,4 +1,3 @@
-// TimelineChart.tsx
 import React from "react";
 import { Line } from "react-chartjs-2";
 import {
@@ -12,9 +11,11 @@ import {
   Legend,
   TimeScale,
 } from "chart.js";
+import annotationPlugin, { AnnotationOptions } from "chartjs-plugin-annotation";
 import "chartjs-adapter-date-fns"; // Import date adapter for time scale
 import { colors } from "../../../util/constant/colors";
 
+// Register plugins and scales
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -23,7 +24,8 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  TimeScale
+  TimeScale,
+  annotationPlugin
 );
 
 const TimelineChart: React.FC = () => {
@@ -63,6 +65,13 @@ const TimelineChart: React.FC = () => {
       },
     ],
   };
+
+  // Calculate mid-semester and end-semester dates
+  const midSemDate = new Date();
+  midSemDate.setMonth(startDate.getMonth() + 2); // Mid-semester exam after 2 months
+
+  const endSemDate = new Date();
+  endSemDate.setMonth(startDate.getMonth() + 4); // End-semester exam after 4 months
 
   const options = {
     responsive: true,
@@ -108,6 +117,58 @@ const TimelineChart: React.FC = () => {
       tooltip: {
         mode: "index" as const,
         intersect: false,
+      },
+      annotation: {
+        annotations: {
+          currentDay: {
+            type: "line",
+            xMin: new Date().toISOString().split("T")[0],
+            xMax: new Date().toISOString().split("T")[0],
+            borderColor: "red",
+            borderWidth: 2,
+            label: {
+              content: "Today",
+              enabled: true,
+              position: "start",
+              backgroundColor: "red",
+              color: "#fff",
+            },
+          } as AnnotationOptions<"line">,
+          midSem: {
+            type: "box",
+            xMin: new Date(midSemDate).toISOString().split("T")[0],
+            xMax: new Date(midSemDate.setDate(midSemDate.getDate() + 7))
+              .toISOString()
+              .split("T")[0], // 1-week duration
+            backgroundColor: "rgba(255, 206, 86, 0.2)",
+            borderColor: "rgba(255, 206, 86, 1)",
+            borderWidth: 1,
+            label: {
+              content: "Mid-Sem Exams",
+              enabled: true,
+              position: "center",
+              backgroundColor: "rgba(255, 206, 86, 0.6)",
+              color: "#333",
+            },
+          } as AnnotationOptions<"box">,
+          endSem: {
+            type: "box",
+            xMin: new Date(endSemDate).toISOString().split("T")[0],
+            xMax: new Date(endSemDate.setDate(endSemDate.getDate() + 7))
+              .toISOString()
+              .split("T")[0], // 1-week duration
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            borderWidth: 1,
+            label: {
+              content: "End-Sem Exams",
+              enabled: true,
+              position: "center",
+              backgroundColor: "rgba(54, 162, 235, 0.6)",
+              color: "#333",
+            },
+          } as AnnotationOptions<"box">,
+        },
       },
     },
   };

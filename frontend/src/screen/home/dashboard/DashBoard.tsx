@@ -3,6 +3,8 @@ import TimelineChart from "../../../components/Chart/TimeLineChart/TimeLineChart
 import CGPAChart from "../../../components/Chart/CGPAChart/CGPAChart";
 import SPIChart from "../../../components/Chart/SPIChart/SPIChart";
 import { colors } from "../../../util/constant/colors";
+import ExamScheduleChart from "../../../components/Chart/ExamScheduleChart/ExamScheduleChart";
+import SimpleAreaChart from "../../../components/Chart/SimpleAreaChart/SimpleAreaChart";
 const data = [
   {
     _id: "66b326e0c2767bc49611e028",
@@ -107,7 +109,7 @@ const DashBoard = () => {
       "sem 7",
       "sem 8",
     ],
-    values: [8, 7.5, 9, 8.2, 8.8, 9.1, 7.9, 8.4],
+    values: [8, 7.5, 9, 8, 6.5, 9.1, 7.9, 8.4],
   };
 
   const cgpaData = {
@@ -155,6 +157,7 @@ const DashBoard = () => {
         className=""
       >
         <TimelineChart />
+        {/* <ExamScheduleChart /> */}
         <div
           style={{
             marginRight: 20,
@@ -162,6 +165,7 @@ const DashBoard = () => {
             display: "flex",
           }}
         >
+          {/* <SimpleAreaChart /> */}
           <SPIChart
             data={spiData}
             style={{

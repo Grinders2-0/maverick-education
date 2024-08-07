@@ -1,0 +1,106 @@
+{
+    "title": "Chapter on Run Time Memory Management",
+    "questions": [
+      {
+        "question": "What is the primary role of the activation record in run-time memory management?",
+        "options": {
+          "A": "To store global variables",
+          "B": "To manage procedure call information",
+          "C": "To hold the executable code",
+          "D": "To optimize code execution"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which area of memory is used for dynamic memory allocation?",
+        "options": {
+          "A": "Stack",
+          "B": "Heap",
+          "C": "Static area",
+          "D": "Code segment"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the purpose of a control link in an activation record?",
+        "options": {
+          "A": "To link to the previous activation record",
+          "B": "To store local variables",
+          "C": "To save machine registers",
+          "D": "To handle parameter passing"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which parameter passing method involves copying the argument's address?",
+        "options": {
+          "A": "Call by value",
+          "B": "Call by reference",
+          "C": "Call by name",
+          "D": "Copy restore"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the key characteristic of stack allocation in memory management?",
+        "options": {
+          "A": "Memory is allocated and deallocated in a last-in-first-out manner",
+          "B": "Memory is allocated and deallocated randomly",
+          "C": "Memory is allocated permanently",
+          "D": "Memory is allocated and deallocated based on usage frequency"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which memory allocation strategy uses fixed-length memory blocks?",
+        "options": {
+          "A": "Dynamic allocation",
+          "B": "Static allocation",
+          "C": "Heap allocation",
+          "D": "Global allocation"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is a dangling reference?",
+        "options": {
+          "A": "A reference to a valid memory location",
+          "B": "A reference to a memory location that has been deallocated",
+          "C": "A reference to an uninitialized variable",
+          "D": "A reference to a global variable"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "In which type of memory allocation is memory freed in any order?",
+        "options": {
+          "A": "Stack allocation",
+          "B": "Heap allocation",
+          "C": "Static allocation",
+          "D": "Code segment allocation"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the role of a symbol table in run-time memory management?",
+        "options": {
+          "A": "To manage memory allocation",
+          "B": "To store variable types and scopes",
+          "C": "To optimize execution speed",
+          "D": "To hold executable instructions"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which of the following methods combines call by value and call by reference?",
+        "options": {
+          "A": "Call by name",
+          "B": "Copy restore",
+          "C": "Call by address",
+          "D": "Call by macro"
+        },
+        "correctAnswer": "B"
+      }
+    ]
+  }
+  
