@@ -2,6 +2,7 @@ import Fuse from 'fuse.js';
 import SubjectMaterial from '../../models/registration/subjectMaterial.js'; // Adjust the path as necessary
 import { StatusCodes } from 'http-status-codes';
 
+
 export const searchCourses = async (req, res) => {
     const { query } = req.query;
 
@@ -78,3 +79,4 @@ export const getAllCourses = async (req, res) => {
       res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Internal Server Error", error: error.message });
     }
   };
+
