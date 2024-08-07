@@ -8,6 +8,7 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import helmet from "helmet";
 import authRouter from "./routers/authRouter.js";
+import searchApi  from "./routers/search.js";
 
 const port = process.env.PORT || 3001;
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(authRouter);
 app.use(registerRoutes);
 app.use(subjects);
+app.use(searchApi);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
