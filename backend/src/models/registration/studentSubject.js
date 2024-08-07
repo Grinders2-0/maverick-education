@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
@@ -9,11 +9,18 @@ const selectedSubjectsSchema = new Schema(
       required: true,
       ref: "User",
     },
+    semester: {
+      type: String,
+      required: true,
+    },
     selectedSubjects: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Subject",
-      },
+        subjectId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Subject",
+          required: true,
+        }
+      }
     ],
   },
   {

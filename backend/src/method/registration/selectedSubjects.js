@@ -1,5 +1,7 @@
 import Subject from '../../models/registration/SUBJECTS.js';
 import UserSubject from '../../models/registration/studentSubject.js';
+import CollegeInfoModel from "../../models/registration/collegeInfo.js";  // Import the CollegeInfoModel
+
 
 const createSubject = async (req, res) => {
   try {
@@ -41,12 +43,11 @@ const getSubjectsBySem = async (req, res) => {
   }
 };
 
+
+
 const selectedSubjects = async (req, res) => {
   const { subjectIds } = req.body;
   const userId = req.user.userId; // Extracted from the token by the middleware
-
-  // console.log('Received userId:', userId); // Debug userId
-  // console.log('Received subjectIds:', subjectIds); // Debug subjectIds
 
   if (!userId || !subjectIds || !Array.isArray(subjectIds) || subjectIds.length === 0) {
     console.log('Invalid input data');
@@ -61,21 +62,40 @@ const selectedSubjects = async (req, res) => {
       return res.status(404).json({ message: 'Some subjects not found' });
     }
 
-    // Find or create the UserSubject document
-    let userSubject = await UserSubject.findOne({ userId });
+    // Fetch the semester from CollegeInfoModel
+    const collegeInfo = await CollegeInfoModel.findOne({ userId });
+    if (!collegeInfo) {
+      console.log('College info not found for user');
+      return res.status(404).json({ message: 'College info not found for user' });
+    }
+    const sem = collegeInfo.semester;
+
+    // Create the selectedSubjects array with subjectId and subjectCode
+    const selectedSubjectsArray = subjects.map(subject => ({
+      subjectId: subject._id,
+      subjectCode: subject.subjectCode,
+    }));
+
+    // Check if there's already a UserSubject document for the user and the same semester
+    let userSubject = await UserSubject.findOne({ userId, semester: sem });
     if (!userSubject) {
-      userSubject = new UserSubject({ userId, selectedSubjects: subjectIds });
+      // Create a new document if it doesn't exist
+      userSubject = new UserSubject({ userId, semester: sem, selectedSubjects: selectedSubjectsArray });
     } else {
-      userSubject.selectedSubjects = subjectIds; // Update selected subjects
+      // Update the selected subjects if the document exists
+      userSubject.selectedSubjects = selectedSubjectsArray;
     }
 
     await userSubject.save();
+    // Populate the selectedSubjects field
+    userSubject = await userSubject.populate('selectedSubjects.subjectId');
 
-    res.status(200).json({ message: 'Subjects selected successfully', userSubject });
+    res.status(200).json({ message: 'Subjects selected successfully', userSubject, currentSemester: sem });
   } catch (error) {
     console.error('Server error:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };
+
 
 export { createSubject, getSubjectsBySem, selectedSubjects };

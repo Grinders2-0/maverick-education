@@ -74,10 +74,10 @@ export const formSubmit =
       const data = prepareFormData(resultArray);
       const college = await SubjectService.collegeInfo(collegeInfo);
       const subject = await SubjectService.studentSubject(selectedSubject);
-      // const result = await SubjectService.uploadResult(data);
 
-      // const survey = await SubjectService.addSurvey(surveyDetail);
-      // const uniqueKey = survey?.surveyResponseData?.uniqueKey;
+      const result = await SubjectService.uploadResult(resultArray);
+      const survey = await SubjectService.addSurvey(surveyDetail);
+
       if (!college || !subject) {
         onSuccess(false);
         alert("failed");
