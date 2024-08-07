@@ -15,6 +15,7 @@ const initialState: IAuthSlice = {
     userID: "",
   },
   otp_token: "",
+  studentType: "",
 };
 
 export const authSlice = createSlice({
@@ -39,10 +40,18 @@ export const authSlice = createSlice({
     setOTPToken: (state, action: PayloadAction<string>) => {
       state.otp_token = action.payload;
     },
+    setStudentType: (state, action: PayloadAction<string>) => {
+      state.studentType = action.payload;
+    },
   },
 });
 
-export const { setUserToken, setUserInfo, setIsLoggedIn, setOTPToken } =
-  authSlice.actions;
+export const {
+  setUserToken,
+  setUserInfo,
+  setIsLoggedIn,
+  setOTPToken,
+  setStudentType,
+} = authSlice.actions;
 
 export default authSlice.reducer;

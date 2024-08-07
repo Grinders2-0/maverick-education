@@ -1,9 +1,11 @@
 import { ICollegeInfo, IServay } from "../../../@types/form";
 import { SubjectService } from "../../../service/api/service";
+import { mixpanelTrack } from "../../../util/mixpanel";
 import { AppDispatch, RootState } from "../../app/store";
 import {
   setCollegeDetail,
   setImageArray,
+  setResultDetails,
   setSurveyDetail,
 } from "../../reducer/formSlice";
 
@@ -25,26 +27,26 @@ export const changeSurveyDetail =
   };
 
 export const addImageDetail =
-  (newFile: File) =>
+  (newFiles: File[]) =>
   async (dispatch: AppDispatch, getState: () => RootState) => {
     const state = getState();
-    const images = state.form?.imageArray || [];
+    const existingImages = state.form?.imageArray || [];
 
-    // Check if a file with the same name already exists
-    const index = images.findIndex((file: File) => file.name === newFile.name);
+    // Combine existing images with new files, removing duplicates by file name
+    const fileMap = new Map<string, File>();
 
-    let updatedImages;
-    if (index > -1) {
-      // Replace the existing file
-      updatedImages = [
-        ...images.slice(0, index),
-        newFile,
-        ...images.slice(index + 1),
-      ];
-    } else {
-      // Add the new file
-      updatedImages = [...images, newFile];
-    }
+    // Add existing images to the map
+    existingImages.forEach((file) => {
+      fileMap.set(file.name, file);
+    });
+
+    // Add new files to the map (will overwrite existing files with the same name)
+    newFiles.forEach((file) => {
+      fileMap.set(file.name, file);
+    });
+
+    // Convert the map back to an array
+    const updatedImages = Array.from(fileMap.values());
 
     // Dispatch the updated images array
     dispatch(setImageArray(updatedImages));
@@ -52,6 +54,8 @@ export const addImageDetail =
 export const formSubmit =
   (onSuccess: (success: boolean) => void) =>
   async (dispatch: AppDispatch, getState: () => RootState) => {
+    mixpanelTrack("Form Submit Press");
+
     const state = getState();
     const form = state.form;
 
@@ -60,11 +64,20 @@ export const formSubmit =
       const selectedSubject = form?.selectedSubjects;
       const resultArray = form?.imageArray;
       const surveyDetail = form?.surveyDetail;
-
+      const prepareFormData = (files: File[]) => {
+        const formData = new FormData();
+        files.forEach((file) => {
+          formData.append("images", file); // Use the fixed key 'images'
+        });
+        return formData;
+      };
+      const data = prepareFormData(resultArray);
       const college = await SubjectService.collegeInfo(collegeInfo);
       const subject = await SubjectService.studentSubject(selectedSubject);
+
       const result = await SubjectService.uploadResult(resultArray);
       const survey = await SubjectService.addSurvey(surveyDetail);
+
       if (!college || !subject) {
         onSuccess(false);
         alert("failed");
@@ -72,6 +85,49 @@ export const formSubmit =
       }
 
       onSuccess(true);
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+export const isFormSubmit =
+  (onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const college = await SubjectService.formExist();
+      if (!college) {
+        onSuccess(false);
+        alert("failed");
+        return;
+      }
+      const isExist = college?.exists;
+      if (isExist) {
+        onSuccess(true);
+      } else {
+        onSuccess(true);
+      }
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+export const getAllResultData =
+  (onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const result = await SubjectService.getStudentResult();
+      if (!result) {
+        onSuccess(false);
+        alert("failed 12");
+        return;
+      }
+      dispatch(setResultDetails(result));
     } catch (e: any) {
       alert("faled");
       onSuccess(false);

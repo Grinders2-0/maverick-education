@@ -11,8 +11,8 @@ import jwt from "jsonwebtoken";
 import { sendMail } from "./sendMail.js";
 
 const login = async (req, res) => {
-  const { email, password, fcmToken, loginType, socialToken, isLogin } =
-    req.body;
+  const { email, password, loginType, isLogin } = req.body;
+  console.log("email,", email, password, loginType);
   if (!loginType || !email) {
     throw new BadRequestError("Provide email, fcmToken, loginType");
   }
@@ -27,12 +27,8 @@ const login = async (req, res) => {
   switch (loginType) {
     case "google":
     case "apple":
-      if (!socialToken) {
-        throw new BadRequestError("Provide socialToken, profileImage");
-      }
       user = await User.findOneAndUpdate(
-        { socialToken, email },
-        { fcmToken },
+        { email },
         {
           new: true,
           runValidators: true,
@@ -41,6 +37,7 @@ const login = async (req, res) => {
       if (user) {
         const token = user.createJWT();
         user.password = undefined;
+        console.log("worked");
         res.status(StatusCodes.OK).json({ user, token, isNewUser: false });
         return;
       }
@@ -50,8 +47,7 @@ const login = async (req, res) => {
         throw new BadRequestError("Provide email and password!");
       }
       user = await User.findOneAndUpdate(
-        { socialToken, email },
-        { fcmToken },
+        { email },
         {
           new: true,
           runValidators: true,
@@ -63,6 +59,7 @@ const login = async (req, res) => {
         }
         const isPasswordCorrect = await user.comparePassword(password);
         if (!isPasswordCorrect) {
+          console.log("incorre");
           throw new UnauthenticatedError("Invalid Credentials!");
         }
         const token = user.createJWT();
@@ -79,6 +76,7 @@ const login = async (req, res) => {
   user = await User.create(req.body);
   user.password = undefined;
   const token = user.createJWT();
+  console.log("data", user);
   res.status(StatusCodes.CREATED).json({ user, token, isNewUser: true });
 };
 
