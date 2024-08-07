@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from "../../app/store";
 import {
   setCollegeDetail,
   setImageArray,
+  setResultDetails,
   setSurveyDetail,
 } from "../../reducer/formSlice";
 
@@ -108,6 +109,25 @@ export const isFormSubmit =
       } else {
         onSuccess(true);
       }
+    } catch (e: any) {
+      alert("faled");
+      onSuccess(false);
+    }
+  };
+export const getAllResultData =
+  (onSuccess: (success: boolean) => void) =>
+  async (dispatch: AppDispatch, getState: () => RootState) => {
+    const state = getState();
+    const form = state.form;
+
+    try {
+      const result = await SubjectService.getStudentResult();
+      if (!result) {
+        onSuccess(false);
+        alert("failed 12");
+        return;
+      }
+      dispatch(setResultDetails(result));
     } catch (e: any) {
       alert("faled");
       onSuccess(false);

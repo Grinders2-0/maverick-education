@@ -3,24 +3,115 @@ import TimelineChart from "../../../components/Chart/TimeLineChart/TimeLineChart
 import CGPAChart from "../../../components/Chart/CGPAChart/CGPAChart";
 import SPIChart from "../../../components/Chart/SPIChart/SPIChart";
 import { colors } from "../../../util/constant/colors";
-
+const data = [
+  {
+    _id: "66b326e0c2767bc49611e028",
+    userId: "66a635905d00a9b4d5f6ef43",
+    grades: [
+      {
+        subjectCode: "3160001",
+        grade: "AA",
+        _id: "66b326e0c2767bc49611e029",
+      },
+      {
+        subjectCode: "3160003",
+        grade: "AA",
+        _id: "66b326e0c2767bc49611e02a",
+      },
+      {
+        subjectCode: "3160704",
+        grade: "BC",
+        _id: "66b326e0c2767bc49611e02b",
+      },
+      {
+        subjectCode: "3160707",
+        grade: "AB",
+        _id: "66b326e0c2767bc49611e02c",
+      },
+      {
+        subjectCode: "3160712",
+        grade: "AB",
+        _id: "66b326e0c2767bc49611e02d",
+      },
+      {
+        subjectCode: "3160713",
+        grade: "AB",
+        _id: "66b326e0c2767bc49611e02e",
+      },
+      {
+        subjectCode: "3160716",
+        grade: "AB",
+        _id: "66b326e0c2767bc49611e02f",
+      },
+    ],
+    spi: "8.70",
+    cgpa: "8.59",
+    semester: "5",
+    __v: 0,
+  },
+  {
+    _id: "66b3270bc2767bc49611e03b",
+    userId: "66a635905d00a9b4d5f6ef43",
+    grades: [
+      {
+        subjectCode: "3160001",
+        grade: "AA",
+        _id: "66b3270bc2767bc49611e03c",
+      },
+      {
+        subjectCode: "3160003",
+        grade: "AA",
+        _id: "66b3270bc2767bc49611e03d",
+      },
+      {
+        subjectCode: "3160704",
+        grade: "BC",
+        _id: "66b3270bc2767bc49611e03e",
+      },
+      {
+        subjectCode: "3160707",
+        grade: "AB",
+        _id: "66b3270bc2767bc49611e03f",
+      },
+      {
+        subjectCode: "3160712",
+        grade: "AB",
+        _id: "66b3270bc2767bc49611e040",
+      },
+      {
+        subjectCode: "3160713",
+        grade: "AB",
+        _id: "66b3270bc2767bc49611e041",
+      },
+      {
+        subjectCode: "3160716",
+        grade: "AB",
+        _id: "66b3270bc2767bc49611e042",
+      },
+    ],
+    spi: "8.70",
+    cgpa: "8.59",
+    semester: "6",
+    __v: 0,
+  },
+];
 const DashBoard = () => {
   const spiData = {
     labels: [
-      "Semester 1",
-      "Semester 2",
-      "Semester 3",
-      "Semester 4",
-      "Semester 5",
-      "Semester 6",
-      "Semester 7",
-      "Semester 8",
+      "sem 1",
+      "sem 2",
+      "sem 3",
+      "sem 4",
+      "sem 5",
+      "sem 6",
+      "sem 7",
+      "sem 8",
     ],
     values: [8, 7.5, 9, 8.2, 8.8, 9.1, 7.9, 8.4],
   };
 
   const cgpaData = {
-    labels: ["Semester 5", "Semester 6", "Semester 7", "Semester 8"],
+    labels: ["sem 5", "sem 6", "sem 7", "sem 8"],
     values: [8.5, 8.7, 8.8, 9.0],
   };
 

@@ -73,6 +73,16 @@ const formExist = async () => {
     });
 };
 
+const getStudentResult = async () => {
+  return instanceWithAuth
+    .get("student/get/studentResult")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get reults api ", e);
+    });
+};
 export default {
   getSubject,
   collegeInfo,
@@ -80,4 +90,5 @@ export default {
   uploadResult,
   addSurvey,
   formExist,
+  getStudentResult,
 };

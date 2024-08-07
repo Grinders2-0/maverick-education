@@ -37,7 +37,7 @@ const SPIChart: React.FC<SPIChartProps> = ({ data, style }) => {
       {
         label: "SPI",
         data: data.values,
-        borderColor: colors.primary,
+        borderColor: "green",
         backgroundColor: `${colors.primary}10`,
         borderWidth: 2,
         pointRadius: 5,

@@ -54,7 +54,7 @@ const TimelineChart: React.FC = () => {
       {
         label: "Daily Usage",
         data: generateRandomData(labels.length),
-        borderColor: colors.secondary,
+        borderColor: "orange",
         backgroundColor: colors.highlightBackground,
         fill: true,
         tension: 0.4, // Curved line

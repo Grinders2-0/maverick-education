@@ -35,8 +35,8 @@ const CGPAChart: React.FC<CGPAChartProps> = ({ data, style }) => {
       {
         label: "CGPA",
         data: data.values,
-        backgroundColor: `${colors.primary}30`,
-        borderColor: colors.primary,
+        backgroundColor: `${colors.red}30`,
+        borderColor: colors.red,
         borderWidth: 2,
       },
     ],

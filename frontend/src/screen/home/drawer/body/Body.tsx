@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DrawerLabel from "../../../../components/Drawer/DrawerLabel";
 import { images } from "../../../../util/constant/images";
+import { colors } from "../../../../util/constant/colors";
 
 // Define a type for the label data
 interface Label {
@@ -42,7 +43,7 @@ const Body = ({ selectedLabel, setSelectedLabel }: props) => {
   };
 
   return (
-    <div>
+    <div style={{ background: colors.accent }}>
       {labels.map((label) => (
         <DrawerLabel
           key={label.title}
