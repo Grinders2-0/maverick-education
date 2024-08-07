@@ -4,8 +4,26 @@ export interface IFromSlice {
   selectedSubjects: string[];
   surveyDetail: IServay;
   imageArray: File[];
+  resultDetail: IStudentResult[];
+}
+interface IStudentGrade {
+  subjectCode?: string;
+  grade?: string;
+  _id?: string;
 }
 
+export interface IStudentResult {
+  _id?: string;
+  userId?: string;
+  grades?: IStudentGrade[];
+  spi?: string;
+  cgpa?: string;
+  semester?: string;
+  __v?: number;
+}
+export interface IStudentResults {
+  results: IStudentResult[];
+}
 export interface ICollegeInfo {
   collegeId?: string;
   userId?: string;

@@ -23,8 +23,12 @@ const collegeInfo = async (body: ICollegeInfo) => {
     });
 };
 const studentSubject = async (body: string[]) => {
+  alert(body);
+  const data = {
+    subjectIds: body,
+  };
   return instanceWithAuth
-    .post("student/selectSubject/form", body)
+    .post("student/selectSubject/form", data)
     .then((res) => {
       return res.data;
     })
@@ -32,7 +36,7 @@ const studentSubject = async (body: string[]) => {
       console.log("no subject are selected ", e);
     });
 };
-const uploadResult = async (body: File[]) => {
+const uploadResult = async (body: FormData) => {
   return instanceWithAuth
     .post("student/survey/upload", body, {
       headers: {
@@ -43,6 +47,7 @@ const uploadResult = async (body: File[]) => {
       return res.data;
     })
     .catch((e) => {
+      alert("333");
       console.log("Error in uploading image ", e);
     });
 };
@@ -57,11 +62,33 @@ const addSurvey = async (body: IServay) => {
       console.log("Error in add survey api ", e);
     });
 };
+const formExist = async () => {
+  return instanceWithAuth
+    .get("student/isUserExist")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in add survey api ", e);
+    });
+};
 
+const getStudentResult = async () => {
+  return instanceWithAuth
+    .get("student/get/studentResult")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get reults api ", e);
+    });
+};
 export default {
   getSubject,
   collegeInfo,
   studentSubject,
   uploadResult,
   addSurvey,
+  formExist,
+  getStudentResult,
 };

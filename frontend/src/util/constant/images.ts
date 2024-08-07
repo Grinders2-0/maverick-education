@@ -14,4 +14,12 @@ export const images = {
   subjectBG: require("../../assets/icons/subjectBG.png"),
   DashBoard: require("../../assets/icons/dashboard.png"),
   DashBoard1: require("../../assets/icons/dashboard1.png"),
+  Feedback: require("../../assets/icons/chat.png"),
+  LogOut: require("../../assets/icons/log-out.png"),
+  ReportAnIssue: require("../../assets/icons/warning.png"),
+  RequestFeature: require("../../assets/icons/request.png"),
+  PrivacyPolicY: require("../../assets/icons/compliant.png"),
+  Subject: require("../../assets/icons/subject.png"),
+  Course: require("../../assets/icons/course.png"),
+  About: require("../../assets/icons/about.png"),
 };

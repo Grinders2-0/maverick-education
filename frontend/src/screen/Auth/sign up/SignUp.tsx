@@ -8,6 +8,9 @@ import {
 } from "../../../service/validators/passwordValidator";
 
 import { GoogleAuthProvider } from "firebase/auth";
+import { useAppDispatch } from "../../../redux/app/store";
+import { signUp } from "../../../redux/action/auth/auth";
+import { useNavigate } from "react-router-dom";
 
 const isValidEmail = (email: string): string => {
   // Basic email validation
@@ -31,6 +34,8 @@ const SignUp = () => {
   const [firstNameError, setFirstNameError] = useState<string>("");
   const [lastNameError, setLastNameError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -90,6 +95,13 @@ const SignUp = () => {
       return;
     }
 
+    dispatch(
+      signUp(email, password, conPassword, firstName, lastName, (success) => {
+        if (success) {
+          navigate("/form");
+        }
+      })
+    );
     setEmailError("");
     setPasswordError("");
     setConfirmPasswordError("");
@@ -186,6 +198,7 @@ const SignUp = () => {
             text={"Sign Up"}
             style={{ minWidth: "200px", marginTop: 20, width: "100%" }}
             isLoading={isLoading}
+            // onClick={onSingUPpress}
           />
         </div>
       </form>
