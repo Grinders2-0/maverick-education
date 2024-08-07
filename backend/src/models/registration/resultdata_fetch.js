@@ -6,6 +6,7 @@ const gradeSchema = new mongoose.Schema({
 });
 
 const resultSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, required: true },
     grades: [gradeSchema],
     spi: { type: String, required: true },
     cgpa: { type: String, required: true },

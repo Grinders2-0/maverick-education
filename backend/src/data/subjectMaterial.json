@@ -1,0 +1,642 @@
+[
+    {
+        "semester": "1",
+        "subjects": [
+            {
+                "subjectCode": "3110005",
+                "subjectName": "Basic Electrical Engineering",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110005-Basic-Electrical-Engineering",
+                "courses" : [
+                    {
+                        "name" : "D.C. Circuit",
+                        "url" : "https://drive.google.com/file/d/1DyqFmBSeW_3kfFtMiWrI1TYMCuxiLcKk/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110007",
+                "subjectName": "Environmental Science",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110007-Environmental-Science",
+                "courses" : [
+                    {
+                        "name" : "Water Pollution",
+                        "url" : "https://drive.google.com/file/d/1uNjsnYktvUCGdFR9Ahpu4h2jy-A3BA_V/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110013",
+                "subjectName": "Engineering Graphics & Design",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110013-Engineering-Graphics-And-Design",
+                "courses" : [
+                    {
+                        "name" : "Engineering Graphics & Design",
+                        "url" : "https://drive.google.com/file/d/17xoH0LAtFcYIggz3g2l6npQqhOvOjPSC/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110014",
+                "subjectName": "Mathematics-I",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110014-Mathematics-I",
+                "courses" : [
+                    {
+                        "name" : "Fourier Series",
+                        "url" : "https://drive.google.com/file/d/11FZWyoFVJTVsUtarbp7P-b2bMJPwQXBS/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110003",
+                "subjectName": "Programming for Problem Solving",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110003-Programming-for-Problem-Solving",
+                "courses" : [
+                    {
+                        "name" : "Fundamentals of C",
+                        "url" : "https://drive.google.com/file/d/1ve2_gaEHhZCCg_bioUONpssnua96QO13/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110006",
+                "subjectName": "Basic Mechanical Engineering",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110006-Basic-Mechanical-Engineering",
+                "courses" : [
+                    {
+                        "name" : "Energy",
+                        "url" : "https://drive.google.com/file/d/112HPeHCEhMOckbV8yTPFZ5ObJ6r13kPa/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "2",
+        "subjects": [
+            {
+                "subjectCode": "3110015",
+                "subjectName": "Mathematics-II",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110015-Mathematics-II",
+                "courses" : [
+                    {
+                        "name" : "VECTOR CALCULUS",
+                        "url" : "https://drive.google.com/file/d/1eBu5ovwJIz1o6aWrAKGZnHxDicqyXEb2/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110016",
+                "subjectName": "Basic Electronics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110016-Basic-Electronics",
+                "courses" : [
+                    {
+                        "name" : "The Diode",
+                        "url" : "https://drive.google.com/file/d/1sybgAn1gre91Bydn5FUIS35izSsh_mYR/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3110018",
+                "subjectName": "Physics Group - II",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3110018-Physics-Group---II",
+                "courses" : [
+                    {
+                        "name" : "Semiconductors",
+                        "url" : "https://drive.google.com/file/d/1S4o_sOKBsIPjhBwT3x1Xf9tsxtZ9JYKT/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "3",
+        "subjects": [
+            {
+                "subjectCode": "3130004",
+                "subjectName": "Effective Technical Communication",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130004-Effective-Technical-Communication",
+                "courses" : [
+                    {
+                        "name" : "Technical Writing",
+                        "url" : "https://drive.google.com/file/d/10lWQTtNkf1VgUP1JSyptpXMKZXHhFK5z/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3130006",
+                "subjectName": "Probability and Statistics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130006-Probability-and-Statistics",
+                "courses" : [
+                    {
+                        "name" : "BASIC PROBABILITY THEORY",
+                        "url" : "https://drive.google.com/file/d/1tEZeGKOPsl9cZROldpKDm3yVzCLbSAK3/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3130007",
+                "subjectName": "Indian Constitution",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130007-Indian-Constitution",
+                "courses" : [
+                    {
+                        "name" : "History Of Indian Constitution",
+                        "url" : "https://drive.google.com/file/d/1yUhvHWhfjT2tmZaZpGYxH0jS2UszYbDn/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3130702",
+                "subjectName": "Data Structures",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130702-Data-Structures",
+                "courses" : [
+                    {
+                        "name" : "Linear Data Structure Array",
+                        "url" : "https://drive.google.com/file/d/1K_VFuG2WiJp7FxFpem-Fgje4gJZbH8kU/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3130703",
+                "subjectName": "Database Management Systems",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130703-Database-Management-Systems",
+                "courses" : [
+                    {
+                        "name" : "Relational Query Languages",
+                        "url" : "https://drive.google.com/file/d/1xhc3VnKW9f8-0gf2WqtnmK5oP-1BdaKO/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3130704",
+                "subjectName": "Digital Fundamentals",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3130704-Digital-Fundamentals",
+                "courses" : [
+                    {
+                        "name" : "Combinational Digital Circuits",
+                        "url" : "https://drive.google.com/file/d/1cd9m9u7NEEuUrNSP2bVxNUCl0twBlE2W/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "4",
+        "subjects": [
+            {
+                "subjectCode": "3140702",
+                "subjectName": "Operating System",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3140702-Operating-System",
+                "courses" : [
+                    {
+                        "name" : "Deadlock",
+                        "url" : "https://drive.google.com/file/d/1jqfZAhQQSCMtc9Ai6HQBXvnp_2DL3q76/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3140705",
+                "subjectName": "Object Oriented Programming - I",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3140705-Object-Oriented-Programming---I",
+                "courses" : [
+                    {
+                        "name" : "Methods and Arrays",
+                        "url" : "https://drive.google.com/file/d/14xbeIQ-LfC3JJ7WkWUT0-qiLK7-6fzrc/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3140707",
+                "subjectName": "Computer Organization & Architecture",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3140707-Computer-Organization-And-Architecture",
+                "courses" : [
+                    {
+                        "name" : "Central Processing Unit",
+                        "url" : "https://drive.google.com/file/d/1laHB9zr_6Z40SCeskxY4kuEu2ehHfLEH/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3140708",
+                "subjectName": "Discrete Mathematics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3140708-Discrete-Mathematics",
+                "courses" : [
+                    {
+                        "name" : "ALGEBRAIC STRUCTURES",
+                        "url" : "https://drive.google.com/file/d/16THcJCoTMH1UHC4-AtS7M8SewzcKQXuk/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3140709",
+                "subjectName": "Principles Of Economics And Management",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3140709-Principles-Of-Economics-And-Management",
+                "courses" : [
+                    {
+                        "name" : "Money and Banking",
+                        "url" : "https://drive.google.com/file/d/164ZXcwK9trPmDkR_SVfqib140V6Ksoqo/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "5",
+        "subjects": [
+            {
+                "subjectCode": "3150703",
+                "subjectName": "Analysis And Design Of Algorithms",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150703-Analysis-And-Design-Of-Algorithms",
+                "courses" : [
+                    {
+                        "name" : "Dynamic Programming",
+                        "url" : "https://drive.google.com/file/d/1oiXAwLlmj1Cb2z1GeUUo3fcymK4_4hp8/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150709",
+                "subjectName": "Professional Ethics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150709-Professional-Ethics",
+                "courses" : [
+                    {
+                        "name" : "Business Ethics",
+                        "url" : "https://drive.google.com/file/d/1oJTQvhctEEFwixjkpLFzeDEAnQxDSSz_/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150710",
+                "subjectName": "Computer Networks",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150710-Computer-Networks",
+                "courses" : [
+                    {
+                        "name" : "Transport Layer",
+                        "url" : "https://drive.google.com/file/d/1hCshpWnw8zLD6T-PZLkzdkkCbVRuCcaV/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150711",
+                "subjectName": "Software Engineering",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150711-Software-Engineering",
+                "courses" : [
+                    {
+                        "name" : "Agile Development",
+                        "url" : "https://drive.google.com/file/d/1RfU74FJWR9BbhWkmsq8HXjFkcuQD25nA/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150712",
+                "subjectName": "Computer Graphics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150712-Computer-Graphics",
+                "courses" : [
+                    {
+                        "name" : "2D Transformation & Viewing",
+                        "url" : "https://drive.google.com/file/d/1GGUn3qgI26DGpq2tVxuO7HgrIRGVxyfi/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150713",
+                "subjectName": "Python for Data Science",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150713-Python-for-Data-Science",
+                "courses" : [
+                    {
+                        "name" : "Data Visualization",
+                        "url" : "https://drive.google.com/file/d/1LJD_pt0cuHn7oxKpDtE-yxEqFxKrS2qX/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3150714",
+                "subjectName": "Cyber Security",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3150714-Cyber-Security",
+                "courses" : [
+                    {
+                        "name" : "Introduction to Cyber Crime and Cyber Law",
+                        "url" : "https://drive.google.com/file/d/1COZJ36dNZZIcATYuxJxF1utaAtd_HjBI/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "6",
+        "subjects": [
+            {
+                "subjectCode": "3160704",
+                "subjectName": "Theory of Computation",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160704-Theory-of-Computation",
+                "courses" : [
+                    {
+                        "name" : "Pushdown Automata, CFL & NCFL",
+                        "url" : "https://drive.google.com/file/d/1SoT5eguL1J_kx8Gx6WxhA7W5xLsFKnoK/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3160707",
+                "subjectName": "Advance Java Programming",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160707-Advance-java-Programming",
+                "courses" : [
+                    {
+                        "name" : "Java Server Pages",
+                        "url" : "https://drive.google.com/file/d/1E1CAgMfrzy4C0mKo99P4oRlEm6UJ65j4/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3160712",
+                "subjectName": "Microprocessor and Interfacing",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160712-Microprocessor-and-Interfacing",
+                "courses" : [
+                    {
+                        "name" : "8085 Microprocessor",
+                        "url" : "https://drive.google.com/file/d/1ElIPlG8HU2ON_ZpGa7cMwad2qZs0mJ6X/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3160713",
+                "subjectName": "WEB Programming",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160713-WEB-Programming",
+                "courses" : [
+                    {
+                        "name" : "Basics of HTML and CSS",
+                        "url" : "https://drive.google.com/file/d/1Hz3sktk4sSjcRfBcMk2KkDsDtqTkMjIG/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3160714",
+                "subjectName": "Data Mining",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160714-Data-Mining",
+                "courses" : [
+                    {
+                        "name" : "Clustering",
+                        "url" : "https://drive.google.com/file/d/1nZJ_zzV5DVakmB5_T_nsyZ-EODB547b-/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3160716",
+                "subjectName": "IOT and Applications",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3160716-IOT-and-Applications",
+                "courses" : [
+                    {
+                        "name" : "Cloud for IoT",
+                        "url" : "https://drive.google.com/file/d/1o2eRLu2m_NemTMEt71ml7u9Q2QxwsP0t/edit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "semester": "7",
+        "subjects": [
+            {
+                "subjectCode": "3170701",
+                "subjectName": "Compiler Design",
+                "subjectUrl": "https://darshan.ac.in/gtu-study-material/3170701-Compiler-Desi",
+                "courses": [
+                    {
+                        "name": "Overview of the Compiler & it’s Structure",
+                        "url": "https://drive.google.com/file/d/1NAEOjqssiQ8f0ATO8kG7At7UDa3sbOg2/edit"
+                    },
+                    {
+                        "name": "Lexical Analyzer",
+                        "url": "https://drive.google.com/file/d/1Qj1BF2i6sUT0gidqhnXSIGdHVoLdRCmC/edit"
+                    },
+                    {
+                        "name": "Syntax Analysis (I)",
+                        "url": "https://drive.google.com/file/d/1yx4mVPlejS-vyWjZxT6yiFpaUZqmBOIu/edit"
+                    },
+                    {
+                        "name": "Syntax Analysis (II)",
+                        "url": "https://drive.google.com/file/d/1n99V1eRJNUBabIWodIhYUzHpudbDz1r5/edit"
+                    },
+                    {
+                        "name": "Error Recovery",
+                        "url": "https://drive.google.com/file/d/1zvQ1rSuJZ9Svu7kStqu7azumj4ccZXT8/edit"
+                    },
+                    {
+                        "name": "Intermediate Code Generation",
+                        "url": "https://drive.google.com/file/d/1hxAFLbA64Arvjfs-OMy06PmpMA_e45C6/edit"
+                    },
+                    {
+                        "name": "Run-Time Environments",
+                        "url": "https://drive.google.com/file/d/1Y3L2xoHHKtybfZ2a9AA1_m3eHXL-Y3sx/edit"
+                    },
+                    {
+                        "name": "Code Generation & Optimization",
+                        "url": "https://drive.google.com/file/d/1aATZ39m5KvXfFZIlHll34Rqv7R6e4IJS/edit"
+                    },
+                    {
+                        "name": "Instruction-Level Parallelism",
+                        "url": "https://drive.google.com/file/d/1NIyXr2bj1Eg2hwWrpOYUDF4aj0KzYvz5/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3170710",
+                "subjectName": "Mobile Computing and Wireless communication",
+                "subjectUrl": "https://darshan.ac.in/gtu-study-material/3170710-Mobile-Computing-and-Wireless-communication",
+                "courses": [
+                    {
+                        "name": "Introduction to Transmission Fundamentals and Communication",
+                        "url": "https://drive.google.com/file/d/1xEzFukTS_Xek6BIGO87UmSF9MTb2nfAb/edit"
+                    },
+                    {
+                        "name": "PART-1: Cellular Wireless Networks",
+                        "url": "https://drive.google.com/file/d/1BNMpVtVkI7bBkxe-DRZAlh-5W9FlAWuj/edit"
+                    },
+                    {
+                        "name": "PART-2: Antennas and Propagation",
+                        "url": "https://drive.google.com/file/d/1qWMtMrpUkc1vRPHZC-VXrt3OLr-E4_bv/edit"
+                    },
+                    {
+                        "name": "PART-3: Spread Spectrum",
+                        "url": "https://drive.google.com/file/d/1zjkygcGR1cViHaOaIshBYbKkdv2cL7iG/edit"
+                    },
+                    {
+                        "name": "PART-4: Coding and Error Control",
+                        "url": "https://drive.google.com/file/d/1l123PoRI2H1_YOCWPw17o9tT_FxYxxD-/edit"
+                    },
+                    {
+                        "name": "PART-1: Multiple access in Wireless System & GSM",
+                        "url": "https://drive.google.com/file/d/1R2ID34dYmWvZo54eU6n8oWRQ2IzRine8/edit"
+                    },
+                    {
+                        "name": "PART-2: GPRS",
+                        "url": "https://drive.google.com/file/d/1vPRemdZmrzgUf9hMBEVdaqwoBtB2Bh3E/edit"
+                    },
+                    {
+                        "name": "Wi-Fi and the IEEE 802.11 Wireless LAN Standard",
+                        "url": "https://drive.google.com/file/d/1ZDsSELCZK6Koavqq0EOZwKCtP_T3kXqV/edit"
+                    },
+                    {
+                        "name": "Bluetooth",
+                        "url": "https://drive.google.com/file/d/1NcrUAiAFiLcZFTKlPZSpZ1tRfiAOZbFs/edit"
+                    }
+                ]
+            },
+
+            {
+                "subjectCode": "3170716",
+                "subjectName": "Artificial Intelligence",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3170716-Artificial-Intelligence",
+                "courses" : [
+                    {
+                        "name" : "Introduction",
+                        "url" : "https://drive.google.com/file/d/1nwrW_ekaaGypGHVQZITUk6OgYafC1Lam/edit"
+                    },
+                    {
+                        "name" : "Problems, State Space Search & Heuristic Search Techniques",
+                        "url" : "https://drive.google.com/file/d/18aehXO40dsGpJSv5_aKx0kdwHZfVZzAE/edit"
+                    },
+                    {
+                        "name" : "Knowledge Representation",
+                        "url" : "https://drive.google.com/file/d/1CbYCYt3AocRwe08BfUzuciBddQmuE9Di/edit"
+                    },
+                    {
+                        "name" : "Symbolic Reasoning Under Uncertainty",
+                        "url" : "https://drive.google.com/file/d/1unMqEHviHCToROdHnO69sjGLQg0mj5uS/edit"
+                    },
+                    {
+                        "name" : "Probabilistic Reasoning",
+                        "url" : "https://drive.google.com/file/d/1pQFgo5MukOgZhrQ6uGs88I1ga7O4VNqV/edit"
+                    },
+                    {
+                        "name" : "Game Playing",
+                        "url" : "https://drive.google.com/file/d/1jdEpGykil6hDrIocyJ2yPQYD7RdFsvKB/edit"
+                    },
+                    {
+                        "name" : "Planning",
+                        "url" : "https://drive.google.com/file/d/1p8W2EB4RYeOPmU15M3k3ewka5qAUHbS4/edit"
+                    },
+                    {
+                        "name" : "Natural Language Processing",
+                        "url" : "https://drive.google.com/file/d/1Q3ZInvMYVG8egTqqfneFpjIhoSFRwJkW/edit"
+                    },
+                    {
+                        "name" : "Connectionist Models",
+                        "url" : "https://drive.google.com/file/d/1A2HEPFuC0Px7kOs4hDxAcSGU-EEVQmkZ/edit"
+                    },
+                    {
+                        "name" : "Expert Systems",
+                        "url" : "https://drive.google.com/file/d/1HliH9sV8WCRCtRuDiVhhQqlr2Cu34IBV/edit"
+                    },
+                    {
+                        "name" : "Genetic Algorithms",
+                        "url" : "https://drive.google.com/file/d/1cU-UFy4KjzSDKiwwdrgwaBXct6kKGwFd/edit"
+                    },
+                    {
+                        "name" : "Introduction to Prolog",
+                        "url" : "https://drive.google.com/file/d/1fDbm791vUHVA4Vo12ElUloq9Jm0yo0GQ/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3170719",
+                "subjectName": "Distributed System",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3170719-Distributed-System",
+                "courses" : [
+                    {
+                        "name" : "Fundamentals of Distributed System",
+                        "url" : "https://drive.google.com/file/d/10tfPlPOcrdH6zomZonvz9CdDGI41mWDo/edit"
+                    },
+                    {
+                        "name" : "Basics of Architectures, Processes and Communication",
+                        "url" : "https://drive.google.com/file/d/1a83elYDAgsKJCw8_wpMl1-21nSMzSUpE/edit"
+                    },
+                    {
+                        "name" : "Naming",
+                        "url" : "https://drive.google.com/file/d/1Sj6kiyVHRncUNU2-bqnNhp4blyLh5rHL/edit"
+                    },
+                    {
+                        "name" : "Synchronization",
+                        "url" : "https://drive.google.com/file/d/1fjqihOrnbG08YtirImnOaz6j8bIeApZN/edit"
+                    },
+                    {
+                        "name" : "Consistency, Replication and Fault Tolerance",
+                        "url" : "https://drive.google.com/file/d/1wmcjw39XthkoIjPiWpfgrvEQV0R0aLpn/edit"
+                    },
+                    {
+                        "name" : "Security",
+                        "url" : "https://drive.google.com/file/d/1XcsnKn-_6ZJib0gL1LiPGgmIwhuFScUa/edit"
+                    },
+                    {
+                        "name" : "Categories of Distributed System",
+                        "url" : "https://drive.google.com/file/d/1wZeDVQLgnoFCP2iMIktahuAqQEcjsaFP/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3170722",
+                "subjectName": "Big Data Analytics",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3170722-Big-Data-Analytics",
+                "courses" : [
+                    {
+                        "name" : "Introduction to Big Data",
+                        "url" : "https://drive.google.com/file/d/1bZCRy-KH6t2hj83ymOOQi6ZnDqJCxnbl/edit"
+                    },
+                    {
+                        "name" : "Hadoop",
+                        "url" : "https://drive.google.com/file/d/1dUj-yP-K5lqZl4ci8NzomBa87LLWYNN4/edit"
+                    },
+                    {
+                        "name" : "NoSQL",
+                        "url" : "https://drive.google.com/file/d/1-bAOxwUzcrUyMS2YLSPM-A-ew3MsEm4R/edit"
+                    },
+                    {
+                        "name" : "Mining Data Stream",
+                        "url" : "https://drive.google.com/file/d/1N1jHQH9OrRhMibMKtRX1YUe63S3MntVD/edit"
+                    },
+                    {
+                        "name" : "Frameworks",
+                        "url" : "https://drive.google.com/file/d/1A9bLSlREETN5n8pLY2x3yjvIGRPOafbq/edit"
+                    },
+                    {
+                        "name" : "Spark",
+                        "url" : "https://drive.google.com/file/d/1YrMDzUx6n0lMuIykczZ8UtOELC1z_Y8L/edit"
+                    }
+                ]
+            },
+            {
+                "subjectCode": "3170726",
+                "subjectName": "Mobile Application Development",
+                "subjectUrl": "https://www.darshan.ac.in/gtu-study-material/3170726-Mobile-Application-Development",
+                "courses" : [
+                    {
+                        "name" : "Android Operating System",
+                        "url" : "https://drive.google.com/file/d/1Yg8VAh9brpOCuiwARC1LAi4hhmV0wzHY/edit"
+                    },
+                    {
+                        "name" : "Android UI",
+                        "url" : "https://drive.google.com/file/d/1fWz3VtmBgAQBTFm-wDwxt4kLhGnsTkRZ/edit"
+                    },
+                    {
+                        "name" : "Database Connectivity",
+                        "url" : "https://drive.google.com/file/d/1PvUX11JVUuZ0lTy-jo3u-d8P69udx8g5/edit"
+                    },
+                    {
+                        "name" : "Applicability to Industrial Projects",
+                        "url" : "https://drive.google.com/file/d/1CoWxYmoNg2tRXEql3JRN_YghAwJp1eGf/edit"
+                    },
+                    {
+                        "name" : "Advanced Android Development",
+                        "url" : "https://drive.google.com/file/d/1obDrHCOY8ZR-DvIKqMaKdeG3MMXftn4c/edit"
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "semester": "8",
+        "subjects":[
+
+        ]
+    }
+]

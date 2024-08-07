@@ -1,49 +1,68 @@
-import fs from 'fs';
+import { exec } from 'child_process';
 import path from 'path';
-import { execFile } from 'child_process';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import Result from "../../models/registration/resultdata_fetch.js";  // Adjust the path as needed
+import fs from 'fs';
+import Result from '../../models/registration/resultdata_fetch.js';  // Adjust the path to your Result model
+import User from '../../models/User.js';
+import NotFoundError from '../../errors/not-found.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const fetchResultDetails = (req, res) => {
-    const scriptPath = 'D:/maverick-education/maverick-education/backend/src/method/registration/extract_grades.py';
-    const filePath = path.join(__dirname, '../../public/temp', req.file.filename);
+const fetchResultDetails = async (req, res) => {
 
-    execFile('python', [scriptPath, filePath], async (error, stdout, stderr) => {
+    const { userId } = req.user;
+
+    const user = await User.findById(userId);
+
+    if(!user){
+        throw new NotFoundError("User not found");
+    }
+
+    if (!req.files || req.files.length === 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    const imagePaths = req.files.map(file => file.path); // Use file paths without quotes
+    const pythonScript = path.join(__dirname, '..', '../method/registration', 'extract_grades.py');
+
+    console.log('Image Paths:', imagePaths); // Debugging info
+
+    exec(`python ${pythonScript} ${imagePaths.map(p => `"${p}"`).join(' ')}`, async (error, stdout, stderr) => {
         if (error) {
-            console.error('Error executing Python script:', error);
-            console.error('stderr:', stderr);
-            return res.status(500).json({ error: 'Error processing the image' });
+            console.error(`exec error: ${error}`);
+            return res.status(500).send('Error processing images');
         }
 
-        // Delete the temporary file after processing
-        fs.unlinkSync(filePath);
-
         try {
-            const result = JSON.parse(stdout);
-            
-            // Save the result to the database
-            const gradesArray = Object.keys(result.grades).map(key => ({
-                subjectCode: key,
-                grade: result.grades[key]
-            }));
+            const results = JSON.parse(stdout);
 
-            const newResult = new Result({
-                grades: gradesArray,
-                spi: result.spi,
-                cgpa: result.cgpa,
-                semester: result.semester
-            });
+            // Save the results into the MongoDB database
+            const savedResults = [];
+            for (const resultData of results.semesters) {
+                const { grades, spi, cgpa, semester } = resultData;
+                
+                const gradeEntries = Object.entries(grades).map(([subjectCode, grade]) => ({ subjectCode, grade }));
+                const resultDocument = new Result({
+                    userId: userId,
+                    grades: gradeEntries,
+                    spi,
+                    cgpa,
+                    semester
+                });
 
-            await newResult.save();
+                const savedResult = await resultDocument.save();
+                savedResults.push(savedResult);
+            }
 
-            return res.status(200).json(result);
+            res.json(savedResults);
+
+            // Clean up temporary files
+            imagePaths.forEach(filePath => fs.unlinkSync(filePath)); // Use file paths without quotes
         } catch (parseError) {
             console.error('Error parsing Python script output:', parseError);
-            return res.status(500).json({ error: 'Error processing the image' });
+            res.status(500).send('Error parsing results');
         }
     });
 };
