@@ -5,16 +5,18 @@ type props = {
   image?: string | undefined;
   title?: string | undefined;
   isSelected?: boolean | undefined;
+  onClick?: () => void;
 };
-const DrawerLabel = ({ image, title, isSelected }: props) => {
+const DrawerLabel = ({ image, title, isSelected, onClick }: props) => {
   return (
     <div
+      onClick={onClick}
       style={{
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         flex: 1,
-        background: isSelected ? colors.accent : "transparent",
+        background: isSelected ? colors.white : colors.accent,
         paddingTop: 8,
         paddingBottom: 8,
         borderRadius: 10,
@@ -34,13 +36,13 @@ const DrawerLabel = ({ image, title, isSelected }: props) => {
         <img
           src={image}
           style={{
-            height: 20,
+            height: "auto",
             width: 20,
-            filter: isSelected ? "invert(1) brightness(100)" : "none", // Apply filter conditionally
+            filter: !isSelected ? "invert(1) brightness(100)" : "none", // Apply filter conditionally
           }}
         />
       </div>
-      <div style={{ color: isSelected ? colors.white : colors.black }}>
+      <div style={{ color: isSelected ? colors.black : colors.white }}>
         <label>{title}</label>
       </div>
     </div>

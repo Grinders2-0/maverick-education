@@ -5,6 +5,8 @@ import {
   ICollegeInfo,
   IFromSlice,
   IServay,
+  IStudentResult,
+  IStudentResults,
   ISubjectModel,
 } from "../../@types/form";
 
@@ -14,6 +16,8 @@ const initialState: IFromSlice = {
   selectedSubjects: [],
   surveyDetail: {},
   imageArray: [],
+  resultDetail: [],
+  fullSubjectDetails: [],
 };
 
 export const formSlice = createSlice({
@@ -35,6 +39,12 @@ export const formSlice = createSlice({
     setImageArray: (state, action: PayloadAction<File[]>) => {
       state.imageArray = action.payload;
     },
+    setResultDetails: (state, action: PayloadAction<IStudentResult[]>) => {
+      state.resultDetail = action.payload;
+    },
+    setFullSubjectDetails: (state, action: PayloadAction<ISubjectModel[]>) => {
+      state.resultDetail = action.payload;
+    },
   },
 });
 
@@ -44,6 +54,8 @@ export const {
   setSelectedSubjectDetail,
   setSurveyDetail,
   setImageArray,
+  setResultDetails,
+  setFullSubjectDetails,
 } = formSlice.actions;
 
 export default formSlice.reducer;

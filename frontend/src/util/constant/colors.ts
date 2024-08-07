@@ -15,7 +15,7 @@ const blueShades = {
 export const colors = {
   primary: "#007bff", // blue
   secondary: "#5a9efc", // light blue
-  accent: "#0056b3", // dark blue
+  accent: "#0A1937", // dark blue
   BackgroundColor: "#fcfdff", // light blue background
   black: "#000000",
   white: "#ffffff",
@@ -47,14 +47,14 @@ export const colors = {
   mainBackground: "#FFFFFF", // white
   secondaryBackground: "#F2F2F2", // light grey
   headerFooterBackground: "#0056B3", // dark blue
-  cardPanelBackground: "#ebf8ff", // very light blue
+  cardPanelBackground: "#F7FAFF", // very light blue
   primaryButtonBackground: "#007bff", // blue
   primaryButtonText: "#FFFFFF", // white
   secondaryButtonBackground: "#5a9efc", // light blue
   secondaryButtonText: "#FFFFFF",
   primaryBorder: "#0056B3", // dark blue
   secondaryBorder: "#5a9efc", // light blue
-  highlightBackground: "#ebf8ff", // very light blue
+  highlightBackground: "#F7FAFF", // very light blue
   highlightText: "#0056B3", // dark blue
   circleColor: "#BEE1FA",
   optionBG: "#483EFF30",

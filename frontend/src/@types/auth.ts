@@ -3,6 +3,7 @@ export interface IAuthSlice {
   isLoggedIn: boolean | null;
   userInfo: IUser;
   otp_token: string;
+  studentType: string;
 }
 export interface IUser {
   isLogin?: boolean;
