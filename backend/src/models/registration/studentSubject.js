@@ -14,12 +14,13 @@ const selectedSubjectsSchema = new Schema(
       required: true,
     },
     selectedSubjects: [
-      [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Subject",
-      },{
-    subjectCode: { type: String, required: true },
-      }],
+      {
+        subjectId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Subject",
+          required: true,
+        }
+      }
     ],
   },
   {

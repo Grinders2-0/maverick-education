@@ -44,6 +44,7 @@ const getSubjectsBySem = async (req, res) => {
 };
 
 
+
 const selectedSubjects = async (req, res) => {
   const { subjectIds } = req.body;
   const userId = req.user.userId; // Extracted from the token by the middleware
@@ -69,19 +70,25 @@ const selectedSubjects = async (req, res) => {
     }
     const sem = collegeInfo.semester;
 
+    // Create the selectedSubjects array with subjectId and subjectCode
+    const selectedSubjectsArray = subjects.map(subject => ({
+      subjectId: subject._id,
+      subjectCode: subject.subjectCode,
+    }));
+
     // Check if there's already a UserSubject document for the user and the same semester
-    let userSubject = await UserSubject.findOne({ userId, semester: sem }).populate('selectedSubjects');
+    let userSubject = await UserSubject.findOne({ userId, semester: sem });
     if (!userSubject) {
       // Create a new document if it doesn't exist
-      userSubject = new UserSubject({ userId, semester: sem, selectedSubjects: subjectIds });
+      userSubject = new UserSubject({ userId, semester: sem, selectedSubjects: selectedSubjectsArray });
     } else {
       // Update the selected subjects if the document exists
-      userSubject.selectedSubjects = subjectIds;
+      userSubject.selectedSubjects = selectedSubjectsArray;
     }
 
     await userSubject.save();
     // Populate the selectedSubjects field
-    userSubject = await userSubject.populate('selectedSubjects');
+    userSubject = await userSubject.populate('selectedSubjects.subjectId');
 
     res.status(200).json({ message: 'Subjects selected successfully', userSubject, currentSemester: sem });
   } catch (error) {
