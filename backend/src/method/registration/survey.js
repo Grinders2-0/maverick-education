@@ -1,12 +1,6 @@
 import SurveyResponse from "../../models/registration/survey.js";
-<<<<<<< HEAD
 import ResultInfoModel from "../../models/registration/resultdata_fetch.js"; // Corrected import
 
-=======
-import PersonalInfoModel from "../../models/registration/personalInfo.js";
-// import ResultInfoModel from "../../models/registration/resultInfo.js"; // Corrected import
-import Result from "../../models/registration/resultdata_fetch.js";
->>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
 // Function to categorize SPI
 const categorizeSPI = (spi) => {
   if (spi === null) return null; // Handle null SPI case
@@ -39,19 +33,8 @@ const surveyResponseCreateMethod = async (req, res) => {
       return res.status(400).json({ error: "All required fields must be provided" });
     }
 
-<<<<<<< HEAD
     // Fetch ResultInfo based on userId
     const resultInfo = await ResultInfoModel.findOne({ userId });
-=======
-    // Check if PersonalInfo exists
-    const personalInfo = await PersonalInfoModel.findOne({ presonalId, isDeleted: { $ne: true } });
-    if (!personalInfo) {
-      return res.status(404).send({ error: "presonalId is not available. Enter correct presonalId." });
-    }
-
-    // Fetch ResultInfo based on presonalId
-    const resultInfo = await Result.findOne({ presonalId });
->>>>>>> 7295046295b36e3eeb1c01404476488c7efa9458
     if (!resultInfo) {
       return res.status(404).send({ error: "No result information found for the given userId." });
     }
@@ -70,7 +53,7 @@ const surveyResponseCreateMethod = async (req, res) => {
     const categorizedSPI = categorizeSPI(spi);
 
     // Generate unique key
-    const uniqueKey = ${attendance}${participation}${assignmentCompletion}${examMotivation}${preferredMaterial}${categorizedSPI};
+    const uniqueKey = `${attendance}${participation}${assignmentCompletion}${examMotivation}${preferredMaterial}${categorizedSPI}`;
 
     // Create a new survey response document
     const newSurveyResponse = new SurveyResponse({
