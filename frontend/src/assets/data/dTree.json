@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "name": "Big Data Analytics",
+      "subjectCode": "3170722",
+      "dependencies": [
+        "Data Mining",
+        "Database Management Systems",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Data Mining",
+      "subjectCode": "3160714",
+      "dependencies": [
+        "Database Management Systems",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Object-Oriented Programming",
+      "subjectCode": "3140705",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Database Management Systems",
+      "subjectCode": "3130703",
+      "dependencies": ["Programming for Problem Solving", "Maths-2", "Maths-1"]
+    },
+    {
+      "name": "Data Structures",
+      "subjectCode": "3130702",
+      "dependencies": ["Programming for Problem Solving", "Maths-2", "Maths-1"]
+    },
+    {
+      "name": "Programming for Problem Solving",
+      "subjectCode": "3110003",
+      "dependencies": ["Maths-2", "Maths-1"]
+    },
+    {
+      "name": "Maths-2",
+      "subjectCode": "3110015",
+      "dependencies": ["Maths-1"]
+    },
+    {
+      "name": "Maths-1",
+      "subjectCode": "3110014",
+      "dependencies": []
+    },
+    {
+      "name": "Data Visualization",
+      "subjectCode": "3160717",
+      "dependencies": [
+        "Object-Oriented Programming",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "subjectCode": "3170724",
+      "dependencies": [
+        "Data Mining",
+        "Database Management Systems",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Information Retrieval",
+      "subjectCode": "3170718",
+      "dependencies": [
+        "Object-Oriented Programming",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "System Software",
+      "subjectCode": "3160715",
+      "dependencies": [
+        "Object-Oriented Programming",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Theory of Computation",
+      "subjectCode": "3160704",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Artificial Intelligence",
+      "subjectCode": "3170716",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Advanced Java Programming",
+      "subjectCode": "3160707",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Mobile Application Development",
+      "subjectCode": "3170726",
+      "dependencies": [
+        "Advanced Java Programming",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Compiler Design",
+      "subjectCode": "3170701",
+      "dependencies": [
+        "Theory of Computation",
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Natural Language Processing",
+      "subjectCode": "3170723",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Cloud Computing",
+      "subjectCode": "3170717",
+      "dependencies": [
+        "Data Structures",
+        "Programming for Problem Solving",
+        "Maths-2",
+        "Maths-1"
+      ]
+    },
+    {
+      "name": "Mobile Communication & Wireless Communication",
+      "subjectCode": "3170710",
+      "dependencies": [
+        "Computer Networks",
+        "Digital Fundamentals",
+        "Basic Electronics",
+        "Physics"
+      ]
+    },
+    {
+      "name": "Information Security",
+      "subjectCode": "3170720",
+      "dependencies": [
+        "Computer Networks",
+        "Digital Fundamentals",
+        "Basic Electronics",
+        "Physics"
+      ]
+    },
+    {
+      "name": "Digital Forensics",
+      "subjectCode": "3170725",
+      "dependencies": [
+        "Computer Networks",
+        "Digital Fundamentals",
+        "Basic Electronics",
+        "Physics"
+      ]
+    },
+    {
+      "name": "Cyber Security",
+      "subjectCode": "3150714",
+      "dependencies": [
+        "Computer Organization & Architecture",
+        "Digital Fundamentals",
+        "Basic Electronics",
+        "Physics"
+      ]
+    },
+    {
+      "name": "Computer Networks",
+      "subjectCode": "3150710",
+      "dependencies": ["Digital Fundamentals", "Basic Electronics", "Physics"]
+    },
+    {
+      "name": "Computer Organization & Architecture",
+      "subjectCode": "3140707",
+      "dependencies": ["Digital Fundamentals", "Basic Electronics", "Physics"]
+    },
+    {
+      "name": "Digital Fundamentals",
+      "subjectCode": "3130704",
+      "dependencies": ["Basic Electronics", "Physics"]
+    },
+    {
+      "name": "Basic Electronics",
+      "subjectCode": "3110016",
+      "dependencies": ["Physics"]
+    },
+    {
+      "name": "Physics",
+      "subjectCode": "3110018",
+      "dependencies": []
+    },
+    {
+      "name": "Basic Mechanical Engineering",
+      "subjectCode": "3110006",
+      "dependencies": []
+    },
+    {
+      "name": "Engineering Graphics & Design",
+      "subjectCode": "3110013",
+      "dependencies": []
+    },
+    {
+      "name": "English",
+      "subjectCode": "3110002",
+      "dependencies": []
+    },
+    {
+      "name": "Effective Technical Communication",
+      "subjectCode": "3130004",
+      "dependencies": []
+    }
+  ]
+}

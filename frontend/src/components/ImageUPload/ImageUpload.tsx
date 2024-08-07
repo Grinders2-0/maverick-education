@@ -1,28 +1,43 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/app/store";
+import { addImageDetail } from "../../redux/action/form/collegeForm";
 
 const ImageUpload: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [selectedImages, setSelectedImages] = useState<File[]>([]);
+  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const dispatch = useAppDispatch();
+  const imageArray = useAppSelector((state) => state.form?.imageArray);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setSelectedImage(file);
-      const fileReader = new FileReader();
-      fileReader.onload = () => {
-        setPreviewUrl(fileReader.result as string);
-      };
-      fileReader.readAsDataURL(file);
+    const files = e.target.files;
+    if (files) {
+      Array.from(files).forEach((file) => {
+        // Dispatch the action for each selected file
+        dispatch(addImageDetail(file));
+      });
+      const imageFiles = Array.from(files);
+      setSelectedImages(imageFiles);
+
+      const imageUrls = imageFiles.map((file) => URL.createObjectURL(file));
+      setPreviewUrls(imageUrls);
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (selectedImage) {
+    if (selectedImages.length > 0) {
       const formData = new FormData();
-      formData.append("image", selectedImage);
+      selectedImages.forEach((image, index) => {
+        formData.append(`images[${index}]`, image);
+      });
 
-      // You can now send 'formData' to your server
+      // Call the uploadResult function with formData
+      try {
+        const result = await uploadResult(formData);
+        console.log("Upload successful", result);
+      } catch (error) {
+        console.error("Upload failed", error);
+      }
     }
   };
 
@@ -32,23 +47,32 @@ const ImageUpload: React.FC = () => {
         <input
           type="file"
           accept="image/*"
+          multiple
           onChange={handleImageChange}
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>
-          Upload Image
-        </button>
+        {/* <button type="submit" style={styles.button}>
+          Upload Images
+        </button> */}
       </form>
-      {previewUrl && (
+      {/* {previewUrls.length > 0 && (
         <div style={styles.previewContainer}>
-          <h4 style={styles.previewTitle}>Image Preview:</h4>
-          <img src={previewUrl} alt="Selected" style={styles.previewImage} />
+          <h4 style={styles.previewTitle}>Image Previews:</h4>
+          <div style={styles.previewImagesContainer}>
+            {previewUrls.map((url, index) => (
+              <img
+                key={index}
+                src={url}
+                alt={`Selected ${index}`}
+                style={styles.previewImage}
+              />
+            ))}
+          </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
-
 const styles: { [key: string]: React.CSSProperties } = {
   container: {
     display: "flex",
@@ -68,7 +92,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     width: "100%",
   },
   input: {
-    marginBottom: "15px",
+    // marginBottom: "15px",
     padding: "10px",
     borderRadius: "5px",
     border: "1px solid #ccc",
@@ -102,3 +126,6 @@ const styles: { [key: string]: React.CSSProperties } = {
 };
 
 export default ImageUpload;
+function uploadResult(formData: FormData) {
+  throw new Error("Function not implemented.");
+}

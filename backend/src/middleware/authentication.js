@@ -13,8 +13,8 @@ const authenticateUser = async (req, _res, next) => {
       throw new Error("JWT_SECRET environment variable not defined");
     }
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("pay",payload);
-    console.log("token",token);
+    // console.log("pay",payload);
+    // console.log("token",token);
     req.user = { userId: payload.userId };
     next();
   } catch (error) {

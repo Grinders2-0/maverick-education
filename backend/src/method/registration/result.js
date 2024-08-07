@@ -10,7 +10,7 @@ import NotFoundError from '../../errors/not-found.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const fetchResultDetails = async (req, res) => {
+export const fetchResultDetails = async (req, res) => {
 
     const { userId } = req.user;
 
@@ -67,4 +67,22 @@ const fetchResultDetails = async (req, res) => {
     });
 };
 
-export default fetchResultDetails;
+
+export const getStudentResult = async (req, res) => {
+    const { userId } = req.user;
+
+    try {
+        const user = await User.findOne({ _id: userId, isDeleted: { $ne: true } });
+        
+        if (!user) {
+            return res.status(404).send({ error: "User ID is not available. Enter a correct user ID." });
+        }
+
+        const results = await Result.find({ userId });
+
+        return res.status(200).json({ results });
+    } catch (dbError) {
+        console.error('Database error:', dbError);
+        return res.status(500).json({ error: 'Database error' });
+    }
+};

@@ -1,8 +1,5 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { AppDispatch } from "../app/store";
 import { IAuthSlice, IUser } from "../../@types/auth";
-import EncryptedStorage from "react-native-encrypted-storage";
 
 const initialState: IAuthSlice = {
   userToken: null,
@@ -25,23 +22,18 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     setUserToken: (state, action: PayloadAction<string | null>) => {
-      EncryptedStorage.setItem("user_token", JSON.stringify(action.payload));
+      localStorage.setItem("user_token", JSON.stringify(action.payload));
       state.userToken = action.payload;
     },
-    // setFcmToken: (state, action: PayloadAction<string | null>) => {
-    //   if (state?.userToken) {
-    //     state.userInfo.fcmToken = action.payload;
-    //   }
-    // },
     setUserInfo: (state, action: PayloadAction<IUser>) => {
-      AsyncStorage.setItem(
+      localStorage.setItem(
         "set_user_auth_data",
         JSON.stringify(action.payload)
       );
       state.userInfo = action.payload;
     },
     setIsLoggedIn: (state, action: PayloadAction<boolean | null>) => {
-      AsyncStorage.setItem("is_logged", JSON.stringify(action.payload));
+      localStorage.setItem("is_logged", JSON.stringify(action.payload));
       state.isLoggedIn = action.payload;
     },
     setOTPToken: (state, action: PayloadAction<string>) => {

@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const subjectsSchema = new Schema(
+const subjectSchema = new Schema(
   {
     sname: { type: String, required: true },
     scode: { type: String, required: true },
@@ -13,5 +13,5 @@ const subjectsSchema = new Schema(
   }
 );
 
-const Subjects = mongoose.model("Subjects", subjectsSchema);
-export default Subjects;
+const Subject = mongoose.model('Subject', subjectSchema);
+export default Subject;

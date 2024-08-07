@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import authReducer from "../reducer/authReducer";
+import authSlice from "../reducer/authSlice";
+import formSlice from "../reducer/formSlice";
 
 const store = configureStore({
   reducer: {
-    auth: authReducer,
+    auth: authSlice,
+    form: formSlice,
   },
 });
 export default store;

@@ -6,9 +6,15 @@ import SemesterDetail from "./SemesterDetail/SemesterDetail";
 import "./Form.css";
 import CustomNumber from "../../components/CustomNumber/CustomNumber";
 import { useNavigate } from "react-router-dom";
+import SelectSubject from "./SelectSubject/SelectSubject";
+import Servey from "./Servey/Servey";
+import { useAppDispatch } from "../../redux/app/store";
+import { formSubmit } from "../../redux/action/form/collegeForm";
 
 const Form = () => {
   const [selectedNo, setSelectedNo] = useState<number>(1);
+  const navigation = useNavigate();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // Add no-scroll class to body when the component mounts
@@ -19,8 +25,36 @@ const Form = () => {
       document.body.classList.remove("no-scroll");
     };
   }, []);
-  const onNextPress = () => {
+  const onNextPress1 = () => {
     setSelectedNo(2);
+  };
+  const onNextPress2 = () => {
+    setSelectedNo(3);
+  };
+  const onNextPress3 = () => {
+    setSelectedNo(4);
+  };
+  const onNextPress4 = () => {
+    dispatch(
+      formSubmit((success) => {
+        if (success) {
+          navigation("/dashboard");
+        } else {
+          console.log("faled");
+
+          // navigation("/form");
+        }
+      })
+    );
+  };
+  const onBackPrees2 = () => {
+    setSelectedNo(1);
+  };
+  const onBackPrees3 = () => {
+    setSelectedNo(2);
+  };
+  const onBackPrees4 = () => {
+    setSelectedNo(3);
   };
   return (
     <div style={{ height: "100vh", display: "flex" }}>
@@ -73,8 +107,22 @@ const Form = () => {
           justifyContent: "center",
         }}
       >
-        {selectedNo == 1 && <CollegeForm onNextPress={onNextPress} />}
-        {selectedNo == 2 && <SemesterDetail />}
+        {selectedNo == 1 && <CollegeForm onNextPress={onNextPress1} />}
+        {selectedNo == 2 && (
+          <SelectSubject
+            onNextPress={onNextPress2}
+            onBackPrees={onBackPrees2}
+          />
+        )}
+        {selectedNo == 3 && (
+          <SemesterDetail
+            onNextPress={onNextPress3}
+            onBackPrees={onBackPrees3}
+          />
+        )}
+        {selectedNo == 4 && (
+          <Servey onNextPress={onNextPress4} onBackPrees={onBackPrees4} />
+        )}
       </div>
     </div>
   );

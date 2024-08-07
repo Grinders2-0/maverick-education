@@ -1,4 +1,3 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { memo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +5,7 @@ const SplashScreen = () => {
   const navigate = useNavigate();
   const getInfo = async () => {
     const timeout = setTimeout(() => {
-      navigate("/login");
+      navigate("/dashboard");
     }, 1000);
 
     return () => clearTimeout(timeout);

@@ -1,0 +1,2918 @@
+[
+  {
+    "Combination": 111111,
+    "Label": 1
+  },
+  {
+    "Combination": 111112,
+    "Label": 1
+  },
+  {
+    "Combination": 111113,
+    "Label": 2
+  },
+  {
+    "Combination": 111121,
+    "Label": 1
+  },
+  {
+    "Combination": 111122,
+    "Label": 2
+  },
+  {
+    "Combination": 111123,
+    "Label": 2
+  },
+  {
+    "Combination": 111131,
+    "Label": 2
+  },
+  {
+    "Combination": 111132,
+    "Label": 2
+  },
+  {
+    "Combination": 111133,
+    "Label": 3
+  },
+  {
+    "Combination": 111211,
+    "Label": 1
+  },
+  {
+    "Combination": 111212,
+    "Label": 2
+  },
+  {
+    "Combination": 111213,
+    "Label": 2
+  },
+  {
+    "Combination": 111221,
+    "Label": 2
+  },
+  {
+    "Combination": 111222,
+    "Label": 2
+  },
+  {
+    "Combination": 111223,
+    "Label": 3
+  },
+  {
+    "Combination": 111231,
+    "Label": 2
+  },
+  {
+    "Combination": 111232,
+    "Label": 3
+  },
+  {
+    "Combination": 111233,
+    "Label": 3
+  },
+  {
+    "Combination": 111311,
+    "Label": 2
+  },
+  {
+    "Combination": 111312,
+    "Label": 2
+  },
+  {
+    "Combination": 111313,
+    "Label": 3
+  },
+  {
+    "Combination": 111321,
+    "Label": 2
+  },
+  {
+    "Combination": 111322,
+    "Label": 3
+  },
+  {
+    "Combination": 111323,
+    "Label": 3
+  },
+  {
+    "Combination": 111331,
+    "Label": 3
+  },
+  {
+    "Combination": 111332,
+    "Label": 3
+  },
+  {
+    "Combination": 111333,
+    "Label": 3
+  },
+  {
+    "Combination": 112111,
+    "Label": 1
+  },
+  {
+    "Combination": 112112,
+    "Label": 1
+  },
+  {
+    "Combination": 112113,
+    "Label": 2
+  },
+  {
+    "Combination": 112121,
+    "Label": 1
+  },
+  {
+    "Combination": 112122,
+    "Label": 2
+  },
+  {
+    "Combination": 112123,
+    "Label": 2
+  },
+  {
+    "Combination": 112131,
+    "Label": 2
+  },
+  {
+    "Combination": 112132,
+    "Label": 2
+  },
+  {
+    "Combination": 112133,
+    "Label": 3
+  },
+  {
+    "Combination": 112211,
+    "Label": 1
+  },
+  {
+    "Combination": 112212,
+    "Label": 2
+  },
+  {
+    "Combination": 112213,
+    "Label": 2
+  },
+  {
+    "Combination": 112221,
+    "Label": 2
+  },
+  {
+    "Combination": 112222,
+    "Label": 2
+  },
+  {
+    "Combination": 112223,
+    "Label": 3
+  },
+  {
+    "Combination": 112231,
+    "Label": 2
+  },
+  {
+    "Combination": 112232,
+    "Label": 3
+  },
+  {
+    "Combination": 112233,
+    "Label": 3
+  },
+  {
+    "Combination": 112311,
+    "Label": 2
+  },
+  {
+    "Combination": 112312,
+    "Label": 2
+  },
+  {
+    "Combination": 112313,
+    "Label": 3
+  },
+  {
+    "Combination": 112321,
+    "Label": 2
+  },
+  {
+    "Combination": 112322,
+    "Label": 3
+  },
+  {
+    "Combination": 112323,
+    "Label": 3
+  },
+  {
+    "Combination": 112331,
+    "Label": 3
+  },
+  {
+    "Combination": 112332,
+    "Label": 3
+  },
+  {
+    "Combination": 112333,
+    "Label": 3
+  },
+  {
+    "Combination": 113111,
+    "Label": 1
+  },
+  {
+    "Combination": 113112,
+    "Label": 1
+  },
+  {
+    "Combination": 113113,
+    "Label": 2
+  },
+  {
+    "Combination": 113121,
+    "Label": 1
+  },
+  {
+    "Combination": 113122,
+    "Label": 2
+  },
+  {
+    "Combination": 113123,
+    "Label": 2
+  },
+  {
+    "Combination": 113131,
+    "Label": 2
+  },
+  {
+    "Combination": 113132,
+    "Label": 2
+  },
+  {
+    "Combination": 113133,
+    "Label": 3
+  },
+  {
+    "Combination": 113211,
+    "Label": 1
+  },
+  {
+    "Combination": 113212,
+    "Label": 2
+  },
+  {
+    "Combination": 113213,
+    "Label": 2
+  },
+  {
+    "Combination": 113221,
+    "Label": 2
+  },
+  {
+    "Combination": 113222,
+    "Label": 2
+  },
+  {
+    "Combination": 113223,
+    "Label": 3
+  },
+  {
+    "Combination": 113231,
+    "Label": 2
+  },
+  {
+    "Combination": 113232,
+    "Label": 3
+  },
+  {
+    "Combination": 113233,
+    "Label": 3
+  },
+  {
+    "Combination": 113311,
+    "Label": 2
+  },
+  {
+    "Combination": 113312,
+    "Label": 2
+  },
+  {
+    "Combination": 113313,
+    "Label": 3
+  },
+  {
+    "Combination": 113321,
+    "Label": 2
+  },
+  {
+    "Combination": 113322,
+    "Label": 3
+  },
+  {
+    "Combination": 113323,
+    "Label": 3
+  },
+  {
+    "Combination": 113331,
+    "Label": 3
+  },
+  {
+    "Combination": 113332,
+    "Label": 3
+  },
+  {
+    "Combination": 113333,
+    "Label": 3
+  },
+  {
+    "Combination": 121111,
+    "Label": 1
+  },
+  {
+    "Combination": 121112,
+    "Label": 1
+  },
+  {
+    "Combination": 121113,
+    "Label": 2
+  },
+  {
+    "Combination": 121121,
+    "Label": 1
+  },
+  {
+    "Combination": 121122,
+    "Label": 2
+  },
+  {
+    "Combination": 121123,
+    "Label": 2
+  },
+  {
+    "Combination": 121131,
+    "Label": 2
+  },
+  {
+    "Combination": 121132,
+    "Label": 2
+  },
+  {
+    "Combination": 121133,
+    "Label": 3
+  },
+  {
+    "Combination": 121211,
+    "Label": 1
+  },
+  {
+    "Combination": 121212,
+    "Label": 2
+  },
+  {
+    "Combination": 121213,
+    "Label": 2
+  },
+  {
+    "Combination": 121221,
+    "Label": 2
+  },
+  {
+    "Combination": 121222,
+    "Label": 2
+  },
+  {
+    "Combination": 121223,
+    "Label": 3
+  },
+  {
+    "Combination": 121231,
+    "Label": 2
+  },
+  {
+    "Combination": 121232,
+    "Label": 3
+  },
+  {
+    "Combination": 121233,
+    "Label": 3
+  },
+  {
+    "Combination": 121311,
+    "Label": 2
+  },
+  {
+    "Combination": 121312,
+    "Label": 2
+  },
+  {
+    "Combination": 121313,
+    "Label": 3
+  },
+  {
+    "Combination": 121321,
+    "Label": 2
+  },
+  {
+    "Combination": 121322,
+    "Label": 3
+  },
+  {
+    "Combination": 121323,
+    "Label": 3
+  },
+  {
+    "Combination": 121331,
+    "Label": 3
+  },
+  {
+    "Combination": 121332,
+    "Label": 3
+  },
+  {
+    "Combination": 121333,
+    "Label": 3
+  },
+  {
+    "Combination": 122111,
+    "Label": 1
+  },
+  {
+    "Combination": 122112,
+    "Label": 1
+  },
+  {
+    "Combination": 122113,
+    "Label": 2
+  },
+  {
+    "Combination": 122121,
+    "Label": 1
+  },
+  {
+    "Combination": 122122,
+    "Label": 2
+  },
+  {
+    "Combination": 122123,
+    "Label": 2
+  },
+  {
+    "Combination": 122131,
+    "Label": 2
+  },
+  {
+    "Combination": 122132,
+    "Label": 2
+  },
+  {
+    "Combination": 122133,
+    "Label": 3
+  },
+  {
+    "Combination": 122211,
+    "Label": 1
+  },
+  {
+    "Combination": 122212,
+    "Label": 2
+  },
+  {
+    "Combination": 122213,
+    "Label": 2
+  },
+  {
+    "Combination": 122221,
+    "Label": 2
+  },
+  {
+    "Combination": 122222,
+    "Label": 2
+  },
+  {
+    "Combination": 122223,
+    "Label": 3
+  },
+  {
+    "Combination": 122231,
+    "Label": 2
+  },
+  {
+    "Combination": 122232,
+    "Label": 3
+  },
+  {
+    "Combination": 122233,
+    "Label": 3
+  },
+  {
+    "Combination": 122311,
+    "Label": 2
+  },
+  {
+    "Combination": 122312,
+    "Label": 2
+  },
+  {
+    "Combination": 122313,
+    "Label": 3
+  },
+  {
+    "Combination": 122321,
+    "Label": 2
+  },
+  {
+    "Combination": 122322,
+    "Label": 3
+  },
+  {
+    "Combination": 122323,
+    "Label": 3
+  },
+  {
+    "Combination": 122331,
+    "Label": 3
+  },
+  {
+    "Combination": 122332,
+    "Label": 3
+  },
+  {
+    "Combination": 122333,
+    "Label": 3
+  },
+  {
+    "Combination": 123111,
+    "Label": 1
+  },
+  {
+    "Combination": 123112,
+    "Label": 1
+  },
+  {
+    "Combination": 123113,
+    "Label": 2
+  },
+  {
+    "Combination": 123121,
+    "Label": 1
+  },
+  {
+    "Combination": 123122,
+    "Label": 2
+  },
+  {
+    "Combination": 123123,
+    "Label": 2
+  },
+  {
+    "Combination": 123131,
+    "Label": 2
+  },
+  {
+    "Combination": 123132,
+    "Label": 2
+  },
+  {
+    "Combination": 123133,
+    "Label": 3
+  },
+  {
+    "Combination": 123211,
+    "Label": 1
+  },
+  {
+    "Combination": 123212,
+    "Label": 2
+  },
+  {
+    "Combination": 123213,
+    "Label": 2
+  },
+  {
+    "Combination": 123221,
+    "Label": 2
+  },
+  {
+    "Combination": 123222,
+    "Label": 2
+  },
+  {
+    "Combination": 123223,
+    "Label": 3
+  },
+  {
+    "Combination": 123231,
+    "Label": 2
+  },
+  {
+    "Combination": 123232,
+    "Label": 3
+  },
+  {
+    "Combination": 123233,
+    "Label": 3
+  },
+  {
+    "Combination": 123311,
+    "Label": 2
+  },
+  {
+    "Combination": 123312,
+    "Label": 2
+  },
+  {
+    "Combination": 123313,
+    "Label": 3
+  },
+  {
+    "Combination": 123321,
+    "Label": 2
+  },
+  {
+    "Combination": 123322,
+    "Label": 3
+  },
+  {
+    "Combination": 123323,
+    "Label": 3
+  },
+  {
+    "Combination": 123331,
+    "Label": 3
+  },
+  {
+    "Combination": 123332,
+    "Label": 3
+  },
+  {
+    "Combination": 123333,
+    "Label": 3
+  },
+  {
+    "Combination": 131111,
+    "Label": 1
+  },
+  {
+    "Combination": 131112,
+    "Label": 1
+  },
+  {
+    "Combination": 131113,
+    "Label": 2
+  },
+  {
+    "Combination": 131121,
+    "Label": 1
+  },
+  {
+    "Combination": 131122,
+    "Label": 2
+  },
+  {
+    "Combination": 131123,
+    "Label": 2
+  },
+  {
+    "Combination": 131131,
+    "Label": 2
+  },
+  {
+    "Combination": 131132,
+    "Label": 2
+  },
+  {
+    "Combination": 131133,
+    "Label": 3
+  },
+  {
+    "Combination": 131211,
+    "Label": 1
+  },
+  {
+    "Combination": 131212,
+    "Label": 2
+  },
+  {
+    "Combination": 131213,
+    "Label": 2
+  },
+  {
+    "Combination": 131221,
+    "Label": 2
+  },
+  {
+    "Combination": 131222,
+    "Label": 2
+  },
+  {
+    "Combination": 131223,
+    "Label": 3
+  },
+  {
+    "Combination": 131231,
+    "Label": 2
+  },
+  {
+    "Combination": 131232,
+    "Label": 3
+  },
+  {
+    "Combination": 131233,
+    "Label": 3
+  },
+  {
+    "Combination": 131311,
+    "Label": 2
+  },
+  {
+    "Combination": 131312,
+    "Label": 2
+  },
+  {
+    "Combination": 131313,
+    "Label": 3
+  },
+  {
+    "Combination": 131321,
+    "Label": 2
+  },
+  {
+    "Combination": 131322,
+    "Label": 3
+  },
+  {
+    "Combination": 131323,
+    "Label": 3
+  },
+  {
+    "Combination": 131331,
+    "Label": 3
+  },
+  {
+    "Combination": 131332,
+    "Label": 3
+  },
+  {
+    "Combination": 131333,
+    "Label": 3
+  },
+  {
+    "Combination": 132111,
+    "Label": 1
+  },
+  {
+    "Combination": 132112,
+    "Label": 1
+  },
+  {
+    "Combination": 132113,
+    "Label": 2
+  },
+  {
+    "Combination": 132121,
+    "Label": 1
+  },
+  {
+    "Combination": 132122,
+    "Label": 2
+  },
+  {
+    "Combination": 132123,
+    "Label": 2
+  },
+  {
+    "Combination": 132131,
+    "Label": 2
+  },
+  {
+    "Combination": 132132,
+    "Label": 2
+  },
+  {
+    "Combination": 132133,
+    "Label": 3
+  },
+  {
+    "Combination": 132211,
+    "Label": 1
+  },
+  {
+    "Combination": 132212,
+    "Label": 2
+  },
+  {
+    "Combination": 132213,
+    "Label": 2
+  },
+  {
+    "Combination": 132221,
+    "Label": 2
+  },
+  {
+    "Combination": 132222,
+    "Label": 2
+  },
+  {
+    "Combination": 132223,
+    "Label": 3
+  },
+  {
+    "Combination": 132231,
+    "Label": 2
+  },
+  {
+    "Combination": 132232,
+    "Label": 3
+  },
+  {
+    "Combination": 132233,
+    "Label": 3
+  },
+  {
+    "Combination": 132311,
+    "Label": 2
+  },
+  {
+    "Combination": 132312,
+    "Label": 2
+  },
+  {
+    "Combination": 132313,
+    "Label": 3
+  },
+  {
+    "Combination": 132321,
+    "Label": 2
+  },
+  {
+    "Combination": 132322,
+    "Label": 3
+  },
+  {
+    "Combination": 132323,
+    "Label": 3
+  },
+  {
+    "Combination": 132331,
+    "Label": 3
+  },
+  {
+    "Combination": 132332,
+    "Label": 3
+  },
+  {
+    "Combination": 132333,
+    "Label": 3
+  },
+  {
+    "Combination": 133111,
+    "Label": 1
+  },
+  {
+    "Combination": 133112,
+    "Label": 1
+  },
+  {
+    "Combination": 133113,
+    "Label": 2
+  },
+  {
+    "Combination": 133121,
+    "Label": 1
+  },
+  {
+    "Combination": 133122,
+    "Label": 2
+  },
+  {
+    "Combination": 133123,
+    "Label": 2
+  },
+  {
+    "Combination": 133131,
+    "Label": 2
+  },
+  {
+    "Combination": 133132,
+    "Label": 2
+  },
+  {
+    "Combination": 133133,
+    "Label": 3
+  },
+  {
+    "Combination": 133211,
+    "Label": 1
+  },
+  {
+    "Combination": 133212,
+    "Label": 2
+  },
+  {
+    "Combination": 133213,
+    "Label": 2
+  },
+  {
+    "Combination": 133221,
+    "Label": 2
+  },
+  {
+    "Combination": 133222,
+    "Label": 2
+  },
+  {
+    "Combination": 133223,
+    "Label": 3
+  },
+  {
+    "Combination": 133231,
+    "Label": 2
+  },
+  {
+    "Combination": 133232,
+    "Label": 3
+  },
+  {
+    "Combination": 133233,
+    "Label": 3
+  },
+  {
+    "Combination": 133311,
+    "Label": 2
+  },
+  {
+    "Combination": 133312,
+    "Label": 2
+  },
+  {
+    "Combination": 133313,
+    "Label": 3
+  },
+  {
+    "Combination": 133321,
+    "Label": 2
+  },
+  {
+    "Combination": 133322,
+    "Label": 3
+  },
+  {
+    "Combination": 133323,
+    "Label": 3
+  },
+  {
+    "Combination": 133331,
+    "Label": 3
+  },
+  {
+    "Combination": 133332,
+    "Label": 3
+  },
+  {
+    "Combination": 133333,
+    "Label": 3
+  },
+  {
+    "Combination": 211111,
+    "Label": 2
+  },
+  {
+    "Combination": 211112,
+    "Label": 2
+  },
+  {
+    "Combination": 211113,
+    "Label": 2
+  },
+  {
+    "Combination": 211121,
+    "Label": 2
+  },
+  {
+    "Combination": 211122,
+    "Label": 2
+  },
+  {
+    "Combination": 211123,
+    "Label": 3
+  },
+  {
+    "Combination": 211131,
+    "Label": 2
+  },
+  {
+    "Combination": 211132,
+    "Label": 3
+  },
+  {
+    "Combination": 211133,
+    "Label": 3
+  },
+  {
+    "Combination": 211211,
+    "Label": 2
+  },
+  {
+    "Combination": 211212,
+    "Label": 2
+  },
+  {
+    "Combination": 211213,
+    "Label": 3
+  },
+  {
+    "Combination": 211221,
+    "Label": 2
+  },
+  {
+    "Combination": 211222,
+    "Label": 3
+  },
+  {
+    "Combination": 211223,
+    "Label": 3
+  },
+  {
+    "Combination": 211231,
+    "Label": 3
+  },
+  {
+    "Combination": 211232,
+    "Label": 3
+  },
+  {
+    "Combination": 211233,
+    "Label": 3
+  },
+  {
+    "Combination": 211311,
+    "Label": 2
+  },
+  {
+    "Combination": 211312,
+    "Label": 2
+  },
+  {
+    "Combination": 211313,
+    "Label": 3
+  },
+  {
+    "Combination": 211321,
+    "Label": 2
+  },
+  {
+    "Combination": 211322,
+    "Label": 3
+  },
+  {
+    "Combination": 211323,
+    "Label": 3
+  },
+  {
+    "Combination": 211331,
+    "Label": 3
+  },
+  {
+    "Combination": 211332,
+    "Label": 3
+  },
+  {
+    "Combination": 211333,
+    "Label": 3
+  },
+  {
+    "Combination": 212111,
+    "Label": 2
+  },
+  {
+    "Combination": 212112,
+    "Label": 2
+  },
+  {
+    "Combination": 212113,
+    "Label": 2
+  },
+  {
+    "Combination": 212121,
+    "Label": 2
+  },
+  {
+    "Combination": 212122,
+    "Label": 2
+  },
+  {
+    "Combination": 212123,
+    "Label": 3
+  },
+  {
+    "Combination": 212131,
+    "Label": 2
+  },
+  {
+    "Combination": 212132,
+    "Label": 3
+  },
+  {
+    "Combination": 212133,
+    "Label": 3
+  },
+  {
+    "Combination": 212211,
+    "Label": 2
+  },
+  {
+    "Combination": 212212,
+    "Label": 2
+  },
+  {
+    "Combination": 212213,
+    "Label": 3
+  },
+  {
+    "Combination": 212221,
+    "Label": 2
+  },
+  {
+    "Combination": 212222,
+    "Label": 3
+  },
+  {
+    "Combination": 212223,
+    "Label": 3
+  },
+  {
+    "Combination": 212231,
+    "Label": 3
+  },
+  {
+    "Combination": 212232,
+    "Label": 3
+  },
+  {
+    "Combination": 212233,
+    "Label": 3
+  },
+  {
+    "Combination": 212311,
+    "Label": 2
+  },
+  {
+    "Combination": 212312,
+    "Label": 2
+  },
+  {
+    "Combination": 212313,
+    "Label": 3
+  },
+  {
+    "Combination": 212321,
+    "Label": 2
+  },
+  {
+    "Combination": 212322,
+    "Label": 3
+  },
+  {
+    "Combination": 212323,
+    "Label": 3
+  },
+  {
+    "Combination": 212331,
+    "Label": 3
+  },
+  {
+    "Combination": 212332,
+    "Label": 3
+  },
+  {
+    "Combination": 212333,
+    "Label": 3
+  },
+  {
+    "Combination": 213111,
+    "Label": 2
+  },
+  {
+    "Combination": 213112,
+    "Label": 2
+  },
+  {
+    "Combination": 213113,
+    "Label": 2
+  },
+  {
+    "Combination": 213121,
+    "Label": 2
+  },
+  {
+    "Combination": 213122,
+    "Label": 2
+  },
+  {
+    "Combination": 213123,
+    "Label": 3
+  },
+  {
+    "Combination": 213131,
+    "Label": 2
+  },
+  {
+    "Combination": 213132,
+    "Label": 3
+  },
+  {
+    "Combination": 213133,
+    "Label": 3
+  },
+  {
+    "Combination": 213211,
+    "Label": 2
+  },
+  {
+    "Combination": 213212,
+    "Label": 2
+  },
+  {
+    "Combination": 213213,
+    "Label": 3
+  },
+  {
+    "Combination": 213221,
+    "Label": 2
+  },
+  {
+    "Combination": 213222,
+    "Label": 3
+  },
+  {
+    "Combination": 213223,
+    "Label": 3
+  },
+  {
+    "Combination": 213231,
+    "Label": 3
+  },
+  {
+    "Combination": 213232,
+    "Label": 3
+  },
+  {
+    "Combination": 213233,
+    "Label": 3
+  },
+  {
+    "Combination": 213311,
+    "Label": 2
+  },
+  {
+    "Combination": 213312,
+    "Label": 2
+  },
+  {
+    "Combination": 213313,
+    "Label": 3
+  },
+  {
+    "Combination": 213321,
+    "Label": 2
+  },
+  {
+    "Combination": 213322,
+    "Label": 3
+  },
+  {
+    "Combination": 213323,
+    "Label": 3
+  },
+  {
+    "Combination": 213331,
+    "Label": 3
+  },
+  {
+    "Combination": 213332,
+    "Label": 3
+  },
+  {
+    "Combination": 213333,
+    "Label": 3
+  },
+  {
+    "Combination": 221111,
+    "Label": 2
+  },
+  {
+    "Combination": 221112,
+    "Label": 2
+  },
+  {
+    "Combination": 221113,
+    "Label": 2
+  },
+  {
+    "Combination": 221121,
+    "Label": 2
+  },
+  {
+    "Combination": 221122,
+    "Label": 2
+  },
+  {
+    "Combination": 221123,
+    "Label": 3
+  },
+  {
+    "Combination": 221131,
+    "Label": 2
+  },
+  {
+    "Combination": 221132,
+    "Label": 3
+  },
+  {
+    "Combination": 221133,
+    "Label": 3
+  },
+  {
+    "Combination": 221211,
+    "Label": 2
+  },
+  {
+    "Combination": 221212,
+    "Label": 2
+  },
+  {
+    "Combination": 221213,
+    "Label": 3
+  },
+  {
+    "Combination": 221221,
+    "Label": 2
+  },
+  {
+    "Combination": 221222,
+    "Label": 3
+  },
+  {
+    "Combination": 221223,
+    "Label": 3
+  },
+  {
+    "Combination": 221231,
+    "Label": 3
+  },
+  {
+    "Combination": 221232,
+    "Label": 3
+  },
+  {
+    "Combination": 221233,
+    "Label": 3
+  },
+  {
+    "Combination": 221311,
+    "Label": 2
+  },
+  {
+    "Combination": 221312,
+    "Label": 2
+  },
+  {
+    "Combination": 221313,
+    "Label": 3
+  },
+  {
+    "Combination": 221321,
+    "Label": 2
+  },
+  {
+    "Combination": 221322,
+    "Label": 3
+  },
+  {
+    "Combination": 221323,
+    "Label": 3
+  },
+  {
+    "Combination": 221331,
+    "Label": 3
+  },
+  {
+    "Combination": 221332,
+    "Label": 3
+  },
+  {
+    "Combination": 221333,
+    "Label": 3
+  },
+  {
+    "Combination": 222111,
+    "Label": 2
+  },
+  {
+    "Combination": 222112,
+    "Label": 2
+  },
+  {
+    "Combination": 222113,
+    "Label": 2
+  },
+  {
+    "Combination": 222121,
+    "Label": 2
+  },
+  {
+    "Combination": 222122,
+    "Label": 2
+  },
+  {
+    "Combination": 222123,
+    "Label": 3
+  },
+  {
+    "Combination": 222131,
+    "Label": 2
+  },
+  {
+    "Combination": 222132,
+    "Label": 3
+  },
+  {
+    "Combination": 222133,
+    "Label": 3
+  },
+  {
+    "Combination": 222211,
+    "Label": 2
+  },
+  {
+    "Combination": 222212,
+    "Label": 2
+  },
+  {
+    "Combination": 222213,
+    "Label": 3
+  },
+  {
+    "Combination": 222221,
+    "Label": 2
+  },
+  {
+    "Combination": 222222,
+    "Label": 3
+  },
+  {
+    "Combination": 222223,
+    "Label": 3
+  },
+  {
+    "Combination": 222231,
+    "Label": 3
+  },
+  {
+    "Combination": 222232,
+    "Label": 3
+  },
+  {
+    "Combination": 222233,
+    "Label": 3
+  },
+  {
+    "Combination": 222311,
+    "Label": 2
+  },
+  {
+    "Combination": 222312,
+    "Label": 2
+  },
+  {
+    "Combination": 222313,
+    "Label": 3
+  },
+  {
+    "Combination": 222321,
+    "Label": 2
+  },
+  {
+    "Combination": 222322,
+    "Label": 3
+  },
+  {
+    "Combination": 222323,
+    "Label": 3
+  },
+  {
+    "Combination": 222331,
+    "Label": 3
+  },
+  {
+    "Combination": 222332,
+    "Label": 3
+  },
+  {
+    "Combination": 222333,
+    "Label": 3
+  },
+  {
+    "Combination": 223111,
+    "Label": 2
+  },
+  {
+    "Combination": 223112,
+    "Label": 2
+  },
+  {
+    "Combination": 223113,
+    "Label": 2
+  },
+  {
+    "Combination": 223121,
+    "Label": 2
+  },
+  {
+    "Combination": 223122,
+    "Label": 2
+  },
+  {
+    "Combination": 223123,
+    "Label": 3
+  },
+  {
+    "Combination": 223131,
+    "Label": 2
+  },
+  {
+    "Combination": 223132,
+    "Label": 3
+  },
+  {
+    "Combination": 223133,
+    "Label": 3
+  },
+  {
+    "Combination": 223211,
+    "Label": 2
+  },
+  {
+    "Combination": 223212,
+    "Label": 2
+  },
+  {
+    "Combination": 223213,
+    "Label": 3
+  },
+  {
+    "Combination": 223221,
+    "Label": 2
+  },
+  {
+    "Combination": 223222,
+    "Label": 3
+  },
+  {
+    "Combination": 223223,
+    "Label": 3
+  },
+  {
+    "Combination": 223231,
+    "Label": 3
+  },
+  {
+    "Combination": 223232,
+    "Label": 3
+  },
+  {
+    "Combination": 223233,
+    "Label": 3
+  },
+  {
+    "Combination": 223311,
+    "Label": 2
+  },
+  {
+    "Combination": 223312,
+    "Label": 2
+  },
+  {
+    "Combination": 223313,
+    "Label": 3
+  },
+  {
+    "Combination": 223321,
+    "Label": 2
+  },
+  {
+    "Combination": 223322,
+    "Label": 3
+  },
+  {
+    "Combination": 223323,
+    "Label": 3
+  },
+  {
+    "Combination": 223331,
+    "Label": 3
+  },
+  {
+    "Combination": 223332,
+    "Label": 3
+  },
+  {
+    "Combination": 223333,
+    "Label": 3
+  },
+  {
+    "Combination": 231111,
+    "Label": 2
+  },
+  {
+    "Combination": 231112,
+    "Label": 2
+  },
+  {
+    "Combination": 231113,
+    "Label": 2
+  },
+  {
+    "Combination": 231121,
+    "Label": 2
+  },
+  {
+    "Combination": 231122,
+    "Label": 2
+  },
+  {
+    "Combination": 231123,
+    "Label": 3
+  },
+  {
+    "Combination": 231131,
+    "Label": 2
+  },
+  {
+    "Combination": 231132,
+    "Label": 3
+  },
+  {
+    "Combination": 231133,
+    "Label": 3
+  },
+  {
+    "Combination": 231211,
+    "Label": 2
+  },
+  {
+    "Combination": 231212,
+    "Label": 2
+  },
+  {
+    "Combination": 231213,
+    "Label": 3
+  },
+  {
+    "Combination": 231221,
+    "Label": 2
+  },
+  {
+    "Combination": 231222,
+    "Label": 3
+  },
+  {
+    "Combination": 231223,
+    "Label": 3
+  },
+  {
+    "Combination": 231231,
+    "Label": 3
+  },
+  {
+    "Combination": 231232,
+    "Label": 3
+  },
+  {
+    "Combination": 231233,
+    "Label": 3
+  },
+  {
+    "Combination": 231311,
+    "Label": 2
+  },
+  {
+    "Combination": 231312,
+    "Label": 2
+  },
+  {
+    "Combination": 231313,
+    "Label": 3
+  },
+  {
+    "Combination": 231321,
+    "Label": 2
+  },
+  {
+    "Combination": 231322,
+    "Label": 3
+  },
+  {
+    "Combination": 231323,
+    "Label": 3
+  },
+  {
+    "Combination": 231331,
+    "Label": 3
+  },
+  {
+    "Combination": 231332,
+    "Label": 3
+  },
+  {
+    "Combination": 231333,
+    "Label": 3
+  },
+  {
+    "Combination": 232111,
+    "Label": 2
+  },
+  {
+    "Combination": 232112,
+    "Label": 2
+  },
+  {
+    "Combination": 232113,
+    "Label": 2
+  },
+  {
+    "Combination": 232121,
+    "Label": 2
+  },
+  {
+    "Combination": 232122,
+    "Label": 2
+  },
+  {
+    "Combination": 232123,
+    "Label": 3
+  },
+  {
+    "Combination": 232131,
+    "Label": 2
+  },
+  {
+    "Combination": 232132,
+    "Label": 3
+  },
+  {
+    "Combination": 232133,
+    "Label": 3
+  },
+  {
+    "Combination": 232211,
+    "Label": 2
+  },
+  {
+    "Combination": 232212,
+    "Label": 2
+  },
+  {
+    "Combination": 232213,
+    "Label": 3
+  },
+  {
+    "Combination": 232221,
+    "Label": 2
+  },
+  {
+    "Combination": 232222,
+    "Label": 3
+  },
+  {
+    "Combination": 232223,
+    "Label": 3
+  },
+  {
+    "Combination": 232231,
+    "Label": 3
+  },
+  {
+    "Combination": 232232,
+    "Label": 3
+  },
+  {
+    "Combination": 232233,
+    "Label": 3
+  },
+  {
+    "Combination": 232311,
+    "Label": 2
+  },
+  {
+    "Combination": 232312,
+    "Label": 2
+  },
+  {
+    "Combination": 232313,
+    "Label": 3
+  },
+  {
+    "Combination": 232321,
+    "Label": 2
+  },
+  {
+    "Combination": 232322,
+    "Label": 3
+  },
+  {
+    "Combination": 232323,
+    "Label": 3
+  },
+  {
+    "Combination": 232331,
+    "Label": 3
+  },
+  {
+    "Combination": 232332,
+    "Label": 3
+  },
+  {
+    "Combination": 232333,
+    "Label": 3
+  },
+  {
+    "Combination": 233111,
+    "Label": 2
+  },
+  {
+    "Combination": 233112,
+    "Label": 2
+  },
+  {
+    "Combination": 233113,
+    "Label": 2
+  },
+  {
+    "Combination": 233121,
+    "Label": 2
+  },
+  {
+    "Combination": 233122,
+    "Label": 2
+  },
+  {
+    "Combination": 233123,
+    "Label": 3
+  },
+  {
+    "Combination": 233131,
+    "Label": 2
+  },
+  {
+    "Combination": 233132,
+    "Label": 3
+  },
+  {
+    "Combination": 233133,
+    "Label": 3
+  },
+  {
+    "Combination": 233211,
+    "Label": 2
+  },
+  {
+    "Combination": 233212,
+    "Label": 2
+  },
+  {
+    "Combination": 233213,
+    "Label": 3
+  },
+  {
+    "Combination": 233221,
+    "Label": 2
+  },
+  {
+    "Combination": 233222,
+    "Label": 3
+  },
+  {
+    "Combination": 233223,
+    "Label": 3
+  },
+  {
+    "Combination": 233231,
+    "Label": 3
+  },
+  {
+    "Combination": 233232,
+    "Label": 3
+  },
+  {
+    "Combination": 233233,
+    "Label": 3
+  },
+  {
+    "Combination": 233311,
+    "Label": 2
+  },
+  {
+    "Combination": 233312,
+    "Label": 2
+  },
+  {
+    "Combination": 233313,
+    "Label": 3
+  },
+  {
+    "Combination": 233321,
+    "Label": 2
+  },
+  {
+    "Combination": 233322,
+    "Label": 3
+  },
+  {
+    "Combination": 233323,
+    "Label": 3
+  },
+  {
+    "Combination": 233331,
+    "Label": 3
+  },
+  {
+    "Combination": 233332,
+    "Label": 3
+  },
+  {
+    "Combination": 233333,
+    "Label": 3
+  },
+  {
+    "Combination": 311111,
+    "Label": 3
+  },
+  {
+    "Combination": 311112,
+    "Label": 3
+  },
+  {
+    "Combination": 311113,
+    "Label": 3
+  },
+  {
+    "Combination": 311121,
+    "Label": 3
+  },
+  {
+    "Combination": 311122,
+    "Label": 3
+  },
+  {
+    "Combination": 311123,
+    "Label": 3
+  },
+  {
+    "Combination": 311131,
+    "Label": 3
+  },
+  {
+    "Combination": 311132,
+    "Label": 3
+  },
+  {
+    "Combination": 311133,
+    "Label": 3
+  },
+  {
+    "Combination": 311211,
+    "Label": 3
+  },
+  {
+    "Combination": 311212,
+    "Label": 3
+  },
+  {
+    "Combination": 311213,
+    "Label": 3
+  },
+  {
+    "Combination": 311221,
+    "Label": 3
+  },
+  {
+    "Combination": 311222,
+    "Label": 3
+  },
+  {
+    "Combination": 311223,
+    "Label": 3
+  },
+  {
+    "Combination": 311231,
+    "Label": 3
+  },
+  {
+    "Combination": 311232,
+    "Label": 3
+  },
+  {
+    "Combination": 311233,
+    "Label": 3
+  },
+  {
+    "Combination": 311311,
+    "Label": 3
+  },
+  {
+    "Combination": 311312,
+    "Label": 3
+  },
+  {
+    "Combination": 311313,
+    "Label": 3
+  },
+  {
+    "Combination": 311321,
+    "Label": 3
+  },
+  {
+    "Combination": 311322,
+    "Label": 3
+  },
+  {
+    "Combination": 311323,
+    "Label": 3
+  },
+  {
+    "Combination": 311331,
+    "Label": 3
+  },
+  {
+    "Combination": 311332,
+    "Label": 3
+  },
+  {
+    "Combination": 311333,
+    "Label": 3
+  },
+  {
+    "Combination": 312111,
+    "Label": 3
+  },
+  {
+    "Combination": 312112,
+    "Label": 3
+  },
+  {
+    "Combination": 312113,
+    "Label": 3
+  },
+  {
+    "Combination": 312121,
+    "Label": 3
+  },
+  {
+    "Combination": 312122,
+    "Label": 3
+  },
+  {
+    "Combination": 312123,
+    "Label": 3
+  },
+  {
+    "Combination": 312131,
+    "Label": 3
+  },
+  {
+    "Combination": 312132,
+    "Label": 3
+  },
+  {
+    "Combination": 312133,
+    "Label": 3
+  },
+  {
+    "Combination": 312211,
+    "Label": 3
+  },
+  {
+    "Combination": 312212,
+    "Label": 3
+  },
+  {
+    "Combination": 312213,
+    "Label": 3
+  },
+  {
+    "Combination": 312221,
+    "Label": 3
+  },
+  {
+    "Combination": 312222,
+    "Label": 3
+  },
+  {
+    "Combination": 312223,
+    "Label": 3
+  },
+  {
+    "Combination": 312231,
+    "Label": 3
+  },
+  {
+    "Combination": 312232,
+    "Label": 3
+  },
+  {
+    "Combination": 312233,
+    "Label": 3
+  },
+  {
+    "Combination": 312311,
+    "Label": 3
+  },
+  {
+    "Combination": 312312,
+    "Label": 3
+  },
+  {
+    "Combination": 312313,
+    "Label": 3
+  },
+  {
+    "Combination": 312321,
+    "Label": 3
+  },
+  {
+    "Combination": 312322,
+    "Label": 3
+  },
+  {
+    "Combination": 312323,
+    "Label": 3
+  },
+  {
+    "Combination": 312331,
+    "Label": 3
+  },
+  {
+    "Combination": 312332,
+    "Label": 3
+  },
+  {
+    "Combination": 312333,
+    "Label": 3
+  },
+  {
+    "Combination": 313111,
+    "Label": 3
+  },
+  {
+    "Combination": 313112,
+    "Label": 3
+  },
+  {
+    "Combination": 313113,
+    "Label": 3
+  },
+  {
+    "Combination": 313121,
+    "Label": 3
+  },
+  {
+    "Combination": 313122,
+    "Label": 3
+  },
+  {
+    "Combination": 313123,
+    "Label": 3
+  },
+  {
+    "Combination": 313131,
+    "Label": 3
+  },
+  {
+    "Combination": 313132,
+    "Label": 3
+  },
+  {
+    "Combination": 313133,
+    "Label": 3
+  },
+  {
+    "Combination": 313211,
+    "Label": 3
+  },
+  {
+    "Combination": 313212,
+    "Label": 3
+  },
+  {
+    "Combination": 313213,
+    "Label": 3
+  },
+  {
+    "Combination": 313221,
+    "Label": 3
+  },
+  {
+    "Combination": 313222,
+    "Label": 3
+  },
+  {
+    "Combination": 313223,
+    "Label": 3
+  },
+  {
+    "Combination": 313231,
+    "Label": 3
+  },
+  {
+    "Combination": 313232,
+    "Label": 3
+  },
+  {
+    "Combination": 313233,
+    "Label": 3
+  },
+  {
+    "Combination": 313311,
+    "Label": 3
+  },
+  {
+    "Combination": 313312,
+    "Label": 3
+  },
+  {
+    "Combination": 313313,
+    "Label": 3
+  },
+  {
+    "Combination": 313321,
+    "Label": 3
+  },
+  {
+    "Combination": 313322,
+    "Label": 3
+  },
+  {
+    "Combination": 313323,
+    "Label": 3
+  },
+  {
+    "Combination": 313331,
+    "Label": 3
+  },
+  {
+    "Combination": 313332,
+    "Label": 3
+  },
+  {
+    "Combination": 313333,
+    "Label": 3
+  },
+  {
+    "Combination": 321111,
+    "Label": 3
+  },
+  {
+    "Combination": 321112,
+    "Label": 3
+  },
+  {
+    "Combination": 321113,
+    "Label": 3
+  },
+  {
+    "Combination": 321121,
+    "Label": 3
+  },
+  {
+    "Combination": 321122,
+    "Label": 3
+  },
+  {
+    "Combination": 321123,
+    "Label": 3
+  },
+  {
+    "Combination": 321131,
+    "Label": 3
+  },
+  {
+    "Combination": 321132,
+    "Label": 3
+  },
+  {
+    "Combination": 321133,
+    "Label": 3
+  },
+  {
+    "Combination": 321211,
+    "Label": 3
+  },
+  {
+    "Combination": 321212,
+    "Label": 3
+  },
+  {
+    "Combination": 321213,
+    "Label": 3
+  },
+  {
+    "Combination": 321221,
+    "Label": 3
+  },
+  {
+    "Combination": 321222,
+    "Label": 3
+  },
+  {
+    "Combination": 321223,
+    "Label": 3
+  },
+  {
+    "Combination": 321231,
+    "Label": 3
+  },
+  {
+    "Combination": 321232,
+    "Label": 3
+  },
+  {
+    "Combination": 321233,
+    "Label": 3
+  },
+  {
+    "Combination": 321311,
+    "Label": 3
+  },
+  {
+    "Combination": 321312,
+    "Label": 3
+  },
+  {
+    "Combination": 321313,
+    "Label": 3
+  },
+  {
+    "Combination": 321321,
+    "Label": 3
+  },
+  {
+    "Combination": 321322,
+    "Label": 3
+  },
+  {
+    "Combination": 321323,
+    "Label": 3
+  },
+  {
+    "Combination": 321331,
+    "Label": 3
+  },
+  {
+    "Combination": 321332,
+    "Label": 3
+  },
+  {
+    "Combination": 321333,
+    "Label": 3
+  },
+  {
+    "Combination": 322111,
+    "Label": 3
+  },
+  {
+    "Combination": 322112,
+    "Label": 3
+  },
+  {
+    "Combination": 322113,
+    "Label": 3
+  },
+  {
+    "Combination": 322121,
+    "Label": 3
+  },
+  {
+    "Combination": 322122,
+    "Label": 3
+  },
+  {
+    "Combination": 322123,
+    "Label": 3
+  },
+  {
+    "Combination": 322131,
+    "Label": 3
+  },
+  {
+    "Combination": 322132,
+    "Label": 3
+  },
+  {
+    "Combination": 322133,
+    "Label": 3
+  },
+  {
+    "Combination": 322211,
+    "Label": 3
+  },
+  {
+    "Combination": 322212,
+    "Label": 3
+  },
+  {
+    "Combination": 322213,
+    "Label": 3
+  },
+  {
+    "Combination": 322221,
+    "Label": 3
+  },
+  {
+    "Combination": 322222,
+    "Label": 3
+  },
+  {
+    "Combination": 322223,
+    "Label": 3
+  },
+  {
+    "Combination": 322231,
+    "Label": 3
+  },
+  {
+    "Combination": 322232,
+    "Label": 3
+  },
+  {
+    "Combination": 322233,
+    "Label": 3
+  },
+  {
+    "Combination": 322311,
+    "Label": 3
+  },
+  {
+    "Combination": 322312,
+    "Label": 3
+  },
+  {
+    "Combination": 322313,
+    "Label": 3
+  },
+  {
+    "Combination": 322321,
+    "Label": 3
+  },
+  {
+    "Combination": 322322,
+    "Label": 3
+  },
+  {
+    "Combination": 322323,
+    "Label": 3
+  },
+  {
+    "Combination": 322331,
+    "Label": 3
+  },
+  {
+    "Combination": 322332,
+    "Label": 3
+  },
+  {
+    "Combination": 322333,
+    "Label": 3
+  },
+  {
+    "Combination": 323111,
+    "Label": 3
+  },
+  {
+    "Combination": 323112,
+    "Label": 3
+  },
+  {
+    "Combination": 323113,
+    "Label": 3
+  },
+  {
+    "Combination": 323121,
+    "Label": 3
+  },
+  {
+    "Combination": 323122,
+    "Label": 3
+  },
+  {
+    "Combination": 323123,
+    "Label": 3
+  },
+  {
+    "Combination": 323131,
+    "Label": 3
+  },
+  {
+    "Combination": 323132,
+    "Label": 3
+  },
+  {
+    "Combination": 323133,
+    "Label": 3
+  },
+  {
+    "Combination": 323211,
+    "Label": 3
+  },
+  {
+    "Combination": 323212,
+    "Label": 3
+  },
+  {
+    "Combination": 323213,
+    "Label": 3
+  },
+  {
+    "Combination": 323221,
+    "Label": 3
+  },
+  {
+    "Combination": 323222,
+    "Label": 3
+  },
+  {
+    "Combination": 323223,
+    "Label": 3
+  },
+  {
+    "Combination": 323231,
+    "Label": 3
+  },
+  {
+    "Combination": 323232,
+    "Label": 3
+  },
+  {
+    "Combination": 323233,
+    "Label": 3
+  },
+  {
+    "Combination": 323311,
+    "Label": 3
+  },
+  {
+    "Combination": 323312,
+    "Label": 3
+  },
+  {
+    "Combination": 323313,
+    "Label": 3
+  },
+  {
+    "Combination": 323321,
+    "Label": 3
+  },
+  {
+    "Combination": 323322,
+    "Label": 3
+  },
+  {
+    "Combination": 323323,
+    "Label": 3
+  },
+  {
+    "Combination": 323331,
+    "Label": 3
+  },
+  {
+    "Combination": 323332,
+    "Label": 3
+  },
+  {
+    "Combination": 323333,
+    "Label": 3
+  },
+  {
+    "Combination": 331111,
+    "Label": 3
+  },
+  {
+    "Combination": 331112,
+    "Label": 3
+  },
+  {
+    "Combination": 331113,
+    "Label": 3
+  },
+  {
+    "Combination": 331121,
+    "Label": 3
+  },
+  {
+    "Combination": 331122,
+    "Label": 3
+  },
+  {
+    "Combination": 331123,
+    "Label": 3
+  },
+  {
+    "Combination": 331131,
+    "Label": 3
+  },
+  {
+    "Combination": 331132,
+    "Label": 3
+  },
+  {
+    "Combination": 331133,
+    "Label": 3
+  },
+  {
+    "Combination": 331211,
+    "Label": 3
+  },
+  {
+    "Combination": 331212,
+    "Label": 3
+  },
+  {
+    "Combination": 331213,
+    "Label": 3
+  },
+  {
+    "Combination": 331221,
+    "Label": 3
+  },
+  {
+    "Combination": 331222,
+    "Label": 3
+  },
+  {
+    "Combination": 331223,
+    "Label": 3
+  },
+  {
+    "Combination": 331231,
+    "Label": 3
+  },
+  {
+    "Combination": 331232,
+    "Label": 3
+  },
+  {
+    "Combination": 331233,
+    "Label": 3
+  },
+  {
+    "Combination": 331311,
+    "Label": 3
+  },
+  {
+    "Combination": 331312,
+    "Label": 3
+  },
+  {
+    "Combination": 331313,
+    "Label": 3
+  },
+  {
+    "Combination": 331321,
+    "Label": 3
+  },
+  {
+    "Combination": 331322,
+    "Label": 3
+  },
+  {
+    "Combination": 331323,
+    "Label": 3
+  },
+  {
+    "Combination": 331331,
+    "Label": 3
+  },
+  {
+    "Combination": 331332,
+    "Label": 3
+  },
+  {
+    "Combination": 331333,
+    "Label": 3
+  },
+  {
+    "Combination": 332111,
+    "Label": 3
+  },
+  {
+    "Combination": 332112,
+    "Label": 3
+  },
+  {
+    "Combination": 332113,
+    "Label": 3
+  },
+  {
+    "Combination": 332121,
+    "Label": 3
+  },
+  {
+    "Combination": 332122,
+    "Label": 3
+  },
+  {
+    "Combination": 332123,
+    "Label": 3
+  },
+  {
+    "Combination": 332131,
+    "Label": 3
+  },
+  {
+    "Combination": 332132,
+    "Label": 3
+  },
+  {
+    "Combination": 332133,
+    "Label": 3
+  },
+  {
+    "Combination": 332211,
+    "Label": 3
+  },
+  {
+    "Combination": 332212,
+    "Label": 3
+  },
+  {
+    "Combination": 332213,
+    "Label": 3
+  },
+  {
+    "Combination": 332221,
+    "Label": 3
+  },
+  {
+    "Combination": 332222,
+    "Label": 3
+  },
+  {
+    "Combination": 332223,
+    "Label": 3
+  },
+  {
+    "Combination": 332231,
+    "Label": 3
+  },
+  {
+    "Combination": 332232,
+    "Label": 3
+  },
+  {
+    "Combination": 332233,
+    "Label": 3
+  },
+  {
+    "Combination": 332311,
+    "Label": 3
+  },
+  {
+    "Combination": 332312,
+    "Label": 3
+  },
+  {
+    "Combination": 332313,
+    "Label": 3
+  },
+  {
+    "Combination": 332321,
+    "Label": 3
+  },
+  {
+    "Combination": 332322,
+    "Label": 3
+  },
+  {
+    "Combination": 332323,
+    "Label": 3
+  },
+  {
+    "Combination": 332331,
+    "Label": 3
+  },
+  {
+    "Combination": 332332,
+    "Label": 3
+  },
+  {
+    "Combination": 332333,
+    "Label": 3
+  },
+  {
+    "Combination": 333111,
+    "Label": 3
+  },
+  {
+    "Combination": 333112,
+    "Label": 3
+  },
+  {
+    "Combination": 333113,
+    "Label": 3
+  },
+  {
+    "Combination": 333121,
+    "Label": 3
+  },
+  {
+    "Combination": 333122,
+    "Label": 3
+  },
+  {
+    "Combination": 333123,
+    "Label": 3
+  },
+  {
+    "Combination": 333131,
+    "Label": 3
+  },
+  {
+    "Combination": 333132,
+    "Label": 3
+  },
+  {
+    "Combination": 333133,
+    "Label": 3
+  },
+  {
+    "Combination": 333211,
+    "Label": 3
+  },
+  {
+    "Combination": 333212,
+    "Label": 3
+  },
+  {
+    "Combination": 333213,
+    "Label": 3
+  },
+  {
+    "Combination": 333221,
+    "Label": 3
+  },
+  {
+    "Combination": 333222,
+    "Label": 3
+  },
+  {
+    "Combination": 333223,
+    "Label": 3
+  },
+  {
+    "Combination": 333231,
+    "Label": 3
+  },
+  {
+    "Combination": 333232,
+    "Label": 3
+  },
+  {
+    "Combination": 333233,
+    "Label": 3
+  },
+  {
+    "Combination": 333311,
+    "Label": 3
+  },
+  {
+    "Combination": 333312,
+    "Label": 3
+  },
+  {
+    "Combination": 333313,
+    "Label": 3
+  },
+  {
+    "Combination": 333321,
+    "Label": 3
+  },
+  {
+    "Combination": 333322,
+    "Label": 3
+  },
+  {
+    "Combination": 333323,
+    "Label": 3
+  },
+  {
+    "Combination": 333331,
+    "Label": 3
+  },
+  {
+    "Combination": 333332,
+    "Label": 3
+  },
+  {
+    "Combination": 333333,
+    "Label": 3
+  }
+]
