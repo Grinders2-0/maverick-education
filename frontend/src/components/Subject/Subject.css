@@ -6,37 +6,46 @@
   background-position: center;
   border-radius: 10px;
   cursor: pointer;
-  /* transition: transform 0.3s ease, background-size 0.3s ease; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; Center align items horizontally */
-  /* justify-content: center; Center align items vertically */
   padding: 20px;
-  overflow: hidden;
   padding-left: 30px;
   padding-top: 30px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for both transform and shadow */
+}
+
+.subject-container:hover {
+  transform: scale(1.02); /* Slightly scale up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .subject-container.selected {
-  transform: scale(1.05); /* Slightly scale up the element */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-  background-size: 110%; /* Slightly increase the size of the background image */
-  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
-  border: 3px solid #fff; /* White border for selection */
-  border-radius: 12px; /* Slightly rounded corners */
+  transform: scale(1.03); /* Scale slightly more when selected */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+  border: 2px solid #fff; /* White border for selection */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Slightly darker overlay for selected */
 }
 
 .subject-name {
-  font-size: 20px; /* Adjust font size for better readability */
+  font-size: 20px;
   margin: 0;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Add shadow for better text contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Shadow for better contrast */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subject-code {
-  font-size: 16px; /* Adjust font size to match the subject name */
+  font-size: 16px;
   margin: 0;
   margin-top: 5px;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Add shadow for better text contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Shadow for better contrast */
 }

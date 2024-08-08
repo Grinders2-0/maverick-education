@@ -9,6 +9,7 @@ import {
   getAllCourseDetail,
   getSearchCourseDetail,
 } from "../../redux/action/form/collegeForm";
+import { mixpanelTrack } from "../../util/mixpanel";
 
 const Course = () => {
   const courseDetail = useAppSelector((state) => state.form?.courseDetail);
@@ -26,6 +27,8 @@ const Course = () => {
     }
   };
   const onLearnPress = (link: string) => {
+    mixpanelTrack("Course Learning");
+
     if (link?.length == 0) {
       alert("data not comming");
       return;

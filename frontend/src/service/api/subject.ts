@@ -1,4 +1,4 @@
-import { ICollegeInfo, IServay } from "../../@types/form";
+import { IChatbot, ICollegeInfo, IServay } from "../../@types/form";
 import { instanceWithAuth, instanceWithoutAuth } from "../../util/axiosHandler";
 
 const getSubject = async (semester: string) => {
@@ -23,7 +23,6 @@ const collegeInfo = async (body: ICollegeInfo) => {
     });
 };
 const studentSubject = async (body: string[]) => {
-  alert(body);
   const data = {
     subjectIds: body,
   };
@@ -120,6 +119,28 @@ const getSubjectOfSem = async () => {
     });
 };
 
+const geminiPro = async (body: IChatbot) => {
+  return instanceWithAuth
+    .post("chat/chatbot", body)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get all corse reults api ", e);
+    });
+};
+
+const weakSubjectMaterail = async () => {
+  return instanceWithAuth
+    .get("student/get/weakSubjectMaterial")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      console.log("Error in get all corse reults api ", e);
+    });
+};
+
 export default {
   getSubject,
   collegeInfo,
@@ -131,4 +152,6 @@ export default {
   searchCourse,
   getAllCourse,
   getSubjectOfSem,
+  geminiPro,
+  weakSubjectMaterail,
 };

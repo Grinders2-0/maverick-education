@@ -14,9 +14,11 @@ const Header = () => {
         background: colors.accent,
       }}
     >
-      <img src={images.Google} style={{ height: 30, width: 30 }} />
+      <img src={images.Logo} style={{ height: 50, width: 50 }} />
       <div style={{ marginLeft: 10 }}>
-        <label style={{ color: colors.white, letterSpacing: 0.7 }}>
+        <label
+          style={{ color: colors.white, letterSpacing: 0.7, fontSize: 20 }}
+        >
           NextGenLearn
         </label>
       </div>

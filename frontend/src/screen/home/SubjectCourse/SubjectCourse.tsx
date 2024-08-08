@@ -4,9 +4,22 @@ import ShowCourse from "../../../components/Subject/ShowCourse";
 import { colors } from "../../../util/constant/colors";
 import ProgressChart from "../../../components/Chart/ProgressChart/ProgressChart";
 import CustomButton from "../../../components/CustomButton/CustomButton";
+import { useAppSelector } from "../../../redux/app/store";
+import mixpanel from "mixpanel-browser";
+import { mixpanelTrack } from "../../../util/mixpanel";
 
 const SubjectCourse = () => {
-  const onExplorePress = () => {};
+  const courseDetail = useAppSelector((state) => state.form?.courseDetail);
+  const singleSubject = useAppSelector(
+    (state) => state.form?.singleSubjectDetail
+  );
+  const filterdData = courseDetail?.filter(
+    (item) => item?.subjectCode == singleSubject?.scode
+  );
+  const onExplorePress = (url: string) => {
+    mixpanelTrack("user Pressed Subject");
+    window.open(url, "_blank");
+  };
   return (
     <div>
       <div
@@ -49,7 +62,7 @@ const SubjectCourse = () => {
                 fontWeight: "bold",
               }}
             >
-              Compiler Design
+              {singleSubject?.sname}
             </label>
           </div>
           <div
@@ -61,7 +74,7 @@ const SubjectCourse = () => {
           >
             <label style={{ fontSize: 20 }}>Subject Code:</label>
             <label style={{ marginLeft: 5, fontSize: 18, color: colors.black }}>
-              3160707
+              {singleSubject?.scode}
             </label>
           </div>
           <div
@@ -85,7 +98,7 @@ const SubjectCourse = () => {
           </div>
         </div>
         <div style={{ marginRight: 20 }}>
-          <ProgressChart progress={30} color={colors.accent} />
+          <ProgressChart progress={0} color={colors.accent} />
         </div>
       </div>
 
@@ -119,19 +132,17 @@ const SubjectCourse = () => {
             overflowY: "auto",
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]?.map(
-            (item, index) => {
-              return (
-                <div key={index} style={{ width: "100%" }}>
-                  <ShowCourse
-                    sname="D.C. Circuit"
-                    style={{ marginRight: 10, marginBottom: 20 }}
-                    onClick={() => onExplorePress()}
-                  />
-                </div>
-              );
-            }
-          )}
+          {filterdData?.map((item, index) => {
+            return (
+              <div key={index} style={{ width: "100%" }}>
+                <ShowCourse
+                  sname={item?.name}
+                  style={{ marginRight: 10, marginBottom: 20 }}
+                  onClick={() => onExplorePress(item?.url ?? "")}
+                />
+              </div>
+            );
+          })}
         </div>
         {/* <div
         style={{

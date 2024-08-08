@@ -38,7 +38,7 @@ const Form = () => {
     dispatch(
       formSubmit((success) => {
         if (success) {
-          navigation("/dashboard");
+          navigation("/home/dashboard");
         } else {
           console.log("faled");
 

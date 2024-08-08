@@ -1,15 +1,41 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import SearchBar from "../../components/SerachBaar/SearchBar";
 import ShowSubject from "../../components/Subject/ShowSubject";
 import { colors } from "../../util/constant/colors";
 import SubjectCourse from "../home/SubjectCourse/SubjectCourse";
+import { useAppDispatch, useAppSelector } from "../../redux/app/store";
+import {
+  getSearchCourseDetail,
+  getSubjectBySemester,
+} from "../../redux/action/form/collegeForm";
+import { getSubjectBySem } from "../../redux/action/subject/subject";
+import { ISubjectModel } from "../../@types/form";
+import { setSingleSubjectDetail } from "../../redux/reducer/formSlice";
+import { mixpanelTrack } from "../../util/mixpanel";
 
 const Subject = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [selectedSub, setSelectedSub] = useState<boolean>(false);
+  const subjectData = useAppSelector((state) => state.form?.fullSubjectDetails);
+  const subject = useAppSelector((state) => state.form?.subjectDetail);
+  console.log("subjectData", subjectData);
+  useEffect(() => {
+    dispatch(getSubjectBySem("7", (success) => {}));
+  }, []);
+  const dispatch = useAppDispatch();
   const onSearchPress = () => {};
-  const onExplorePress = () => {
-    setSelectedSub(!selectedSub);
+  const onExplorePress = (code: string, item: ISubjectModel) => {
+    mixpanelTrack("user Press subject button");
+    dispatch(setSingleSubjectDetail(item));
+    dispatch(
+      getSearchCourseDetail(code, (success) => {
+        if (success) {
+          setSelectedSub(!selectedSub);
+        } else {
+          // setSelectedSub(!selectedSub);
+        }
+      })
+    );
   };
   return (
     <div style={{ padding: 20 }}>
@@ -46,20 +72,18 @@ const Subject = () => {
                 overflowY: "auto",
               }}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]?.map(
-                (item, index) => {
-                  return (
-                    <div key={index} style={{}}>
-                      <ShowSubject
-                        scode="3160707"
-                        sname="Comiler Design"
-                        style={{ marginRight: 10, marginBottom: 20 }}
-                        onClick={() => onExplorePress()}
-                      />
-                    </div>
-                  );
-                }
-              )}
+              {subject?.map((item, index) => {
+                return (
+                  <div key={index} style={{}}>
+                    <ShowSubject
+                      scode={item.scode}
+                      sname={item?.sname}
+                      style={{ marginRight: 10, marginBottom: 20 }}
+                      onClick={() => onExplorePress(item?.scode ?? "", item)}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -5,6 +5,9 @@ import SPIChart from "../../../components/Chart/SPIChart/SPIChart";
 import { colors } from "../../../util/constant/colors";
 import ExamScheduleChart from "../../../components/Chart/ExamScheduleChart/ExamScheduleChart";
 import SimpleAreaChart from "../../../components/Chart/SimpleAreaChart/SimpleAreaChart";
+import { useAppSelector } from "../../../redux/app/store";
+import ShowCourse from "../../../components/Subject/ShowCourse";
+import { mixpanelTrack } from "../../../util/mixpanel";
 const data = [
   {
     _id: "66b326e0c2767bc49611e028",
@@ -98,6 +101,10 @@ const data = [
   },
 ];
 const DashBoard = () => {
+  const userInfo = useAppSelector((state) => state.auth?.userInfo);
+  const aiData = useAppSelector((state) => state.form?.aiData);
+  console.log("userInfo", userInfo);
+
   const spiData = {
     labels: [
       "sem 1",
@@ -116,7 +123,10 @@ const DashBoard = () => {
     labels: ["sem 5", "sem 6", "sem 7", "sem 8"],
     values: [8.5, 8.7, 8.8, 9.0],
   };
-
+  const onLearnPress = (url: string) => {
+    mixpanelTrack("User Learning Course");
+    window.open(url, "_blank");
+  };
   return (
     <div
       style={{
@@ -147,6 +157,7 @@ const DashBoard = () => {
         >
           <h4 style={{ color: "white" }}>J</h4>
         </div>
+        {/* <label>{userInfo?.fName + "" + userInfo?.lName} </label> */}
         <label>Jeneesh S.</label>
       </div>
       <div
@@ -180,6 +191,49 @@ const DashBoard = () => {
             data={cgpaData}
             style={{ width: "350px", display: "flex", flex: 1 }}
           />
+        </div>
+      </div>
+      <div>
+        <div style={{ marginTop: 30 }}>
+          <h2 style={{ fontSize: 34 }}>Your Personalize Learning</h2>
+        </div>
+        <div style={{ width: "100%" }}>
+          {aiData && aiData?.length > 0 ? (
+            aiData?.map((item: any, index: number) => {
+              return (
+                <ShowCourse
+                  sname={item?.name}
+                  style={{
+                    marginRight: 10,
+                    marginBottom: 20,
+                  }}
+                  isDash
+                  onClick={() => onLearnPress(item?.url ?? "")}
+                />
+              );
+            })
+          ) : (
+            <>
+              <ShowCourse
+                sname={"Probablistic Reasoning"}
+                style={{
+                  marginRight: 10,
+                  marginBottom: 20,
+                }}
+                isDash
+                // onClick={() => onLearnPress(item?.url ?? "")}
+              />
+              <ShowCourse
+                sname={"Natural Language Processing"}
+                style={{
+                  marginRight: 10,
+                  marginBottom: 20,
+                }}
+                isDash
+                // onClick={() => onLearnPress(item?.url ?? "")}
+              />
+            </>
+          )}
         </div>
       </div>
     </div>

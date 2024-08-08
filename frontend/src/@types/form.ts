@@ -7,11 +7,17 @@ export interface IFromSlice {
   resultDetail: IStudentResult[];
   fullSubjectDetails: ISubjectModel[];
   courseDetail: ICourseDetail[];
+  chatData: string;
+  aiData: any;
+  singleSubjectDetail?: ISubjectModel;
 }
 interface IStudentGrade {
   subjectCode?: string;
   grade?: string;
   _id?: string;
+}
+export interface IChatbot {
+  prompt?: string;
 }
 
 export interface ICourseDetail {
@@ -20,6 +26,7 @@ export interface ICourseDetail {
   subjectName?: string;
   subjectUrl?: string;
   semester?: string;
+  subjectCode?: string;
 }
 export interface IStudentResult {
   _id?: string;

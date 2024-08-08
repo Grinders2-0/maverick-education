@@ -9,6 +9,7 @@ import DashRoute from "./DashRoute";
 import Subject from "../screen/subject/Subject";
 import Course from "../screen/Course/Course";
 import SubjectCourse from "../screen/home/SubjectCourse/SubjectCourse";
+import Chatbot from "../screen/Chatbot/Chatbot";
 
 const MainRoute: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const MainRoute: React.FC = () => {
           <Route path="subject" element={<Subject />} />
           <Route path="course" element={<Course />} />
           <Route path="subjectCourse" element={<SubjectCourse />} />
+          <Route path="chatbot" element={<Chatbot />} />
 
           {/* Add more routes here if needed */}
         </Route>

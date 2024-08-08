@@ -29,23 +29,23 @@ ChartJS.register(
 );
 
 const TimelineChart: React.FC = () => {
-  // Generate a list of dates for the past four months
+  // Generate a list of dates for every week in the past four months
   const startDate = new Date();
   startDate.setMonth(startDate.getMonth() - 4);
 
-  const generateDateRange = (start: Date, end: Date): string[] => {
+  const generateWeeklyDateRange = (start: Date, end: Date): string[] => {
     const dateArray: string[] = [];
     let currentDate = new Date(start);
     while (currentDate <= end) {
       dateArray.push(currentDate.toISOString().split("T")[0]); // Format as YYYY-MM-DD
-      currentDate.setDate(currentDate.getDate() + 1);
+      currentDate.setDate(currentDate.getDate() + 7); // Move to next week
     }
     return dateArray;
   };
 
-  const labels = generateDateRange(startDate, new Date());
+  const labels = generateWeeklyDateRange(startDate, new Date());
 
-  // Generate random data for each day
+  // Generate random data for each week
   const generateRandomData = (num: number) => {
     return Array.from({ length: num }, () => Math.floor(Math.random() * 100));
   };
@@ -54,7 +54,7 @@ const TimelineChart: React.FC = () => {
     labels,
     datasets: [
       {
-        label: "Daily Usage",
+        label: "Weekly Usage",
         data: generateRandomData(labels.length),
         borderColor: "orange",
         backgroundColor: colors.highlightBackground,
@@ -80,7 +80,7 @@ const TimelineChart: React.FC = () => {
       x: {
         type: "time" as const, // Use time scale for x-axis
         time: {
-          unit: "day" as const, // Ensure this is a valid literal type
+          unit: "week" as const, // Use weeks for x-axis units
         },
         title: {
           display: true,

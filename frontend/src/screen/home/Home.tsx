@@ -4,14 +4,18 @@ import Drawer from "./drawer/Drawer";
 import { colors } from "../../util/constant/colors";
 import Subject from "../subject/Subject";
 import Course from "../Course/Course";
-import { useAppDispatch } from "../../redux/app/store";
-import { getAllResultData } from "../../redux/action/form/collegeForm";
+import { useAppDispatch, useAppSelector } from "../../redux/app/store";
+import {
+  getAllResultData,
+  getWeakSubjectData,
+} from "../../redux/action/form/collegeForm";
 
 const Home = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    // dispatch(getAllResultData((success) => {}));
+    dispatch(getWeakSubjectData((success) => {}));
+    dispatch(getAllResultData((success) => {}));
   }, []);
   const [selectedLabel, setSelectedLabel] = useState<string>("Dashboard");
 

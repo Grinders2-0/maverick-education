@@ -20,6 +20,9 @@ const initialState: IFromSlice = {
   resultDetail: [],
   fullSubjectDetails: [],
   courseDetail: [],
+  chatData: "",
+  aiData: null,
+  singleSubjectDetail: {},
 };
 
 export const formSlice = createSlice({
@@ -50,6 +53,15 @@ export const formSlice = createSlice({
     setCourseDetail: (state, action: PayloadAction<ICourseDetail[]>) => {
       state.courseDetail = action.payload;
     },
+    setChatData: (state, action: PayloadAction<string>) => {
+      state.chatData = action.payload;
+    },
+    setAiData: (state, action: PayloadAction<any>) => {
+      state.aiData = action.payload;
+    },
+    setSingleSubjectDetail: (state, action: PayloadAction<ISubjectModel>) => {
+      state.singleSubjectDetail = action.payload;
+    },
   },
 });
 
@@ -62,6 +74,9 @@ export const {
   setResultDetails,
   setFullSubjectDetails,
   setCourseDetail,
+  setChatData,
+  setAiData,
+  setSingleSubjectDetail,
 } = formSlice.actions;
 
 export default formSlice.reducer;

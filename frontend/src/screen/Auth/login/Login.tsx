@@ -17,6 +17,7 @@ import { useAppDispatch } from "../../../redux/app/store";
 import { signIn, signUpWithGoogle } from "../../../redux/action/auth/auth";
 import { isFormSubmit } from "../../../redux/action/form/collegeForm";
 import { useNavigate } from "react-router-dom";
+import { mixpanelTrack } from "../../../util/mixpanel";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -44,14 +45,14 @@ const Login = () => {
       setPasswordError(passwordValidationError);
       return;
     }
-
+    mixpanelTrack("Press Login Button");
     dispatch(
       signIn(email, password, (success) => {
         if (success) {
           dispatch(
             isFormSubmit((success) => {
               if (success) {
-                navigate("/dashboard");
+                navigate("/home/dashboard");
               } else {
                 navigate("/form");
               }

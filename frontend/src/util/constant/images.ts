@@ -23,4 +23,6 @@ export const images = {
   Subject: require("../../assets/icons/subject.png"),
   Course: require("../../assets/icons/course.png"),
   About: require("../../assets/icons/about.png"),
+  Logo: require("../../assets/icons/logo.png"),
+  ChatBot: require("../../assets/icons/chatbot.png"),
 };

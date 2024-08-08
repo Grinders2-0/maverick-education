@@ -11,6 +11,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useAppDispatch } from "../../../redux/app/store";
 import { signUp } from "../../../redux/action/auth/auth";
 import { useNavigate } from "react-router-dom";
+import { mixpanelTrack } from "../../../util/mixpanel";
 
 const isValidEmail = (email: string): string => {
   // Basic email validation
@@ -95,6 +96,7 @@ const SignUp = () => {
       return;
     }
 
+    mixpanelTrack("press sign up button");
     dispatch(
       signUp(email, password, conPassword, firstName, lastName, (success) => {
         if (success) {

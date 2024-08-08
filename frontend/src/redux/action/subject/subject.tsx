@@ -6,6 +6,7 @@ import {
   setSelectedSubjectDetail,
   setSubjectDetail,
 } from "../../reducer/formSlice";
+import * as Sentry from "@sentry/react";
 
 export const getSubjectBySem =
   (sem: string, onSuccess: (success: boolean) => void) =>
@@ -18,7 +19,8 @@ export const getSubjectBySem =
       } else {
         onSuccess(false);
       }
-    } catch (error) {
+    } catch (error: any) {
+      Sentry.captureMessage("Error in fetching subject ", error);
       console.error("Error fetching subjects:", error);
       onSuccess(false);
     }

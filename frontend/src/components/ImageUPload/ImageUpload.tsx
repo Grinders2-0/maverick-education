@@ -20,27 +20,27 @@ const ImageUpload: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (selectedImages.length > 0) {
-      const formData = new FormData();
-      selectedImages.forEach((image, index) => {
-        formData.append(`images[${index}]`, image);
-      });
+  // const handleSubmit = async (e: FormEvent) => {
+  //   e.preventDefault();
+  //   if (selectedImages.length > 0) {
+  //     const formData = new FormData();
+  //     selectedImages.forEach((image, index) => {
+  //       formData.append(`images[${index}]`, image);
+  //     });
 
-      // Call the uploadResult function with formData
-      try {
-        const result = await uploadResult(formData);
-        console.log("Upload successful", result);
-      } catch (error) {
-        console.error("Upload failed", error);
-      }
-    }
-  };
+  //     // Call the uploadResult function with formData
+  //     try {
+  //       const result = await uploadResult(formData);
+  //       console.log("Upload successful", result);
+  //     } catch (error) {
+  //       console.error("Upload failed", error);
+  //     }
+  //   }
+  // };
 
   return (
     <div style={styles.container}>
-      <form onSubmit={handleSubmit} style={styles.form}>
+      <form style={styles.form}>
         <input
           type="file"
           accept="image/*"

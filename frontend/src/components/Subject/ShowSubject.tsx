@@ -3,7 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import { images } from "../../util/constant/images";
 import { colors } from "../../util/constant/colors";
 
-type props = {
+type Props = {
   onClick?: () => void;
   sname?: string;
   scode?: string;
@@ -11,6 +11,7 @@ type props = {
   style?: CSSProperties | undefined;
   buttonStyle?: CSSProperties | undefined;
 };
+
 const ShowSubject = ({
   onClick,
   scode,
@@ -18,7 +19,7 @@ const ShowSubject = ({
   buttonText,
   style,
   buttonStyle,
-}: props) => {
+}: Props) => {
   return (
     <div
       style={{
@@ -32,16 +33,24 @@ const ShowSubject = ({
         justifyContent: "space-between",
         paddingTop: 30,
         backgroundImage: `url(${images.subjectBG})`,
-        backgroundSize: "cover", // Cover the entire div
-        backgroundPosition: "center", // Center the image
-        backgroundRepeat: "no-repeat", // Do not repeat the image
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         ...style,
       }}
     >
       <div>
         <div>
           <label
-            style={{ fontSize: 20, fontWeight: "bold", color: colors.white }}
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              color: colors.white,
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+              display: "block",
+            }}
           >
             {sname}
           </label>

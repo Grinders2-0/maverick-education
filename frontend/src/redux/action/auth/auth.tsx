@@ -9,7 +9,8 @@ import { AppDispatch, RootState } from "../../app/store";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, googleProvider } from "../../../firebase";
 import { mixpanelTrack } from "../../../util/mixpanel";
-
+import { log } from "console";
+import * as Sentry from "@sentry/react";
 const getItemFromStorage = (key: string) => {
   const item = localStorage.getItem(key);
   return item ? JSON.parse(item) : null;
@@ -66,6 +67,7 @@ export const signIn =
             lName: loginData?.user?.lName ?? "",
             userID: loginData?.user?._id ?? "",
           };
+          console.log("userTije", loginData?.token);
 
           disptach(setIsLoggedIn(true));
           disptach(setUserToken(loginData?.token));
@@ -85,6 +87,7 @@ export const signIn =
           onSuccess(false);
         }
       } catch (error: any) {
+        Sentry.captureMessage("Error in Sign In ", error);
         onSuccess(false);
         // showMessage({
         //   message: 'Sign-in Error',
@@ -111,79 +114,54 @@ export const signUp =
     mixpanelTrack("sign up press");
     const cleanedEmail = email.replace(/\s/g, "");
     const cleanPassword = password.replace(/\s/g, "");
-    const cleanConfirmPassword = confirmPassword.replace(/\s/g, "");
 
-    const stateData = getState();
-    if (!isEmailValid(email)) {
-      //   showMessage({
-      //     message: 'Invalid Email',
-      //     description: 'Please enter a valid email address.',
-      //     type: 'warning',
-      //   });
-      onSuccess(false);
-    } else if (cleanPassword.length < 6) {
-      //   showMessage({
-      //     message: 'Password Too Short',
-      //     description: 'Password should be at least 6 characters long.',
-      //     type: 'warning',
-      //   });
-      onSuccess(false);
-    } else if (cleanPassword !== cleanConfirmPassword) {
-      //   showMessage({
-      //     message: 'Password Mismatch',
-      //     description: 'The password and confirm password do not match.',
-      //     type: 'warning',
-      //   });
-      onSuccess(false);
-    } else {
-      try {
-        const data = {
-          loginType: "email",
-          email: cleanedEmail.toLowerCase(),
-          fName: firstName,
-          lName: lastName,
-          isLogin: false,
-          password: cleanPassword,
+    try {
+      const data = {
+        loginType: "email",
+        email: cleanedEmail.toLowerCase(),
+        fName: firstName,
+        lName: lastName,
+        isLogin: false,
+        password: cleanPassword,
+      };
+      const loginData = await AuthService.login(data);
+      console.log("Logindata", loginData);
+
+      if (loginData) {
+        const mainData = {
+          ...data,
+          userID: loginData?.user?._id ?? "",
         };
-        const loginData = await AuthService.login(data);
-        console.log("Logindata", loginData);
+        disptach(setUserInfo(mainData));
+        disptach(setIsLoggedIn(true));
 
-        if (loginData) {
-          const mainData = {
-            ...data,
-            userID: loginData?.user?._id ?? "",
-          };
-          disptach(setUserInfo(mainData));
-          disptach(setIsLoggedIn(true));
+        // console.log('LoginData:' + loginData?.token);
+        disptach(setUserToken(loginData?.token));
 
-          // console.log('LoginData:' + loginData?.token);
-          disptach(setUserToken(loginData?.token));
-          //   showMessage({
-          //     message: 'Sign Up Successfully',
-          //     type: 'success',
-          //   });
+        //   showMessage({
+        //     message: 'Sign Up Successfully',
+        //     type: 'success',
+        //   });
 
-          //   navigation.navigate('BottomTab' as never);
-          onSuccess(true);
-        } else {
-          //   showMessage({
-          //     message: 'Login Failed',
-          //     description: 'email already in use. Kindly choose another email',
-          //     type: 'warning',
-          //   });
-          onSuccess(false);
-        }
-      } catch (error: any) {
-        alert(error);
-        console.log("error", error);
-
+        //   navigation.navigate('BottomTab' as never);
+        onSuccess(true);
+      } else {
+        //   showMessage({
+        //     message: 'Login Failed',
+        //     description: 'email already in use. Kindly choose another email',
+        //     type: 'warning',
+        //   });
         onSuccess(false);
-        // showMessage({
-        //   message: 'Account Creation Error',
-        //   description: 'Please check your credentials and try again',
-        //   type: 'danger',
-        // });
       }
+    } catch (error: any) {
+      Sentry.captureMessage("Error in Sign Up ", error);
+
+      onSuccess(false);
+      // showMessage({
+      //   message: 'Account Creation Error',
+      //   description: 'Please check your credentials and try again',
+      //   type: 'danger',
+      // });
     }
   };
 
@@ -233,6 +211,7 @@ export const signUpWithGoogle =
       }
     } catch (error: any) {
       onSuccess(false);
+      Sentry.captureMessage("Error in Sign In With Google ", error);
 
       //   showMessage({
       //     message: 'Google Sign Up Error',
@@ -321,6 +300,8 @@ export const singOUt =
       // console.log('Signout', signout);
       console.log("Sign-out successful");
     } catch (error: any) {
+      Sentry.captureMessage("Error in Sign Out ", error);
+
       onSuccess(false);
       //   showMessage({
       //     message: 'Sign-Out Error',

@@ -9,6 +9,7 @@ type props = {
   buttonText?: string | undefined;
   style?: CSSProperties | undefined;
   buttonStyle?: CSSProperties | undefined;
+  isDash?: boolean | undefined;
 };
 const ShowCourse = ({
   onClick,
@@ -16,6 +17,7 @@ const ShowCourse = ({
   buttonText,
   style,
   buttonStyle,
+  isDash = false,
 }: props) => {
   return (
     <div
@@ -28,7 +30,7 @@ const ShowCourse = ({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingTop: 30,
-        backgroundImage: `url(${images.courseBG})`,
+        backgroundImage: isDash ? colors.white : `url(${images.courseBG})`,
         backgroundSize: "cover", // Cover the entire div
         backgroundPosition: "center", // Center the image
         backgroundRepeat: "no-repeat", // Do not repeat the image
@@ -48,7 +50,7 @@ const ShowCourse = ({
           style={{
             fontSize: 20,
             fontWeight: "bold",
-            color: colors.white,
+            color: isDash ? colors.black : colors.white,
           }}
         >
           {sname}
@@ -66,8 +68,8 @@ const ShowCourse = ({
           onClick={onClick}
           text={buttonText ? buttonText : "Learn"}
           style={{
-            background: colors.white,
-            color: colors.black,
+            background: isDash ? colors.black : colors.white,
+            color: isDash ? colors.white : colors.black,
             fontWeight: "bold",
             marginLeft: 30,
             marginRight: 10,
