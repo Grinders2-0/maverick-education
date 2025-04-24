@@ -1,0 +1,30 @@
+2025-04-23 20:58:56:5856 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 20:59:10:5910 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 20:59:14:5914 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 20:59:14:5914 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 20:59:22:5922 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 20:59:23:5923 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 21:00:03:03 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:00:04:04 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:00:05:05 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 21:00:18:018 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:00:19:019 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 21:00:41:041 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:00:41:041 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 21:01:06:16 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:01:07:17 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-23 21:03:07:37 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-23 21:03:08:38 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:01:43:143 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-24 11:01:43:143 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:01:52:152 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-24 11:01:52:152 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:01:56:156 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-24 11:01:56:156 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:04:10:410 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-24 11:04:11:411 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:04:14:414 [33mwarn[39m: [33mPort 3001 is already in use. Trying another port...[39m
+2025-04-24 11:04:14:414 [32minfo[39m: [32mServer running at port 3002 (port 3001 was in use)[39m
+2025-04-24 11:04:15:415 [32minfo[39m: [32mMongoDB database connected successfully[39m
+2025-04-24 11:21:32:2132 [32minfo[39m: [32mServer running at port 3001[39m
+2025-04-24 11:21:33:2133 [32minfo[39m: [32mMongoDB database connected successfully[39m

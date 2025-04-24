@@ -1,0 +1,17 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": false,
+  "quiet": false,
+  "events": {
+    "restart": "echo [nodemon] restarting due to changes...",
+    "start": "echo [nodemon] starting `node server.js`"
+  },
+  "execMap": {
+    "js": "node"
+  },
+  "watch": ["src/", "server.js"],
+  "ext": "js,json",
+  "delay": "1000",
+  "stdout": true
+} 

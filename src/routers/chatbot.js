@@ -1,0 +1,9 @@
+import express from "express";
+import { chatbot } from "../controller/chatbotcontroller.js";
+
+
+const router = express.Router();
+
+router.post("/chatbot", chatbot);
+
+export default router;
