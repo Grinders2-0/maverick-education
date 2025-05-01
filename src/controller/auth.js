@@ -7,7 +7,6 @@ import {
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { sendMail } from "./sendMail.js";
 
 export const signup = async (req, res) => {
   try {
@@ -118,33 +117,6 @@ const login = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ user, token, isNewUser: true });
 };
 
-// const updateUser = async (req, res) => {
-//   const { userId } = req.user;
-//   const body = req.body;
-//   const { userName, email, address, website } = body;
-//   if (!userName || !email || !address) {
-//     throw new BadRequestError("name, email and address are required");
-//   }
-//   body.role = undefined;
-//   body.currentPackage = undefined;
-//   body.removeAd = undefined;
-//   body.loginType = undefined;
-//   const tempUser = await User.findById(userId);
-//   if (tempUser.loginType == "phone") {
-//     body.phone = undefined;
-//   } else {
-//     body.email = undefined;
-//   }
-//   const user = await User.findByIdAndUpdate(userId, body, {
-//     new: true,
-//     runValidators: true,
-//   });
-//   if (!user) {
-//     throw new NotFoundError(`No user found with id ${userId}`);
-//   }
-//   res.status(StatusCodes.OK).json({ user });
-// };
-
 const logout = async (req, res) => {
   try {
     const { userId } = req.user;
@@ -172,228 +144,216 @@ const logout = async (req, res) => {
   }
 };
 
-// const changePassword = async (req, res) => {
-//   const { email, oldPassword, newPassword } = req.body;
-//   const userData = await User.findOne({ email: email });
-
-//   if (!userData) {
-//     throw new NotFoundError(`No user found with email ${email}`);
-//   }
-//   const isPasswordCorrect = await userData.comparePassword(oldPassword);
-//   if (!isPasswordCorrect) {
-//     throw new UnauthenticatedError("Invalid Credentials!");
-//   }
-//   console.log("ispass", isPasswordCorrect);
-//   const salt = await bcrypt.genSalt(10);
-//   const hashedPassword = await bcrypt.hash(newPassword, salt);
-//   const userUpdate = await User.findOneAndUpdate(
-//     { email: email },
-//     { password: hashedPassword },
-//     { new: true }
-//   );
-
-//   if (userUpdate) {
-//     userUpdate.password = undefined;
-//   }
-
-//   res.status(StatusCodes.OK).json({
-//     data: userUpdate,
-//     message: "password change successfully",
-//   });
-// };
-
 const changePassword = async (req, res) => {
-  const { email, oldPassword, newPassword } = req.body;
-  const userData = await User.findOne({ email: email });
+  try {
+    const { oldPassword, newPassword } = req.body;
+    const userId = req.user.userId;
 
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
+    if (!oldPassword || !newPassword) {
+      throw new BadRequestError("Please provide both old and new password");
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      throw new NotFoundError("User not found");
+    }
+
+    const isPasswordCorrect = await user.comparePassword(oldPassword);
+    if (!isPasswordCorrect) {
+      throw new UnauthenticatedError("Invalid old password");
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    user.password = hashedPassword;
+    await user.save();
+
+    res.status(StatusCodes.OK).json({
+      success: true,
+      message: "Password changed successfully"
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
   }
-
-  if (!userData.password) {
-    throw new UnauthenticatedError("User does not have a password set!");
-  }
-
-  const isPasswordCorrect = await userData.comparePassword(oldPassword);
-
-  if (!isPasswordCorrect) {
-    throw new UnauthenticatedError("Invalid Credentials!");
-  }
-
-  console.log("ispass", isPasswordCorrect);
-
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(newPassword, salt);
-
-  const userUpdate = await User.findOneAndUpdate(
-    { email: email },
-    { $set: { password: hashedPassword } },
-    { new: true, runValidators: true }
-  );
-
-  console.log("Updated User:", userUpdate);
-
-  if (!userUpdate) {
-    throw new Error("Password update failed!");
-  }
-
-  res.status(StatusCodes.OK).json({
-    data: userUpdate,
-    message: "Password changed successfully",
-  });
 };
 
+const deleteAccount = async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      throw new BadRequestError("Please provide email");
+    }
+    
+    const userData = await User.findOneAndDelete({ email: email });
+    if (!userData) {
+      throw new NotFoundError(`No user found with email ${email}`);
+    }
 
-const sendMailOtp = async (req, res) => {
-  const { email } = req.body;
-  if (!email) {
-    throw new BadRequestError("Provide Email For Reset Password");
+    res.status(StatusCodes.OK).json({ 
+      success: true,
+      message: "Account deleted successfully" 
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
   }
-  const userData = await User.findOne({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
-  const otpCode = generateOTP();
-  const message = {
-    to: email,
-    otp: otpCode,
-  };
-  const otpSend = await sendMail(message);
+};
 
-  if (otpSend) {
-    const data = jwt.sign(
-      { userId: userData._id, otpCode },
-      process.env.JWT_SECRET
+const webDeleteAccount = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      throw new BadRequestError("Please provide email and password");
+    }
+
+    const userData = await User.findOne({ email: email });
+    if (!userData) {
+      throw new NotFoundError(`No user found with email ${email}`);
+    }
+
+    const isPasswordCorrect = await userData.comparePassword(password);
+    if (!isPasswordCorrect) {
+      throw new UnauthenticatedError("Invalid password");
+    }
+
+    await User.findOneAndDelete({ email: email });
+    res.status(StatusCodes.OK).json({ 
+      success: true,
+      message: "Account deleted successfully" 
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+const userAuthorize = async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      throw new BadRequestError("Please provide email");
+    }
+
+    const userData = await User.findOne({ email: email });
+    if (!userData) {
+      throw new NotFoundError(`No user found with email ${email}`);
+    }
+
+    res.status(StatusCodes.OK).json({ 
+      success: true,
+      message: "User authorized" 
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+const updateProfile = async (req, res) => {
+  try {
+    const { email, fName, lName } = req.body;
+    if (!email || !fName) {
+      throw new BadRequestError("Please provide email and first name");
+    }
+
+    const userData = await User.findOne({ email: email });
+    if (!userData) {
+      throw new NotFoundError(`No user found with email ${email}`);
+    }
+
+    const updatedData = await User.findOneAndUpdate(
+      { email: email },
+      {
+        fName: fName,
+        lName: lName,
+      },
+      { new: true }
     );
 
-    res.status(StatusCodes.OK).json({ token_otp: data });
-  } else {
-    throw new NotFoundError(`There is an issue with sending OTP`);
-  }
-};
-const generateOTP = () => {
-  const otp = Math.floor(100000 + Math.random() * 900000);
-  return otp.toString();
-};
+    if (updatedData) {
+      updatedData.password = undefined;
+    }
 
-const verifyOtp = async (req, res) => {
-  const { email, otp, otp_token } = req.body;
-  if (!otp || !otp_token || !email) {
-    throw new BadRequestError("Provide OTP for reset Password");
-  }
-  const userData = await User.findOne({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
-  const payload = jwt.verify(otp_token, process.env.JWT_SECRET);
-  const get_otp = payload.otpCode;
-  if (get_otp === otp) {
-    res
-      .status(StatusCodes.OK)
-      .json({ message: "OTP verification successful", isValid: true });
-  } else {
-    res.status(StatusCodes.OK).json({ message: "InValid OTP", isValid: false });
+    res.status(StatusCodes.OK).json({
+      success: true,
+      data: updatedData
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
   }
 };
 
 const resetPassword = async (req, res) => {
-  const { email, password } = req.body;
-  if (!email) {
-    throw new BadRequestError("Provide Email For Reset Password");
-  }
-  const userData = await User.findOne({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
+  try {
+    const { email, oldPassword, newPassword } = req.body;
 
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-  const userUpdate = await User.findOneAndUpdate(
-    { email: email },
-    { password: hashedPassword },
-    { new: true }
-  );
+    if (!email || !oldPassword || !newPassword) {
+      throw new BadRequestError("Please provide email, old password, and new password");
+    }
 
-  if (userUpdate) {
-    userUpdate.password = undefined;
-  } else {
-    throw new NotFoundError("Error in updating Data");
-  }
-  res.status(StatusCodes.OK).json({
-    data: userUpdate,
-    message: "Password reset successfully",
-  });
-};
-const deleteAccount = async (req, res) => {
-  const { email } = req.body;
-  if (!email) {
-    throw new BadRequestError("Provide Email For Reset Password");
-  }
-  const userData = await User.findOneAndDelete({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new NotFoundError(`No user found with email ${email}`);
+    }
 
-  res.status(StatusCodes.OK).json({ message: "Account deleted successfully" });
-};
-const webDeleteAccount = async (req, res) => {
-  const { email, password } = req.body;
-  const userData = await User.findOne({ email: email });
+    // Verify old password
+    const isPasswordCorrect = await user.comparePassword(oldPassword);
+    if (!isPasswordCorrect) {
+      throw new UnauthenticatedError("Invalid old password");
+    }
 
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
-  const isPasswordCorrect = await userData.comparePassword(password);
-  if (!isPasswordCorrect) {
-    throw new UnauthenticatedError("Invalid Credentials!");
-  }
+    // Validate new password format
+    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
+    if (!passwordRegex.test(newPassword)) {
+      throw new BadRequestError("New password must contain at least one number and one special character, and be at least 6 characters long");
+    }
 
-  await User.findOneAndDelete({ email: email });
-  res.status(StatusCodes.OK).json({ message: "Account deleted successfully" });
-};
-const userAuthorize = async (req, res) => {
-  const { email } = req.body;
-  if (!email) {
-    throw new BadRequestError("Provide Email For Reset Password");
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    // Use findOneAndUpdate to bypass validation
+    const updatedUser = await User.findOneAndUpdate(
+      { email },
+      { password: hashedPassword },
+      { new: true, runValidators: false }
+    );
+
+    if (!updatedUser) {
+      throw new Error("Failed to update password");
+    }
+
+    res.status(StatusCodes.OK).json({
+      success: true,
+      message: "Password reset successfully"
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: error.message
+    });
   }
-  const userData = await User.findOne({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
-  res.status(StatusCodes.OK).json("OK");
 };
 
-const updateProfile = async (req, res) => {
-  const { email, fName, lName } = req.body;
-  if (!email || !fName) {
-    throw new BadRequestError("Provid Name ");
-  }
-  const userData = await User.findOne({ email: email });
-  if (!userData) {
-    throw new NotFoundError(`No user found with email ${email}`);
-  }
-  const updatedData = await User.findOneAndUpdate(
-    { email: email },
-    {
-      fName: fName,
-      lName: lName,
-    },
-    { new: true }
-  );
-  if (updatedData) {
-    updatedData.password = undefined;
-  }
-  res.status(StatusCodes.OK).json(updatedData);
-};
 export {
   login,
   logout,
-  sendMailOtp,
   changePassword,
   deleteAccount,
-  verifyOtp,
-  resetPassword,
   userAuthorize,
   webDeleteAccount,
   updateProfile,
+  resetPassword
 };

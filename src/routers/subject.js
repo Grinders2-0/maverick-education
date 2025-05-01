@@ -1,5 +1,5 @@
 import express from 'express';
-import subjectApiRouter from '../api/admin.js';
+import subjectApiRouter from '../api/subject.js';
 
 const registerRoutes = express.Router();
 

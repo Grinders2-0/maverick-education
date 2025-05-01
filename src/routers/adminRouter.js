@@ -3,6 +3,9 @@ import adminApiRouter from "../api/admin.js";
 
 const adminRouter = express.Router();
 
-adminRouter.use("/api/v1/admin", adminApiRouter);
+// Mount without the leading slash since app.js already adds /api/v1/admin prefix
+adminRouter.use("", adminApiRouter);
+
+console.log("Admin router mounted");
 
 export default adminRouter; 

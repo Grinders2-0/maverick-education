@@ -115,24 +115,96 @@ export const adminLogin = async (req, res) => {
 
 export const adminLogout = async (req, res) => {
   try {
-    const { adminId } = req.admin;
+    // A simple logout endpoint that doesn't require server-side action
+    // since JWT tokens are stateless
+    res.status(StatusCodes.OK).json({
+      success: true,
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Something went wrong during logout",
+      error: error.message,
+    });
+  }
+};
+
+export const getAllStudentsData = async (req, res) => {
+  try {
+    console.log("getAllStudentsData endpoint called");
+    const User = await import('../models/User.js');
+    const CollegeInfo = await import('../models/registration/collegeInfo.js');
+    const Result = await import('../models/registration/resultdata_fetch.js');
+    const UserSubject = await import('../models/registration/studentSubject.js');
     
-    // Update the admin's lastLogin field
-    await Admin.findByIdAndUpdate(
-      adminId, 
-      { lastLogin: new Date() },
-      { new: true }
-    );
+    // Get all users with role 'user' (students)
+    const students = await User.default.find({ role: 'user' }).select('fName lName email isDeleted');
+    console.log(`Found ${students.length} students`);
+    
+    // Create an array to hold the complete student data
+    const studentsData = [];
+    
+    // For each student, gather their related data
+    for (const student of students) {
+      const studentData = {
+        id: student._id,
+        name: `${student.fName} ${student.lName || ''}`.trim(),
+        email: student.email,
+        isDeleted: student.isDeleted,
+        college: null,
+        cgpa: null,
+        currentSubjects: []
+      };
+      
+      // Get college information
+      const collegeInfo = await CollegeInfo.default.findOne({ userId: student._id }).sort({ createdAt: -1 });
+      if (collegeInfo) {
+        studentData.college = {
+          name: collegeInfo.collegeName,
+          department: collegeInfo.department,
+          semester: collegeInfo.semester,
+          enrollmentYear: collegeInfo.enrollmentYear,
+          expectedGraduationYear: collegeInfo.expectedGraduationYear,
+          enrollmentNumber: collegeInfo.enrollmentNumber
+        };
+      }
+      
+      // Get current subjects
+      const subjects = await UserSubject.default.findOne({ userId: student._id }).sort({ createdAt: -1 }).populate('selectedSubjects.subjectId');
+      if (subjects) {
+        studentData.currentSubjects = subjects.selectedSubjects.map(subject => {
+          if (subject.subjectId) {
+            return {
+              name: subject.subjectId.sname,
+              code: subject.subjectId.scode
+            };
+          }
+          return null;
+        }).filter(Boolean);
+      }
+      
+      // Get CGPA information
+      const result = await Result.default.findOne({ userId: student._id }).sort({ createdAt: -1 });
+      if (result) {
+        studentData.cgpa = result.cgpa;
+      }
+      
+      studentsData.push(studentData);
+    }
     
     res.status(StatusCodes.OK).json({
       success: true,
-      message: "Admin logged out successfully"
+      count: studentsData.length,
+      data: studentsData
     });
   } catch (error) {
-    console.error("Admin logout error:", error);
+    console.error("Error fetching student data:", error);
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       success: false,
-      message: "Error during admin logout"
+      message: "Failed to fetch student data",
+      error: error.message
     });
   }
 }; 
+

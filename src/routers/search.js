@@ -1,9 +1,16 @@
-import express from 'express';
-import searchApiRouter from '../api/search.js';
+import express from "express";
+import { searchQuestions, searchStudyMaterials, combinedSearch } from "../controller/searchController.js";
+import authenticateUser from "../middleware/authentication.js";
 
+const router = express.Router();
 
-const search = express.Router();
+// Search questions
+router.get("/questions", authenticateUser, searchQuestions);
 
-search.use("/search", searchApiRouter);
+// Search study materials
+router.get("/materials", authenticateUser, searchStudyMaterials);
 
-export default search;
+// Combined search
+router.get("/combined", authenticateUser, combinedSearch);
+
+export default router;

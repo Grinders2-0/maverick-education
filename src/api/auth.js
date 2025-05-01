@@ -3,28 +3,27 @@ const router = express.Router();
 import authenticateUser from "../middleware/authentication.js";
 import {
   changePassword,
-  sendMailOtp,
   login,
   logout,
   deleteAccount,
-  verifyOtp,
-  resetPassword,
   userAuthorize,
   webDeleteAccount,
   updateProfile,
+  resetPassword,
   signup
 } from "../controller/auth.js";
 
+// Public routes
 router.post("/signup", signup);
 router.post("/login", login);
-router.patch("/logout", authenticateUser, logout);
-router.post("/forgotPassword/sendMail", sendMailOtp);
-router.post("/forgotPassword/verifyOtp", verifyOtp);
-router.post("/forgotPassword/resetPassword", resetPassword);
+router.post("/userAuthorize", userAuthorize);
+router.post("/resetPassword",authenticateUser, resetPassword);
+
+// Protected routes (require authentication)
+router.post("/logout", authenticateUser, logout);
 router.post("/changePassword", authenticateUser, changePassword);
 router.post("/deleteAccount", authenticateUser, deleteAccount);
-router.post("/webDeleteAccount", webDeleteAccount);
-router.post("/userAuthorize", authenticateUser, userAuthorize);
-router.post("/updateProfile", updateProfile);
+router.post("/webDeleteAccount", authenticateUser, webDeleteAccount);
+router.post("/updateProfile", authenticateUser, updateProfile);
 
 export default router;

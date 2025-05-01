@@ -8,12 +8,13 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import helmet from "helmet";
 import authRouter from "./routers/authRouter.js";
-import searchApi  from "./routers/search.js";
-// import chatbotApi  from "./routers/chatbot.js";
+import searchApi from "./routers/search.js";
 import chatbotApi from "./routers/chatbot.js";
 import questionRoutes from "./routers/questionRoutes.js";
-import adminRouter from "./routers/adminRouter.js";
 import logger from "./utility/logger.js";
+
+// Directly import and use the admin API router
+import adminrouter from "./api/admin.js";
 
 // Use port from environment variables or default to 3001
 const port = process.env.PORT || 3001;
@@ -22,16 +23,29 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
 app.use(authRouter);
+app.use("/api/v1/search", searchApi);
+app.use(questionRoutes);
+app.use("/api/v1/admin", adminrouter);
 app.use(registerRoutes);
 app.use(subjects);
-app.use(searchApi);
 app.use(chatbotApi);
-app.use(questionRoutes);
-app.use(adminRouter);
 
-app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
+
+const start = async () => {
+  try {
+    app.listen(port, () => {
+      logger.info(`Server is listening on port ${port}...`);
+    });
+  } catch (error) {
+    logger.error(error);
+  }
+};
+
+start();
 
 // Global error handlers
 process.on('uncaughtException', (err) => {
@@ -46,22 +60,6 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (reason) => {
   logger.error(`Unhandled Rejection: ${reason}`);
 });
-
-const server = app.listen(port, () => {
-  logger.info(`Server running at port ${port}`);
-}).on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    const newPort = parseInt(port) + 1;
-    logger.warn(`Port ${port} is already in use. Trying another port...`);
-    app.listen(newPort, () => {
-      logger.info(`Server running at port ${newPort} (port ${port} was in use)`);
-    });
-  } else {
-    logger.error(`Server error: ${err.message}`);
-  }
-});
-
-// Database connection message will be logged in server.js or db.js
 
 // Error handler middleware for Express errors
 app.use((err, req, res, next) => {
